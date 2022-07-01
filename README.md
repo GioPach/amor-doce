@@ -1,5 +1,13 @@
-# amor-doce
-Projeto final da disciplina de Programação II - IFRS Campus Canoas 2022/1.
-Filipe Siota
-Gabriela Estigarribia
-Giovani Signori
+<h1>Amor Doce>
+<h3>Projeto JavaFx - IFRS Campus Canoas 2022/1</h3>
+
+<p>amordoce - diretório principal: telas, controladores, modelos (classes Java), handlers e App.java</p>
+<p>assets - diretório de recursos: imagens, áudios, vídeos, etc.</p>
+<p>css - diretório de estilos CSS</p>
+
+<h1>Time de desenvolvimento</h1>
+<p>Filipe Siota</p>
+<p>Gabriela Estigarribia</p>
+<p>Giovani Signori</p>
+
+
