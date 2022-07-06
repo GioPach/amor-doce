@@ -4,14 +4,18 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="697.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaInicialController">
+<AnchorPane id="AnchorPane" prefHeight="697.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaInicialController">
     <children>
       <ImageView fitHeight="697.0" fitWidth="833.0">
          <image>
             <Image url="@../../assets/img/TelaInicial.png" />
          </image>
       </ImageView>
-      <Button layoutX="564.0" layoutY="30.0" mnemonicParsing="false" onAction="#handlerButtonAction" prefHeight="90.0" prefWidth="207.0" text="ENTRAR NA ESCOLA" />
+      <Button layoutX="563.0" layoutY="46.0" mnemonicParsing="false" onAction="#handlerButtonJogar" prefHeight="90.0" prefWidth="207.0" text="Jogar">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Button>
     </children>
 </AnchorPane>

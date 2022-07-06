@@ -6,15 +6,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaPersonagensController">
+<AnchorPane prefHeight="739.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaPersonagensController">
    <children>
-      <ImageView fitHeight="697.0" fitWidth="833.0">
+      <ImageView fitHeight="697.0" fitWidth="833.0" layoutY="42.0">
          <image>
             <Image url="@../../assets/img/TelaPersonagens.png" />
          </image>
       </ImageView>
-      <Button layoutX="664.0" layoutY="103.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" prefHeight="70.0" prefWidth="137.0" text="Voltar" />
-      <Button id="ema" layoutX="7.0" layoutY="7.0" mnemonicParsing="false" onAction="#handlerButtonEmaMontenegro" prefHeight="134.0" prefWidth="398.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css">
+      <Button fx:id="btnSairDoJogo" layoutX="737.0" layoutY="6.0" mnemonicParsing="false" onAction="#handlerButtonSairDoJogo" prefHeight="31.0" prefWidth="89.0" text="Sair do jogo" />
+      <Button id="ema" layoutX="7.0" layoutY="49.0" mnemonicParsing="false" onAction="#handlerButtonEmaMontenegro" prefHeight="134.0" prefWidth="398.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

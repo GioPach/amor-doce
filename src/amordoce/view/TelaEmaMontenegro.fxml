@@ -6,17 +6,21 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaEmaMontenegroController">
+<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="833.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaEmaMontenegroController">
    <children>
-      <ImageView fitHeight="697.0" fitWidth="833.0">
+      <ImageView fitHeight="529.0" fitWidth="833.0">
          <image>
             <Image url="@../../assets/img/EmaMontenegro.png" />
          </image>
       </ImageView>
-      <Button layoutX="28.0" layoutY="24.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" prefHeight="41.0" prefWidth="88.0" text="Voltar" />
-      <Label fx:id="labelHumor" alignment="CENTER" layoutX="681.0" layoutY="234.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
-      <Label fx:id="labelEnergia" alignment="CENTER" layoutX="681.0" layoutY="283.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
-      <Label fx:id="labelNivel" alignment="CENTER" layoutX="681.0" layoutY="381.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
-      <Label fx:id="labelInteresse" alignment="CENTER" layoutX="681.0" layoutY="331.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Button fx:id="btnVoltar" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" prefHeight="41.0" prefWidth="88.0" text="Voltar" />
+      <Label fx:id="labelHumor" alignment="CENTER" layoutX="681.0" layoutY="222.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Label fx:id="labelEnergia" alignment="CENTER" layoutX="681.0" layoutY="265.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Label fx:id="labelNivel" alignment="CENTER" layoutX="681.0" layoutY="362.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Label fx:id="labelInteresse" alignment="CENTER" layoutX="681.0" layoutY="313.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Label fx:id="labelPergunta" alignment="CENTER" layoutX="117.0" layoutY="453.0" prefHeight="70.0" prefWidth="600.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Button fx:id="btnOpcaoA" layoutX="116.0" layoutY="549.0" mnemonicParsing="false" onAction="#handlerButtonOpcaoA" prefHeight="50.0" prefWidth="290.0" wrapText="true" />
+      <Button fx:id="btnOpcaoB" layoutX="427.0" layoutY="549.0" mnemonicParsing="false" onAction="#handlerButtonOpcaoB" prefHeight="50.0" prefWidth="290.0" wrapText="true" />
+      <Button fx:id="btnOpcaoC" layoutX="272.0" layoutY="616.0" mnemonicParsing="false" onAction="#handlerButtonOpcaoC" prefHeight="50.0" prefWidth="290.0" wrapText="true" />
    </children>
 </AnchorPane>
