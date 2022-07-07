@@ -2,6 +2,7 @@ package amordoce.control.personagens.emaMontenegro;
 
 import amordoce.App;
 import amordoce.control.personagens.PersonagemController;
+import amordoce.model.Conversa;
 import amordoce.model.personagens.EmaMontenegro;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,12 +17,20 @@ public class TelaEmaMontenegroController extends PersonagemController implements
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+               
         atualizarAtributosTela(ema);
-        labelPergunta.setText(ema.getConversaAtual().getPergunta());
-        btnOpcaoA.setText(ema.getConversaAtual().getResposta(0));
-        btnOpcaoB.setText(ema.getConversaAtual().getResposta(1));
-        btnOpcaoC.setText(ema.getConversaAtual().getResposta(2));
+        Conversa conversa = ema.getConversaAtual();
+
+        if(conversa.getId() == -1) {
+            disableRespostas();
+            labelPergunta.setText("...");
+        } else {
+            labelPergunta.setText(ema.getConversaAtual().getPergunta());
+            btnOpcaoA.setText(ema.getConversaAtual().getResposta(0));
+            btnOpcaoB.setText(ema.getConversaAtual().getResposta(1));
+            btnOpcaoC.setText(ema.getConversaAtual().getResposta(2));
+        }
+      
     }
     
 
@@ -68,7 +77,7 @@ public class TelaEmaMontenegroController extends PersonagemController implements
         atualizarAtributosTela(ema);
         labelPergunta.setText(ema.getConversaAtual().getReacao(idResposta));
         ema.concluirConversa(ema.getConversaAtual().getId());
-        fecharPerguntas();
+        disableRespostas();
         
     }
 }

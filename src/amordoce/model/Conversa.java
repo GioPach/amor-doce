@@ -10,13 +10,18 @@ public class Conversa {
     private int id;
     private Personagem personagem;
     private String pergunta;
-    private Set<Resposta> respostasPossiveis = new HashSet<>();
-    private Set<Resposta> reacoesPossiveis = new HashSet<>();
+    private Set<Resposta> respostasPossiveis = new HashSet<>(3);
+    private Set<Resposta> reacoesPossiveis = new HashSet<>(3);
     private Resposta respostaUsuario;
     final private int numRespostasPossiveis = 3; // constante
     
     public Conversa() {
-    
+        this.id = -1;
+        this.pergunta = "...";
+        for(int i = 0; i < numRespostasPossiveis; i++) {
+            this.respostasPossiveis.add(new Resposta(i));
+            this.reacoesPossiveis.add(new Resposta(i));
+        }
     }
     
     public Conversa(Personagem personagem, String pergunta, Set<Resposta> respostas, Set<Resposta> reacoesPossiveis) {

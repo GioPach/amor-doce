@@ -50,7 +50,7 @@ public class PersonagemController implements Initializable {
     }
     
     @FXML
-    public void fecharPerguntas() {
+    public void disableRespostas() {
         anchorPane.getChildren().remove(btnOpcaoA);
         anchorPane.getChildren().remove(btnOpcaoB);
         anchorPane.getChildren().remove(btnOpcaoC);

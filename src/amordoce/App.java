@@ -28,7 +28,7 @@ public class App extends Application {
         scene = new Scene(loadFXML("TelaInicial"), 833, 697);
         stage.setScene(scene);
         stage.show();
-        //new AudioHandler().playSong("vital-whales");
+        //new AudioHandler().startPlaylist();
     }
 
     /**

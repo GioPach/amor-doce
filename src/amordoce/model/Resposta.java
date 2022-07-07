@@ -11,7 +11,11 @@ public class Resposta {
     private int deltaInteresse;
     
     public Resposta() {
+    }
     
+    public Resposta(int id) {
+        this.id = id;
+        this.texto = "...";
     }
 
     public Resposta(int id, String reacao) {

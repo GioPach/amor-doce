@@ -2,7 +2,6 @@ package amordoce.model;
 
 import java.util.Set;
 import java.util.HashSet;
-import java.util.NoSuchElementException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -136,13 +135,12 @@ public class Personagem {
      * @return o primeiro elemento da fila de conversas
      */
     public Conversa getConversaAtual() {
-        Conversa primeiraDaFila = new Conversa();
-        try {
-            primeiraDaFila = this.conversas.iterator().next(); // retorna primeiro elemento da fila de conversas
-        } catch(NoSuchElementException e) {
-            System.out.println("Nenhuma conversa na fila do personagem " + this.getNome() + " ...");
+               
+        if(this.conversas.isEmpty()) {
+            return new Conversa();
+        } else {
+            return this.conversas.iterator().next();
         }
-        return primeiraDaFila;
     }    
     
     /**
@@ -153,7 +151,7 @@ public class Personagem {
         for(Conversa conversa : this.conversas) {
             if(conversa.getId() == idConversa) {
                 this.conversasConcluidas.add(conversa);
-                //this.conversas.remove(conversa); --> TODO: DESCOMENTAR
+                this.conversas.remove(conversa);
             }
         }
     }
@@ -208,9 +206,9 @@ public class Personagem {
      */
     public ObservableList<String> logPersonagem() {
         ObservableList<String> perguntaResposta = FXCollections.observableArrayList();
-        for(Conversa conversa : this.conversasConcluidas) {
+        this.conversasConcluidas.forEach((conversa) -> {
             perguntaResposta.add(conversa.getPergunta() + " " + conversa.getRespostaUsuario().getTexto());
-        }
+        });
         return perguntaResposta;    
     }
     

@@ -22,7 +22,20 @@ public class EmaMontenegro extends Personagem {
     }
     
     private void setarConversas() {
-        // Respostas que podem ser escolhidas pelo usuário
+        Conversa conversa1 = criarConversa1();
+        // Conversa conversa2 = criarConversa1();
+         // Conversa conversa3 = criarConversa1();
+         //  Conversa conversa4 = criarConversa1();
+           // Conversa conversa5 = criarConversa1();
+        this.conversas.add(conversa1);
+       // this.conversas.add(conversa2);
+       // this.conversas.add(conversa3);
+       // this.conversas.add(conversa4);
+       // this.conversas.add(conversa5);
+    }
+    
+    private Conversa criarConversa1() {
+     // Respostas que podem ser escolhidas pelo usuário
         Set<Resposta> respostasPossiveis = new HashSet();
         respostasPossiveis.add(new Resposta("Sim. Eu sou o aluno novo!", "Empolgada", 10, 10));
         respostasPossiveis.add(new Resposta("Sim.", "Neutro", 5));
@@ -35,8 +48,7 @@ public class EmaMontenegro extends Personagem {
         reacoesPossiveis.add(new Resposta(2, "Como?"));
 
         // Implementa a pergunta, criando um objeto Conversa e o colocando no array de conversas
-        Conversa conversa = new Conversa(this, "Você é novo por aqui, né?", respostasPossiveis, reacoesPossiveis);
-        this.conversas.add(conversa);
+        return new Conversa(this, "Você é novo por aqui, né?", respostasPossiveis, reacoesPossiveis);
     }
     
 }
