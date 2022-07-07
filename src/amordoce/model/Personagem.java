@@ -2,6 +2,9 @@ package amordoce.model;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.NoSuchElementException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Personagem {
 
@@ -84,6 +87,22 @@ public class Personagem {
         this.humor = humor;
     }
 
+    public Set<Conversa> getConversas() {
+        return conversas;
+    }
+
+    public void setConversas(Set<Conversa> conversas) {
+        this.conversas = conversas;
+    }
+
+    public Set<Conversa> getConversasConcluidas() {
+        return conversasConcluidas;
+    }
+
+    public void setConversasConcluidas(Set<Conversa> conversasConcluidas) {
+        this.conversasConcluidas = conversasConcluidas;
+    }
+
     public int getEnergia() {
         return this.energia;
     }
@@ -117,13 +136,28 @@ public class Personagem {
      * @return o primeiro elemento da fila de conversas
      */
     public Conversa getConversaAtual() {
-        return this.conversas.iterator().next();
+        Conversa primeiraDaFila = new Conversa();
+        try {
+            primeiraDaFila = this.conversas.iterator().next(); // retorna primeiro elemento da fila de conversas
+        } catch(NoSuchElementException e) {
+            System.out.println("Nenhuma conversa na fila do personagem " + this.getNome() + " ...");
+        }
+        return primeiraDaFila;
     }    
+    
+    public void concluirConversa(int idConversa) {
+        for(Conversa conversa : this.conversas) {
+            if(conversa.getId() == idConversa) {
+                this.conversasConcluidas.add(conversa);
+                //this.conversas.remove(conversa); --> TODO: DESCOMENTAR
+            }
+        }
+    }
     
     /**
      * Atualiza o interesse do personagem pelo usuário
      * @param deltaInteresse 
-     */
+     */    
     public void atualizarInteresse(int deltaInteresse) {
         int tmpInteresse = this.interesse + deltaInteresse;
         
@@ -163,4 +197,13 @@ public class Personagem {
             this.energia += deltaEnergia;
         }
     }
+    
+    public ObservableList<String> logPersonagem() {
+        ObservableList<String> perguntaResposta = FXCollections.observableArrayList();
+        for(Conversa conversa : this.conversasConcluidas) {
+            perguntaResposta.add(conversa.getPergunta() + " " + conversa.getRespostaUsuario().getTexto());
+        }
+        return perguntaResposta;    
+    }
+    
 }

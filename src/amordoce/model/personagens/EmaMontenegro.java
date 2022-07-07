@@ -13,8 +13,12 @@ public class EmaMontenegro extends Personagem {
      * Constrói a personagem com suas conversas e atributos setados
      */
     public EmaMontenegro() {
-        super("Ema Montenegro", 21, "Gêmeos", "Espanhola", 'F', "Neutro", 100, 0, "Fácil");     
-        this.setarConversas();
+        
+    }
+    
+    public EmaMontenegro(String nome, int idade, String signo, String nacionalidade, char genero, String humor, int energia, int interesse, String nivel) {
+        super(nome, idade, signo, nacionalidade, genero, humor, energia, interesse, nivel);
+        setarConversas();
     }
     
     private void setarConversas() {
