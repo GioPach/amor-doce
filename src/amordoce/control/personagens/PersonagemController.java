@@ -1,6 +1,7 @@
 package amordoce.control.personagens;
 
 import amordoce.App;
+import amordoce.model.Conversa;
 import amordoce.model.Personagem;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -9,12 +10,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 
 public class PersonagemController implements Initializable {
     
-    @FXML
-    public AnchorPane anchorPane;
     @FXML 
     public Label labelEnergia;
     @FXML 
@@ -31,6 +29,8 @@ public class PersonagemController implements Initializable {
     public Button btnOpcaoB;
     @FXML
     public Button btnOpcaoC;
+    @FXML
+    public Button btnProxima;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -49,10 +49,29 @@ public class PersonagemController implements Initializable {
         labelNivel.setText("Nivel: " + personagem.getNivel());
     }
     
+    public void carregarConversa(Personagem personagem) {
+        Conversa conversa = personagem.getConversaAtual();
+
+        if(conversa.getId() == -1) {
+            setVisibilityRespostas(false);
+            labelPergunta.setText("...");
+        } else {
+            labelPergunta.setText(personagem.getConversaAtual().getPergunta());
+            btnOpcaoA.setText(personagem.getConversaAtual().getResposta(0));
+            btnOpcaoB.setText(personagem.getConversaAtual().getResposta(1));
+            btnOpcaoC.setText(personagem.getConversaAtual().getResposta(2));
+        }
+    }
+    
     @FXML
-    public void disableRespostas() {
-        anchorPane.getChildren().remove(btnOpcaoA);
-        anchorPane.getChildren().remove(btnOpcaoB);
-        anchorPane.getChildren().remove(btnOpcaoC);
+    public void setVisibilityRespostas(boolean valor) {
+        btnOpcaoA.setVisible(valor);
+        btnOpcaoB.setVisible(valor);
+        btnOpcaoC.setVisible(valor);
+    }
+    
+    @FXML
+    public void setVisibilityButtonProxima(boolean valor) {
+        btnProxima.setVisible(valor);
     }
 }

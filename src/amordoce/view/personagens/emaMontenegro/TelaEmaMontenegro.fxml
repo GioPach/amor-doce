@@ -23,5 +23,6 @@
       <Button fx:id="btnOpcaoB" layoutX="427.0" layoutY="549.0" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="290.0" wrapText="true" />
       <Button fx:id="btnOpcaoC" layoutX="272.0" layoutY="616.0" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="290.0" wrapText="true" />
       <Button layoutX="733.0" layoutY="14.0" mnemonicParsing="false" onAction="#handlerLogConversas" prefHeight="41.0" prefWidth="88.0" text="Conversas" />
+      <Button fx:id="btnProxima" layoutX="731.0" layoutY="648.0" mnemonicParsing="false" onAction="#handlerButtonProxima" prefHeight="41.0" prefWidth="88.0" text="Próxima" />
    </children>
 </AnchorPane>

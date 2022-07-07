@@ -2,7 +2,6 @@ package amordoce.control.personagens.emaMontenegro;
 
 import amordoce.App;
 import amordoce.control.personagens.PersonagemController;
-import amordoce.model.Conversa;
 import amordoce.model.personagens.EmaMontenegro;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,26 +16,16 @@ public class TelaEmaMontenegroController extends PersonagemController implements
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-               
         atualizarAtributosTela(ema);
-        Conversa conversa = ema.getConversaAtual();
-
-        if(conversa.getId() == -1) {
-            disableRespostas();
-            labelPergunta.setText("...");
-        } else {
-            labelPergunta.setText(ema.getConversaAtual().getPergunta());
-            btnOpcaoA.setText(ema.getConversaAtual().getResposta(0));
-            btnOpcaoB.setText(ema.getConversaAtual().getResposta(1));
-            btnOpcaoC.setText(ema.getConversaAtual().getResposta(2));
-        }
-      
+        carregarConversa(ema);
+        setVisibilityRespostas(true);
+        setVisibilityButtonProxima(false);
     }
     
-
     @FXML
-    private void handlerButtonVoltar(ActionEvent event) throws Exception {
-        App.setRoot("TelaPersonagens");
+    private void handlerButtonProxima(ActionEvent event) throws Exception {
+        carregarConversa(ema);
+        setVisibilityButtonProxima(false);
     }
     
     @FXML
@@ -47,8 +36,6 @@ public class TelaEmaMontenegroController extends PersonagemController implements
     @FXML
     private void handlerButtonResposta(ActionEvent event) throws Exception {
         Button btn = (Button) event.getSource();
-        
-        //System.out.println(btn.getText());
         
         int idResposta;
         
@@ -77,7 +64,7 @@ public class TelaEmaMontenegroController extends PersonagemController implements
         atualizarAtributosTela(ema);
         labelPergunta.setText(ema.getConversaAtual().getReacao(idResposta));
         ema.concluirConversa(ema.getConversaAtual().getId());
-        disableRespostas();
-        
+        setVisibilityRespostas(false);
+        setVisibilityButtonProxima(true);
     }
 }
