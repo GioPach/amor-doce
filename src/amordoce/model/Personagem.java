@@ -145,6 +145,10 @@ public class Personagem {
         return primeiraDaFila;
     }    
     
+    /**
+     * Conclui uma conversa (diálogo) e adiciona ela às já concluídas para ter o log de conversas no futuro
+     * @param idConversa 
+     */
     public void concluirConversa(int idConversa) {
         for(Conversa conversa : this.conversas) {
             if(conversa.getId() == idConversa) {
@@ -198,6 +202,10 @@ public class Personagem {
         }
     }
     
+    /**
+     * ObservableList??
+     * @return 
+     */
     public ObservableList<String> logPersonagem() {
         ObservableList<String> perguntaResposta = FXCollections.observableArrayList();
         for(Conversa conversa : this.conversasConcluidas) {

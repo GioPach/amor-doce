@@ -6,7 +6,6 @@ package amordoce.control;
 
 import amordoce.App;
 import java.net.URL;
-import java.util.Set;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

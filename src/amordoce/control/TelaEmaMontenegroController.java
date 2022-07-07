@@ -1,7 +1,6 @@
 package amordoce.control;
 
 import amordoce.App;
-import amordoce.model.Conversa;
 import amordoce.model.personagens.EmaMontenegro;
 import java.net.URL;
 import java.util.ResourceBundle;

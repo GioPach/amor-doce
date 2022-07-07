@@ -38,17 +38,20 @@
 - Métodos:
 
 - [x] + getConversaAtual(): Conversa
+- [x] + concluirConversa(): void (adicionado a conversa às já concluídas para ter o log depois)
 - [x] + atualizarInteresse(): void
 - [x] + atualizarHumor(): void
 - [x] + atualizarEnergia(): void
+- [x] + logPersonagem(): ObservableList<String> (????)
 
 ### Herança (NomePersonagem)
 
-- [x] construção da personagem pelo método `super` dentro do contrutor
+- [ ] construção da personagem pelo método `super` dentro do contrutor (REVISAR)
 - [x] - setarConversas(): void (seta as conversas referentes a esta personagem)
 
 ## Conversa (Comentada)
 
+- [x] - id: int
 - [x] - personagem: Personagem
 - [x] - pergunta: String
 - [x] - respostasPossiveis: Set<Resposta>
@@ -66,7 +69,7 @@
 
 ## Resposta (Comentada)
 
-- [ ] - id: int (REVISAR)
+- [x] - id: int
 - [x] - texto: String
 - [x] - humorFinal: String
 - [ ] - deltaEnergia: double (REVISAR)
