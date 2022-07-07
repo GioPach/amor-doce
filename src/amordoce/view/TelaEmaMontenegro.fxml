@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="703.0" prefWidth="833.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaEmaMontenegroController">
+   <children>
+      <ImageView fitHeight="529.0" fitWidth="833.0">
+         <image>
+            <Image url="@../../assets/img/EmaMontenegro.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnVoltar" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" prefHeight="41.0" prefWidth="88.0" text="Voltar" />
+      <Label fx:id="labelHumor" alignment="CENTER" layoutX="681.0" layoutY="222.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Label fx:id="labelEnergia" alignment="CENTER" layoutX="681.0" layoutY="265.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Label fx:id="labelNivel" alignment="CENTER" layoutX="681.0" layoutY="362.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Label fx:id="labelInteresse" alignment="CENTER" layoutX="681.0" layoutY="313.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Label fx:id="labelPergunta" alignment="CENTER" layoutX="117.0" layoutY="453.0" prefHeight="70.0" prefWidth="600.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Button fx:id="btnOpcaoA" layoutX="116.0" layoutY="549.0" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="290.0" wrapText="true" />
+      <Button fx:id="btnOpcaoB" layoutX="427.0" layoutY="549.0" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="290.0" wrapText="true" />
+      <Button fx:id="btnOpcaoC" layoutX="272.0" layoutY="616.0" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="290.0" wrapText="true" />
+      <Button layoutX="733.0" layoutY="14.0" mnemonicParsing="false" onAction="#handlerLogConversas" prefHeight="41.0" prefWidth="88.0" text="Conversas" />
+   </children>
+</AnchorPane>
