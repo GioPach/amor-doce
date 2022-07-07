@@ -6,11 +6,13 @@ package amordoce.control;
 
 import amordoce.App;
 import java.net.URL;
+import java.util.Set;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.ListView;
 
 /**
  * FXML Controller class
@@ -19,15 +21,19 @@ import javafx.scene.control.TextArea;
  */
 public class TelaLogEmaMontenegroController implements Initializable {
     
+    public ObservableList<String> listaPerguntasRespostas;
+    
     @FXML
-    public TextArea textareaLog;
+    public ListView<String> listView;
 
     /**
      * Initializes the controller class.
      */
     @Override
+    @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        
+        this.listaPerguntasRespostas = TelaEmaMontenegroController.ema.logPersonagem();
+        listView.setItems(listaPerguntasRespostas);
     }    
     
     @FXML

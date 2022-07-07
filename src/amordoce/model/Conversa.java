@@ -5,6 +5,9 @@ import java.util.HashSet;
 
 public class Conversa {
     
+    private static int seqId = 0;
+    
+    private int id;
     private Personagem personagem;
     private String pergunta;
     private Set<Resposta> respostasPossiveis = new HashSet<>();
@@ -21,10 +24,19 @@ public class Conversa {
             System.out.println("Modelo Conversa: Instancie 3 respostas...");
             return;
         }
+        this.id = seqId++;
         this.personagem = personagem;
         this.pergunta = pergunta;
         this.respostasPossiveis = respostas;
         this.reacoesPossiveis = reacoesPossiveis;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Personagem getPersonagem() {

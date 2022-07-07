@@ -1,6 +1,7 @@
 package amordoce.control;
 
 import amordoce.App;
+import amordoce.model.Conversa;
 import amordoce.model.personagens.EmaMontenegro;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -8,11 +9,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
 
 public class TelaEmaMontenegroController extends PersonagemController implements Initializable {
     
-    public static EmaMontenegro ema = new EmaMontenegro();
+    public static EmaMontenegro ema = new EmaMontenegro("Ema Montenegro", 21, "Gêmeos", "Espanhola", 'F', "Neutro", 100, 0, "Fácil");
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -32,10 +32,7 @@ public class TelaEmaMontenegroController extends PersonagemController implements
     
     @FXML
     private void handlerLogConversas(ActionEvent event) throws Exception {
-
-        AnchorPane ap = new AnchorPane();
-        
-        
+        App.setRoot("TelaLogEmaMontenegro");
     }
     
     @FXML
@@ -70,6 +67,7 @@ public class TelaEmaMontenegroController extends PersonagemController implements
         ema.getConversaAtual().escolherResposta(idResposta);
         atualizarAtributosTela(ema);
         labelPergunta.setText(ema.getConversaAtual().getReacao(idResposta));
+        ema.concluirConversa(ema.getConversaAtual().getId());
         fecharPerguntas();
         
     }
