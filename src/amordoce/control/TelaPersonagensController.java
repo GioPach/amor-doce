@@ -21,6 +21,6 @@ public class TelaPersonagensController implements Initializable {
     
     @FXML
     private void handlerButtonEmaMontenegro(ActionEvent event) throws Exception {
-        App.setRoot("TelaEmaMontenegro");
+        App.setRoot("personagens/emaMontenegro/TelaEmaMontenegro");
     }
 }

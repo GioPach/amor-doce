@@ -1,4 +1,4 @@
-package amordoce.control;
+package amordoce.control.personagens;
 
 import amordoce.App;
 import amordoce.model.Personagem;

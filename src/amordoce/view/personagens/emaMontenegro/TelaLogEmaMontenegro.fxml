@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="697.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaLogEmaMontenegroController">
+<AnchorPane id="AnchorPane" prefHeight="697.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.emaMontenegro.TelaLogEmaMontenegroController">
    <children>
       <Button fx:id="btnVoltar" layoutX="713.0" layoutY="41.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" prefHeight="31.0" prefWidth="89.0" text="Voltar" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="41.0" prefHeight="39.0" prefWidth="232.0" text="Ema Montenegro" textAlignment="CENTER" textFill="#5e5e5e">

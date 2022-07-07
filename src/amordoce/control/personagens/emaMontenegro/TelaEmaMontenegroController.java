@@ -1,6 +1,7 @@
-package amordoce.control;
+package amordoce.control.personagens.emaMontenegro;
 
 import amordoce.App;
+import amordoce.control.personagens.PersonagemController;
 import amordoce.model.personagens.EmaMontenegro;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,7 +32,7 @@ public class TelaEmaMontenegroController extends PersonagemController implements
     
     @FXML
     private void handlerLogConversas(ActionEvent event) throws Exception {
-        App.setRoot("TelaLogEmaMontenegro");
+        App.setRoot("personagens/emaMontenegro/TelaLogEmaMontenegro");
     }
     
     @FXML

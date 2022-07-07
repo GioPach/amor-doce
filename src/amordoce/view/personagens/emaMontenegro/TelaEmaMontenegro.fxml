@@ -6,11 +6,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="703.0" prefWidth="833.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaEmaMontenegroController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="703.0" prefWidth="833.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.emaMontenegro.TelaEmaMontenegroController">
    <children>
       <ImageView fitHeight="529.0" fitWidth="833.0">
          <image>
-            <Image url="@../../assets/img/EmaMontenegro.png" />
+            <Image url="@../../../../assets/img/personagens/EmaMontenegro.png" />
          </image>
       </ImageView>
       <Button fx:id="btnVoltar" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" prefHeight="41.0" prefWidth="88.0" text="Voltar" />
