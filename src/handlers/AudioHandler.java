@@ -1,4 +1,4 @@
-package amordoce.handlers;
+package handlers;
 
 import javafx.scene.media.AudioClip;
 

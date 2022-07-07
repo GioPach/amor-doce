@@ -26,4 +26,6 @@ hs_err_pid*
 # Extra
 manifest.mf
 build.xml
+dist*
 nbproject*
+/dist/

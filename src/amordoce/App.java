@@ -1,6 +1,6 @@
 package amordoce;
 
-import amordoce.handlers.AudioHandler;
+import handlers.AudioHandler;
 import amordoce.model.Personagem;
 
 import javafx.application.Application;
@@ -28,7 +28,7 @@ public class App extends Application {
         scene = new Scene(loadFXML("TelaInicial"), 833, 697);
         stage.setScene(scene);
         stage.show();
-        new AudioHandler().playSong("vital-whales");
+        //new AudioHandler().playSong("vital-whales");
     }
 
     /**
