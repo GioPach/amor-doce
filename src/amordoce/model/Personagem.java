@@ -12,15 +12,16 @@ public class Personagem {
     private char genero;
     private String humor;
     private int energia;
-    private double interesse;
-    // private Set<Conversa> conversas = new HashSet<>();
+    private int interesse;
     private String nivel;
+    public Set<Conversa> conversas = new HashSet<>();
+    public Set<Conversa> conversasConcluidas = new HashSet<>();
 
 
     public Personagem() {
     }
 
-    public Personagem(String nome, int idade, String signo, String nacionalidade, char genero, String humor, int energia, double interesse, String nivel) {
+    public Personagem(String nome, int idade, String signo, String nacionalidade, char genero, String humor, int energia, int interesse, String nivel) {
         this.nome = nome;
         this.idade = idade;
         this.signo = signo;
@@ -88,16 +89,12 @@ public class Personagem {
         this.energia = energia;
     }
 
-    public double getInteresse() {
+    public int getInteresse() {
         return this.interesse;
     }
 
-    public void setInteresse(double interesse) {
-        if(interesse >= 0 && interesse <= 1)
-        {
-            this.interesse = interesse * 100;
-        }
-        
+    public void setInteresse(int interesse) {
+        this.interesse = interesse;
     }
 
     public String getNivel() {
@@ -107,21 +104,42 @@ public class Personagem {
     public void setNivel(String nivel) {
         this.nivel = nivel;
     }
-
-    @Override
-    public String toString() {
-        return "{" +
-            " nome='" + getNome() + "'" +
-            ", idade='" + getIdade() + "'" +
-            ", signo='" + getSigno() + "'" +
-            ", nacionalidade='" + getNacionalidade() + "'" +
-            ", genero='" + getGenero() + "'" +
-            ", humor='" + getHumor() + "'" +
-            ", energia='" + getEnergia() + "'" +
-            ", interesse='" + getInteresse() + "'" +
-            ", nivel='" + getNivel() + "'" +
-            "}";
+    
+    public Conversa getConversaAtual() {
+        return this.conversas.iterator().next(); // retorna primeiro elemento da fila de conversas
+    }    
+    
+    public void atualizarInteresse(int deltaInteresse) {
+        int tmpInteresse = this.interesse + deltaInteresse;
+        
+        if(tmpInteresse < 0) {
+            this.interesse = 0;
+        }         
+        else if(tmpInteresse > 100) {
+            this.interesse = 100;
+        }         
+        else {
+            this.interesse += deltaInteresse;
+        }
     }
-
-
+    
+    public void atualizarHumor(String humorFinal) {
+        this.humor = humorFinal;
+    }
+    
+    public void atualizarEnergia(int deltaEnergia) {
+        int tmpEnergia = this.energia + deltaEnergia;
+        
+        if(tmpEnergia < 0) {
+            this.energia = 0;
+        }         
+        else if(tmpEnergia > 100) {
+            this.energia = 100;
+        }         
+        else {
+            this.energia += deltaEnergia;
+        }
+        
+    }
+    
 }

@@ -1,6 +1,6 @@
 package amordoce;
 
-//import amordoce.handlers.AudioHandler;
+import amordoce.handlers.AudioHandler;
 import amordoce.model.Personagem;
 
 import javafx.application.Application;
@@ -15,7 +15,6 @@ public class App extends Application {
     
     public static Personagem usuario;
     public static Set<Personagem> personagens = new HashSet<>();
-    //private HashSet<Conversa> conversas = new HashSet<Conversa>();
     private static Scene scene;
     
     @Override
@@ -23,7 +22,7 @@ public class App extends Application {
         scene = new Scene(loadFXML("TelaInicial"), 833, 697);
         stage.setScene(scene);
         stage.show();
-        //new AudioHandler().playSong("vital-whales");
+        new AudioHandler().playSong("vital-whales");
     }
 
     public static void setRoot(String fxml) throws Exception {
