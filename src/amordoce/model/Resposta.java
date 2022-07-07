@@ -8,7 +8,7 @@ public class Resposta {
     private String texto;
     private String humorFinal;
     private int deltaEnergia;
-    private int deltaInteresse;  
+    private int deltaInteresse;
     
     public Resposta() {
     
@@ -34,6 +34,10 @@ public class Resposta {
         this.deltaInteresse = deltaInteresse;
     }
 
+    /*===============================
+    # Getters e Setters
+    ===============================*/
+     
     public int getId() {
         return this.id;
     }

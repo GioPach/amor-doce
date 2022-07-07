@@ -10,7 +10,7 @@ public class Conversa {
     private Set<Resposta> respostasPossiveis = new HashSet<>();
     private Set<Resposta> reacoesPossiveis = new HashSet<>();
     private Resposta respostaUsuario;
-    final private int numRespostasPossiveis = 3;
+    final private int numRespostasPossiveis = 3; // constante
     
     public Conversa() {
     
@@ -26,6 +26,10 @@ public class Conversa {
         this.respostasPossiveis = respostas;
         this.reacoesPossiveis = reacoesPossiveis;
     }
+    
+    /*===============================
+    # Getters e Setters
+    ===============================*/
 
     public Personagem getPersonagem() {
         return this.personagem;
@@ -38,6 +42,10 @@ public class Conversa {
     public String getPergunta() {
         return this.pergunta;
     }
+    
+    public void setPergunta(String pergunta) {
+        this.pergunta = pergunta;
+    }
 
     public Set<Resposta> getReacoesPossiveis() {
         return reacoesPossiveis;
@@ -45,10 +53,6 @@ public class Conversa {
 
     public void setReacoesPossiveis(Set<Resposta> reacoesPossiveis) {
         this.reacoesPossiveis = reacoesPossiveis;
-    }
-
-    public void setPergunta(String pergunta) {
-        this.pergunta = pergunta;
     }
 
     public Set<Resposta> getRespostasPossiveis() {
@@ -62,31 +66,53 @@ public class Conversa {
     public Resposta getRespostaUsuario() {
         return this.respostaUsuario;
     }
-
+    
     public void setRespostaUsuario(Resposta respostaUsuario) {
         this.respostaUsuario = respostaUsuario;
-        this.personagem.atualizarInteresse(this.respostaUsuario.getDeltaInteresse());
-        this.personagem.atualizarHumor(this.respostaUsuario.getHumorFinal());
-        this.personagem.atualizarEnergia(this.respostaUsuario.getDeltaEnergia());
+        this.personagem.atualizarInteresse(this.respostaUsuario.getDeltaInteresse()); // atualiza barra de interesse
+        this.personagem.atualizarHumor(this.respostaUsuario.getHumorFinal()); // atualiza barra de humor
+        this.personagem.atualizarEnergia(this.respostaUsuario.getDeltaEnergia()); // atualiza barra de energia
     }
     
+    /*===============================
+    # Demais métodos
+    ===============================*/
+    
+    /**
+     * Busca o texto da resposta através do seu id
+     * @param idResposta
+     * @return o texto da resposta do usuário
+     */
     public String getResposta(int idResposta) {
         return this.buscarResposta(idResposta).getTexto();
     }
     
+    /**
+     * Busca a reação da resposta através do seu id
+     * @param idResposta
+     * @return o texto da reação do personagem
+     */
     public String getReacao(int idResposta) {
         return this.buscarReacao(idResposta).getTexto();
     }
 
+    /**
+     * Faz a escolha da resposta de uma conversa
+     * @param idResposta 
+     */
     public void escolherResposta(int idResposta) {
         if(idResposta < 0 || idResposta > 2) {
             throw new Error("Modelo Conversa -> metodo escolherResposta: o id da resposta deve ser: 0, 1 ou 2");
         }
         
         this.setRespostaUsuario(buscarResposta(idResposta));
-       
     } 
     
+    /**
+     * Valida a busca pela reação de acordo com a opção escolhida
+     * @param idResposta
+     * @return o objeto da reação do personagem
+     */
     private Resposta buscarReacao(int idResposta) {
         for(Resposta reacao : this.reacoesPossiveis) {
             if(reacao.getId() == idResposta) {
@@ -96,6 +122,11 @@ public class Conversa {
         throw new Error("Modelo Conversa -> metodo buscarReacao: reacao nao encontrada...");
     }
     
+    /**
+     * Valida a busca pela resposta de acordo com a opção escolhida
+     * @param idResposta
+     * @return o objeto da resposta do usuário
+     */
     private Resposta buscarResposta(int idResposta) {
         for(Resposta resposta : this.respostasPossiveis) {
             if(resposta.getId() == idResposta) {

@@ -10,13 +10,12 @@ public class Personagem {
     private String signo;
     private String nacionalidade;
     private char genero;
-    private String humor;
-    private int energia;
-    private int interesse;
-    private String nivel;
-    public Set<Conversa> conversas = new HashSet<>();
-    public Set<Conversa> conversasConcluidas = new HashSet<>();
-
+    private String humor; // barra
+    private int energia; // barra
+    private int interesse; // barra
+    private String nivel; // barra
+    public Set<Conversa> conversas = new HashSet<>(); // conversas do personagem
+    public Set<Conversa> conversasConcluidas = new HashSet<>(); // conversas concluídas para gerar o log de conversas
 
     public Personagem() {
     }
@@ -32,6 +31,10 @@ public class Personagem {
         this.interesse = interesse;
         this.nivel = nivel;
     }
+    
+    /*===============================
+    # Getters e Setters
+    ===============================*/
 
     public String getNome() {
         return this.nome;
@@ -105,10 +108,22 @@ public class Personagem {
         this.nivel = nivel;
     }
     
+    /*===============================
+    # Demais métodos
+    ===============================*/
+    
+    /**
+     * O Padrão Iterator fornece uma maneira de acessar sequencialmente os elementos de um objeto agregado sem expor a sua representação subjacente
+     * @return o primeiro elemento da fila de conversas
+     */
     public Conversa getConversaAtual() {
-        return this.conversas.iterator().next(); // retorna primeiro elemento da fila de conversas
+        return this.conversas.iterator().next();
     }    
     
+    /**
+     * Atualiza o interesse do personagem pelo usuário
+     * @param deltaInteresse 
+     */
     public void atualizarInteresse(int deltaInteresse) {
         int tmpInteresse = this.interesse + deltaInteresse;
         
@@ -123,10 +138,18 @@ public class Personagem {
         }
     }
     
+    /**
+     * Atualiza o humor do personagem após um diálogo
+     * @param humorFinal 
+     */
     public void atualizarHumor(String humorFinal) {
         this.humor = humorFinal;
     }
     
+    /**
+     * Atualiza a energia do personagem após um diálogo
+     * @param deltaEnergia 
+     */
     public void atualizarEnergia(int deltaEnergia) {
         int tmpEnergia = this.energia + deltaEnergia;
         
@@ -139,7 +162,5 @@ public class Personagem {
         else {
             this.energia += deltaEnergia;
         }
-        
     }
-    
 }
