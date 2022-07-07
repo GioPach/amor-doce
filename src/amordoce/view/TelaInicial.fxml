@@ -6,14 +6,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="697.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaInicialController">
+<AnchorPane id="AnchorPane" prefHeight="710.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaInicialController">
     <children>
-      <ImageView fitHeight="697.0" fitWidth="833.0">
+      <ImageView fitHeight="710.0" fitWidth="907.0">
          <image>
-            <Image url="@../../assets/img/TelaInicial.png" />
+            <Image url="@../../assets/img/Tela%20Inicial.png" />
          </image>
       </ImageView>
-      <Button layoutX="563.0" layoutY="46.0" mnemonicParsing="false" onAction="#handlerButtonJogar" prefHeight="90.0" prefWidth="207.0" text="Jogar">
+      <ImageView fitHeight="710.0" fitWidth="907.0">
+         <image>
+            <Image url="@../../assets/img/TelaI.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="585.0" layoutY="559.0" mnemonicParsing="false" onAction="#handlerButtonJogar" prefHeight="90.0" prefWidth="207.0" text="Jogar">
          <font>
             <Font name="System Bold" size="24.0" />
          </font></Button>

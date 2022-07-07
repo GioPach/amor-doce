@@ -6,15 +6,45 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="739.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaPersonagensController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaPersonagensController">
    <children>
-      <ImageView fitHeight="697.0" fitWidth="833.0" layoutY="42.0">
+      <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="50.0">
          <image>
-            <Image url="@../../assets/img/TelaPersonagens.png" />
+            <Image url="@../../assets/img/Tela%20Personagens.png" />
          </image>
       </ImageView>
       <Button fx:id="btnSairDoJogo" layoutX="737.0" layoutY="6.0" mnemonicParsing="false" onAction="#handlerButtonSairDoJogo" prefHeight="31.0" prefWidth="89.0" text="Sair do jogo" />
-      <Button id="ema" layoutX="7.0" layoutY="49.0" mnemonicParsing="false" onAction="#handlerButtonEmaMontenegro" prefHeight="134.0" prefWidth="398.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css">
+      <Button id="ema" layoutX="664.0" layoutY="642.0" mnemonicParsing="false" onAction="#handlerButtonEmaMontenegro" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Ema Montenegro" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button id="ema" layoutX="260.0" layoutY="477.0" mnemonicParsing="false" onAction="#handlerButtonDarioAgostini" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Dario Agostini" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button id="ema" layoutX="451.0" layoutY="578.0" mnemonicParsing="false" onAction="#handlerButtonJudyWillis" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Judy Willis" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button id="ema" layoutX="8.0" layoutY="171.0" mnemonicParsing="false" onAction="#handlerButtonDylanAyala" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Dylan Ayala" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button id="ema" layoutX="219.0" layoutY="220.0" mnemonicParsing="false" onAction="#handlerButtonMatthewWilliams" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Matthew Williams" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button id="ema" layoutX="658.0" layoutY="387.0" mnemonicParsing="false" onAction="#handlerButtonSusanneLefort" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Susanne Lefort" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button id="ema" layoutX="451.0" layoutY="306.0" mnemonicParsing="false" onAction="#handlerButtonCaioLopes" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Caio Lopes" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
