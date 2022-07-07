@@ -8,6 +8,8 @@ import javafx.collections.ObservableList;
 public class Personagem {
 
     private String nome;
+    private String turma;
+    private Personagem colega;
     private int idade;
     private String signo;
     private String nacionalidade;
@@ -22,8 +24,9 @@ public class Personagem {
     public Personagem() {
     }
 
-    public Personagem(String nome, int idade, String signo, String nacionalidade, char genero, String humor, int energia, int interesse, String nivel) {
+    public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, int energia, int interesse, String nivel) {
         this.nome = nome;
+        this.turma = turma;
         this.idade = idade;
         this.signo = signo;
         this.nacionalidade = nacionalidade;
@@ -44,6 +47,22 @@ public class Personagem {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getTurma() {
+        return turma;
+    }
+
+    public void setTurma(String turma) {
+        this.turma = turma;
+    }
+
+    public Personagem getColega() {
+        return colega;
+    }
+
+    public void setColega(Personagem colega) {
+        this.colega = colega;
     }
 
     public int getIdade() {
@@ -198,6 +217,10 @@ public class Personagem {
         else {
             this.energia += deltaEnergia;
         }
+    }
+    
+    public void atualizarColega(int deltaInteresse, int deltaEnergia) {
+        
     }
     
     /**
