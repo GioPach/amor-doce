@@ -89,6 +89,8 @@ public class Conversa {
         this.personagem.atualizarInteresse(this.respostaUsuario.getDeltaInteresse()); // atualiza barra de interesse
         this.personagem.atualizarHumor(this.respostaUsuario.getHumorFinal()); // atualiza barra de humor
         this.personagem.atualizarEnergia(this.respostaUsuario.getDeltaEnergia()); // atualiza barra de energia
+    // arredondar deltas:   
+    // this.personagem.atualizarColega(this.respostaUsuario.getDeltaEnergia() / 2, this.respostaUsuario.getDeltaEnergia() / 2); // fofoca com Personagem da mesma turma (50% de influência)
     }
     
     /*===============================
@@ -152,5 +154,11 @@ public class Conversa {
         }
         throw new Error("Modelo Conversa -> metodo buscarResposta: resposta nao encontrada...");
     }
+
+    @Override
+    public String toString() {
+        return "Conversa{" + "id=" + id + ", personagem=" + personagem + ", pergunta=" + pergunta + ", respostasPossiveis=" + respostasPossiveis + ", reacoesPossiveis=" + reacoesPossiveis + ", respostaUsuario=" + respostaUsuario + ", numRespostasPossiveis=" + numRespostasPossiveis + '}';
+    }
+    
     
 }
