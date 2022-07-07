@@ -56,6 +56,7 @@ public class PersonagemController implements Initializable {
             setVisibilityRespostas(false);
             labelPergunta.setText("...");
         } else {
+            setVisibilityRespostas(true);
             labelPergunta.setText(personagem.getConversaAtual().getPergunta());
             btnOpcaoA.setText(personagem.getConversaAtual().getResposta(0));
             btnOpcaoB.setText(personagem.getConversaAtual().getResposta(1));

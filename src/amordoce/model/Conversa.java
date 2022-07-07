@@ -120,10 +120,6 @@ public class Conversa {
      * @param idResposta 
      */
     public void escolherResposta(int idResposta) {
-        if(idResposta < 0 || idResposta > 2) {
-            throw new Error("Modelo Conversa -> metodo escolherResposta: o id da resposta deve ser: 0, 1 ou 2");
-        }
-        
         this.setRespostaUsuario(buscarResposta(idResposta));
     } 
     

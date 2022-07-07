@@ -12,13 +12,12 @@ import javafx.scene.control.Button;
 
 public class TelaEmaMontenegroController extends PersonagemController implements Initializable {
     
-    public static EmaMontenegro ema = new EmaMontenegro("Ema Montenegro", 21, "Gêmeos", "Espanhola", 'F', "Neutro", 100, 0, "Fácil");
+    public static EmaMontenegro ema = new EmaMontenegro("Ema Montenegro", "DS3", 21, "Gêmeos", "Espanhola", 'F', "Neutro", 100, 0, "Fácil");
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         atualizarAtributosTela(ema);
         carregarConversa(ema);
-        setVisibilityRespostas(true);
         setVisibilityButtonProxima(false);
     }
     
@@ -48,7 +47,6 @@ public class TelaEmaMontenegroController extends PersonagemController implements
             case "btnOpcaoB":
                 idResposta = 1;
                 break;
-
 
             case "btnOpcaoC":
                 idResposta = 2;

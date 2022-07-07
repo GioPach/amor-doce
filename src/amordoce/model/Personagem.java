@@ -153,8 +153,7 @@ public class Personagem {
      * O Padrão Iterator fornece uma maneira de acessar sequencialmente os elementos de um objeto agregado sem expor a sua representação subjacente
      * @return o primeiro elemento da fila de conversas
      */
-    public Conversa getConversaAtual() {
-               
+    public Conversa getConversaAtual() {               
         if(this.conversas.isEmpty()) {
             return new Conversa();
         } else {
@@ -171,6 +170,7 @@ public class Personagem {
             if(conversa.getId() == idConversa) {
                 this.conversasConcluidas.add(conversa);
                 this.conversas.remove(conversa);
+                return;
             }
         }
     }
