@@ -1,6 +1,6 @@
 package amordoce;
 
-import amordoce.handlers.AudioHandler;
+import handlers.AudioHandler;
 import amordoce.model.Personagem;
 
 import javafx.application.Application;
@@ -25,10 +25,10 @@ public class App extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
-        scene = new Scene(loadFXML("TelaInicial"), 833, 697);
+        scene = new Scene(loadFXML("TelaInicial"), 1280, 720);
         stage.setScene(scene);
         stage.show();
-        new AudioHandler().playSong("vital-whales");
+        new AudioHandler().startPlaylist();
     }
 
     /**

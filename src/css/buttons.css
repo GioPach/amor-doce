@@ -1,0 +1,37 @@
+.btn {
+  -fx-font-family: "Berlin Sans FB";
+  font-family: "Berlin Sans FB";
+  -fx-font-size: 20px;
+  font-size: 20px;
+  -fx-font-weight: 600;
+  font-weight: 600;
+  -fx-background-color: #1a9e3d;
+  background-color: #1a9e3d;
+}
+
+.btn:hover {
+  -fx-background-color: #188836;
+  background-color: #188836;
+}
+
+.btnPersonagem {
+  -fx-font-size: 16px;
+  font-size: 16px;
+  -fx-text-fill: #3e3e3e;
+  -fx-background-color: #fff;
+  background-color: #fff;
+  -fx-border-radius: 5px;
+  border-radius: 5px;
+  -fx-border-width: 2px;
+  border-width: 2px;
+  -fx-border-style: solid;
+  border-style: solid;
+  -fx-border-color: #fff;
+  border-color: #fff;
+}
+
+.btnPersonagem:hover {
+  -fx-text-fill: #fff;
+  -fx-background-color: transparent;
+  background-color: transparent;
+}

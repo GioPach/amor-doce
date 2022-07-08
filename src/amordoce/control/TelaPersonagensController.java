@@ -18,9 +18,54 @@ public class TelaPersonagensController implements Initializable {
     private void handlerButtonSairDoJogo(ActionEvent event) throws Exception {
         App.setRoot("TelaInicial");
     }
-    
+    //Ema Montenegro
     @FXML
     private void handlerButtonEmaMontenegro(ActionEvent event) throws Exception {
-        App.setRoot("TelaEmaMontenegro");
+        App.setRoot("personagens/emaMontenegro/TelaEmaMontenegro");
+    }
+    //Judy Willis
+    @FXML
+    private void handlerButtonJudyWillis(ActionEvent event) throws Exception {
+        App.setRoot("personagens/judyWillis/TelaJudyWillis");
+    }
+    //Dylan Ayala
+        @FXML
+    private void handlerButtonDylanAyala(ActionEvent event) throws Exception {
+        App.setRoot("personagens/dylanAyala/TelaDylanAyala");
+    }
+    //Dario Agostini
+     @FXML
+    private void handlerButtonDarioAgostini(ActionEvent event) throws Exception {
+        App.setRoot("personagens/darioAgostini/TelaDarioAgostini");
+    }
+    //Matthew Williams
+          @FXML
+    private void handlerButtonMatthewWilliams(ActionEvent event) throws Exception {
+        App.setRoot("personagens/matthewWilliams/TelaMatthewWilliams"); 
+    }
+    //Susanne Lefort
+           @FXML
+    private void handlerButtonSusanneLefort(ActionEvent event) throws Exception {
+        App.setRoot("personagens/susanneLefort/TelaSusanneLefort"); 
+    }
+    //Caio Lopes
+           @FXML
+    private void handlerButtonCaioLopes(ActionEvent event) throws Exception {
+        App.setRoot("personagens/caioLopes/TelaCaioLopes"); 
+    }
+    //Renzo Andreotti
+        @FXML
+    private void handlerButtonRenzoAndreotti(ActionEvent event) throws Exception {
+        App.setRoot("personagens/renzoAndreotti/TelaRenzoAndreotti"); 
+    }
+    //Sphie Porto
+         @FXML
+    private void handlerButtonSophiePorto(ActionEvent event) throws Exception {
+        App.setRoot("personagens/sophiePorto/TelaSpohiePorto"); 
+    }
+    //Catherine Jones
+         @FXML
+    private void handlerButtonCatherineJones(ActionEvent event) throws Exception {
+        App.setRoot("personagens/catherineJones/TelaCatherineJones"); 
     }
 }

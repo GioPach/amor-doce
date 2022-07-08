@@ -2,13 +2,14 @@ package amordoce.model;
 
 import java.util.Set;
 import java.util.HashSet;
-import java.util.NoSuchElementException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Personagem {
 
     private String nome;
+    private String turma;
+    private Personagem colega;
     private int idade;
     private String signo;
     private String nacionalidade;
@@ -23,8 +24,9 @@ public class Personagem {
     public Personagem() {
     }
 
-    public Personagem(String nome, int idade, String signo, String nacionalidade, char genero, String humor, int energia, int interesse, String nivel) {
+    public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, int energia, int interesse, String nivel) {
         this.nome = nome;
+        this.turma = turma;
         this.idade = idade;
         this.signo = signo;
         this.nacionalidade = nacionalidade;
@@ -45,6 +47,22 @@ public class Personagem {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getTurma() {
+        return turma;
+    }
+
+    public void setTurma(String turma) {
+        this.turma = turma;
+    }
+
+    public Personagem getColega() {
+        return colega;
+    }
+
+    public void setColega(Personagem colega) {
+        this.colega = colega;
     }
 
     public int getIdade() {
@@ -135,14 +153,12 @@ public class Personagem {
      * O Padrão Iterator fornece uma maneira de acessar sequencialmente os elementos de um objeto agregado sem expor a sua representação subjacente
      * @return o primeiro elemento da fila de conversas
      */
-    public Conversa getConversaAtual() {
-        Conversa primeiraDaFila = new Conversa();
-        try {
-            primeiraDaFila = this.conversas.iterator().next(); // retorna primeiro elemento da fila de conversas
-        } catch(NoSuchElementException e) {
-            System.out.println("Nenhuma conversa na fila do personagem " + this.getNome() + " ...");
+    public Conversa getConversaAtual() {               
+        if(this.conversas.isEmpty()) {
+            return new Conversa();
+        } else {
+            return this.conversas.iterator().next();
         }
-        return primeiraDaFila;
     }    
     
     /**
@@ -153,7 +169,8 @@ public class Personagem {
         for(Conversa conversa : this.conversas) {
             if(conversa.getId() == idConversa) {
                 this.conversasConcluidas.add(conversa);
-                //this.conversas.remove(conversa); --> TODO: DESCOMENTAR
+                this.conversas.remove(conversa);
+                return;
             }
         }
     }
@@ -202,15 +219,19 @@ public class Personagem {
         }
     }
     
+    public void atualizarColega(int deltaInteresse, int deltaEnergia) {
+        
+    }
+    
     /**
      * ObservableList??
      * @return 
      */
     public ObservableList<String> logPersonagem() {
         ObservableList<String> perguntaResposta = FXCollections.observableArrayList();
-        for(Conversa conversa : this.conversasConcluidas) {
+        this.conversasConcluidas.forEach((conversa) -> {
             perguntaResposta.add(conversa.getPergunta() + " " + conversa.getRespostaUsuario().getTexto());
-        }
+        });
         return perguntaResposta;    
     }
     

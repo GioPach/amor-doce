@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.emaMontenegro.TelaEmaMontenegroController">
+   <children>
+      <ImageView fitHeight="536.0" fitWidth="870.0" layoutX="222.0" layoutY="-3.0">
+         <image>
+            <Image url="@../../../../assets/img/personagens/EmaMontenegro.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnVoltar" layoutX="31.0" layoutY="24.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" prefHeight="41.0" prefWidth="88.0" text="Voltar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label fx:id="labelHumor" alignment="CENTER" layoutX="857.0" layoutY="216.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Label fx:id="labelEnergia" alignment="CENTER" layoutX="857.0" layoutY="265.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Label fx:id="labelNivel" alignment="CENTER" layoutX="857.0" layoutY="360.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Label fx:id="labelInteresse" alignment="CENTER" layoutX="857.0" layoutY="314.0" prefHeight="34.0" prefWidth="140.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Label fx:id="labelPergunta" alignment="CENTER" layoutX="340.0" layoutY="451.0" prefHeight="70.0" prefWidth="600.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
+      <Button fx:id="btnOpcaoA" layoutX="340.0" layoutY="549.0" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="290.0" wrapText="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnOpcaoB" layoutX="650.0" layoutY="549.0" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="290.0" wrapText="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnOpcaoC" layoutX="505.0" layoutY="620.0" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="290.0" wrapText="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="1145.0" layoutY="24.0" mnemonicParsing="false" onAction="#handlerLogConversas" prefHeight="41.0" prefWidth="88.0" text="Conversas">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnProxima" layoutX="1145.0" layoutY="645.0" mnemonicParsing="false" onAction="#handlerButtonProxima" prefHeight="41.0" prefWidth="88.0" text="Próxima">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</AnchorPane>

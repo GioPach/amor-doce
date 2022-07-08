@@ -2,8 +2,6 @@ package amordoce.model;
 
 public class Resposta {
     
-    private static int seqId = 0;
-    
     private int id;
     private String texto;
     private String humorFinal;
@@ -11,7 +9,11 @@ public class Resposta {
     private int deltaInteresse;
     
     public Resposta() {
+    }
     
+    public Resposta(int id) {
+        this.id = id;
+        this.texto = "...";
     }
 
     public Resposta(int id, String reacao) {
@@ -19,15 +21,15 @@ public class Resposta {
         this.texto = reacao;
     }    
     
-    public Resposta(String texto, String humorFinal, int deltaInteresse) {
-        this.id = seqId++;
+    public Resposta(int id, String texto, String humorFinal, int deltaInteresse) {
+        this.id = id;
         this.humorFinal = humorFinal;
         this.texto = texto;
         this.deltaInteresse = deltaInteresse;
     }
     
-     public Resposta(String texto, String humorFinal, int deltaEnergia, int deltaInteresse) {
-        this.id = seqId++;
+     public Resposta(int id, String texto, String humorFinal, int deltaEnergia, int deltaInteresse) {
+        this.id = id;
         this.humorFinal = humorFinal;
         this.texto = texto;
         this.deltaEnergia = deltaEnergia;
