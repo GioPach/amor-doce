@@ -20,7 +20,6 @@ public class AudioHandler {
         
         setPlaylist();
         players.get(0).play();
-    
     }
     
     /** Compõe a playlist settando o MediaPlayer a tocar após o término do anterior */

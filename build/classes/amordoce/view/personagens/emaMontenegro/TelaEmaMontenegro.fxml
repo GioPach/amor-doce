@@ -6,50 +6,63 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.emaMontenegro.TelaEmaMontenegroController">
    <children>
-<<<<<<< HEAD
-      <ImageView fitHeight="536.0" fitWidth="870.0" layoutX="222.0" layoutY="-3.0">
-=======
       <ImageView fitHeight="720.0" fitWidth="1280.0">
->>>>>>> 6646af23550fa85313e7af9f0fd038d1c0b2d9a9
          <image>
             <Image url="@../../../../assets/img/personagens/EmaMontenegro.png" />
          </image>
       </ImageView>
-<<<<<<< HEAD
-      <Button fx:id="btnVoltar" layoutX="31.0" layoutY="24.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" prefHeight="41.0" prefWidth="88.0" text="Voltar">
-=======
       <Button fx:id="btnVoltar" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Voltar" textFill="WHITE">
->>>>>>> 6646af23550fa85313e7af9f0fd038d1c0b2d9a9
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Label fx:id="labelHumor" alignment="CENTER" layoutX="1016.0" layoutY="188.0" prefHeight="34.0" prefWidth="191.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: #FFF;" />
-      <Label fx:id="labelEnergia" alignment="CENTER" layoutX="1016.0" layoutY="238.0" prefHeight="34.0" prefWidth="191.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
-      <Label fx:id="labelNivel" alignment="CENTER" layoutX="1016.0" layoutY="343.0" prefHeight="34.0" prefWidth="191.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
-      <Label fx:id="labelInteresse" alignment="CENTER" layoutX="1016.0" layoutY="289.0" prefHeight="34.0" prefWidth="191.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
-      <Label fx:id="labelPergunta" alignment="CENTER" layoutX="427.0" layoutY="163.0" prefHeight="252.0" prefWidth="493.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" />
-      <Button fx:id="btnOpcaoA" layoutX="340.0" layoutY="549.0" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="290.0" wrapText="true">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Button fx:id="btnOpcaoB" layoutX="650.0" layoutY="549.0" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="290.0" wrapText="true">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Button fx:id="btnOpcaoC" layoutX="505.0" layoutY="620.0" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="290.0" wrapText="true">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
+      <Label fx:id="labelHumor" alignment="CENTER" layoutX="1016.0" layoutY="188.0" prefHeight="34.0" prefWidth="191.0" style="-fx-background-color: #fff; -fx-background-radius: 10px; -fx-border-color: #000; -fx-border-width: 2px; -fx-border-radius: 10px;" />
+      <Label fx:id="labelEnergia" alignment="CENTER" layoutX="1016.0" layoutY="238.0" prefHeight="34.0" prefWidth="191.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: #FFF; -fx-background-radius: 10px;" />
+      <Label fx:id="labelNivel" alignment="CENTER" layoutX="1016.0" layoutY="343.0" prefHeight="34.0" prefWidth="191.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: #FFF; -fx-background-radius: 10px;" />
+      <Label fx:id="labelInteresse" alignment="CENTER" layoutX="1016.0" layoutY="289.0" prefHeight="34.0" prefWidth="191.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: #FFF; -fx-background-radius: 10px;" />
+      <Label fx:id="labelPergunta" alignment="CENTER" layoutX="450.0" layoutY="205.0" prefHeight="146.0" prefWidth="430.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" textAlignment="CENTER">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
       <Button layoutX="1131.0" layoutY="30.0" mnemonicParsing="false" onAction="#handlerLogConversas" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Conversas" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="btnProxima" layoutX="1145.0" layoutY="645.0" mnemonicParsing="false" onAction="#handlerButtonProxima" prefHeight="41.0" prefWidth="88.0" text="Próxima">
+      <Button fx:id="btnProxima" layoutX="1131.0" layoutY="652.0" mnemonicParsing="false" onAction="#handlerButtonProxima" prefHeight="35.0" prefWidth="109.6" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Próxima" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
+      <VBox layoutX="323.0" layoutY="460.0" prefHeight="168.0" prefWidth="602.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnOpcaoA" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="602.0" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnOpcaoB" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="602.0" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnOpcaoC" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="602.0" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
