@@ -3,6 +3,7 @@ package amordoce.model.personagens;
 import amordoce.model.Personagem;
 import amordoce.model.Conversa;
 import amordoce.model.Resposta;
+import enums.NivelDificuldade;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,7 +17,7 @@ public class EmaMontenegro extends Personagem {
         
     }
     
-    public EmaMontenegro(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, double energia, double interesse, String nivel) {
+    public EmaMontenegro(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, double energia, double interesse, NivelDificuldade nivel) {
         super(nome, turma, idade, signo, nacionalidade, genero, humor, energia, interesse, nivel);
         setarConversas();
     }
@@ -62,7 +63,7 @@ public class EmaMontenegro extends Personagem {
         Set<Resposta> reacoesPossiveis = new HashSet();
         reacoesPossiveis.add(new Resposta(0, "Sou de ELE3, Ema, prazer."));
         reacoesPossiveis.add(new Resposta(1, "Ah..."));
-        reacoesPossiveis.add(new Resposta(2, "Que tipo de calouro não sabe nem a própria turma?"));
+        reacoesPossiveis.add(new Resposta(2, "Que tipo de calouro não\nsabe nem a própria turma?"));
 
         // Implementa a pergunta, criando um objeto Conversa e o colocando no array de conversas
         return new Conversa(this, "De que turma você é?", respostasPossiveis, reacoesPossiveis);

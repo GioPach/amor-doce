@@ -1,5 +1,6 @@
 package amordoce.model;
 
+import enums.NivelDificuldade;
 import java.util.Set;
 import java.util.HashSet;
 import javafx.collections.FXCollections;
@@ -17,14 +18,15 @@ public class Personagem {
     private String humor; // barra
     private double energia; // barra
     private double interesse; // barra
-    private String nivel; // barra
+    private NivelDificuldade nivel;
+    private double descontoNivel;
     public Set<Conversa> conversas = new HashSet<>(); // conversas do personagem
     public Set<Conversa> conversasConcluidas = new HashSet<>(); // conversas concluídas para gerar o log de conversas
 
     public Personagem() {
     }
 
-    public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, double energia, double interesse, String nivel) {
+    public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, double energia, double interesse, NivelDificuldade nivel) {
         this.nome = nome;
         this.turma = turma;
         this.idade = idade;
@@ -35,6 +37,7 @@ public class Personagem {
         this.energia = energia;
         this.interesse = interesse;
         this.nivel = nivel;
+        this.setDescontoNivel();
     }
     
     /*===============================
@@ -151,13 +154,21 @@ public class Personagem {
         this.interesse = interesse;
     }
 
-    public String getNivel() {
+    public NivelDificuldade getNivel() {
         return this.nivel;
     }
 
-    public void setNivel(String nivel) {
+    public void setNivel(NivelDificuldade nivel) {
         this.nivel = nivel;
     }
+
+    public double getDescontoNivel() {
+        return descontoNivel;
+    }
+
+    public void setDescontoNivel() {
+        this.descontoNivel = this.getNivel().getDesconto();
+    }  
     
     /*===============================
     # Demais métodos
