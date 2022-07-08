@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 
 public class TelaEmaMontenegroController extends PersonagemController implements Initializable {
     
-    public static EmaMontenegro ema = new EmaMontenegro("Ema Montenegro", "DS3", 21, "Gêmeos", "Espanhola", 'F', "Neutro", 100, 0, "Fácil");
+    public static EmaMontenegro ema = new EmaMontenegro("Ema Montenegro", "DS3", 21, "Gêmeos", "Espanhola", 'F', "Neutro", 1.0, 0.0, "Fácil");
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

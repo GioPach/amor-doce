@@ -16,7 +16,7 @@ public class EmaMontenegro extends Personagem {
         
     }
     
-    public EmaMontenegro(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, int energia, int interesse, String nivel) {
+    public EmaMontenegro(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, double energia, double interesse, String nivel) {
         super(nome, turma, idade, signo, nacionalidade, genero, humor, energia, interesse, nivel);
         setarConversas();
     }
@@ -37,9 +37,9 @@ public class EmaMontenegro extends Personagem {
     private Conversa criarConversa1() {
         // Respostas que podem ser escolhidas pelo usuário
         Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Sim. Eu sou o aluno novo!", "Empolgada", 10, 10));
-        respostasPossiveis.add(new Resposta(1, "Sim.", "Neutro", 5));
-        respostasPossiveis.add(new Resposta(2, "Não viaja!", "Irritada", -20, -5));
+        respostasPossiveis.add(new Resposta(0, "Sim. Eu sou o aluno novo!", "Empolgada", 0.1, 0.1));
+        respostasPossiveis.add(new Resposta(1, "Sim.", "Neutro", 0.05));
+        respostasPossiveis.add(new Resposta(2, "Não viaja!", "Irritada", -0.2, -0.05));
         
         // Possíveis reações a resposta do usuário
         Set<Resposta> reacoesPossiveis = new HashSet();
@@ -54,9 +54,9 @@ public class EmaMontenegro extends Personagem {
       private Conversa criarConversa2() {
         // Respostas que podem ser escolhidas pelo usuário
         Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Sou de DS3, e você?", "Empolgada", 5, 5));
-        respostasPossiveis.add(new Resposta(1, "Sou de DS3.", "Neutro", 0));
-        respostasPossiveis.add(new Resposta(2, "Nem eu sei! Será que você poderia me apresentar o campus?", "Incomodada", -5, -5));
+        respostasPossiveis.add(new Resposta(0, "Sou de DS3, e você?", "Empolgada", 0.05, 0.05));
+        respostasPossiveis.add(new Resposta(1, "Sou de DS3.", "Neutro", 0.0));
+        respostasPossiveis.add(new Resposta(2, "Nem eu sei! Será que você poderia me apresentar o campus?", "Incomodada", -0.05, -0.05));
         
         // Possíveis reações a resposta do usuário
         Set<Resposta> reacoesPossiveis = new HashSet();

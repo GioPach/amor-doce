@@ -15,8 +15,8 @@ public class Personagem {
     private String nacionalidade;
     private char genero;
     private String humor; // barra
-    private int energia; // barra
-    private int interesse; // barra
+    private double energia; // barra
+    private double interesse; // barra
     private String nivel; // barra
     public Set<Conversa> conversas = new HashSet<>(); // conversas do personagem
     public Set<Conversa> conversasConcluidas = new HashSet<>(); // conversas concluídas para gerar o log de conversas
@@ -24,7 +24,7 @@ public class Personagem {
     public Personagem() {
     }
 
-    public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, int energia, int interesse, String nivel) {
+    public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, double energia, double interesse, String nivel) {
         this.nome = nome;
         this.turma = turma;
         this.idade = idade;
@@ -122,18 +122,32 @@ public class Personagem {
     }
 
     public int getEnergia() {
-        return this.energia;
+          if(this.energia < 0) {
+            return 0;
+        } else {
+            return (int) Math.round(this.energia * 100);
+        }
     }
 
-    public void setEnergia(int energia) {
+    public void setEnergia(double energia) {
+        if(energia < -1 && energia > 1) {
+            throw new Error("Modelo Personagem: energia passada inválida...menor que -1 ou maior que 1");
+        }
         this.energia = energia;
     }
 
     public int getInteresse() {
-        return this.interesse;
+        if(this.interesse < 0) {
+            return 0;
+        } else {
+            return (int) Math.round(this.interesse * 100);
+        }
     }
 
-    public void setInteresse(int interesse) {
+    public void setInteresse(double interesse) {
+        if(interesse < -1 && interesse > 1) {
+            throw new Error("Modelo Personagem: interesse passado inválida...menor que -1 ou maior que 1");
+        }
         this.interesse = interesse;
     }
 
@@ -172,21 +186,25 @@ public class Personagem {
     }
     
     /**
+     * Atualiza a energia do personagem após um diálogo
+     * @param deltaEnergia 
+     */
+    public void atualizarEnergia(double deltaEnergia) {
+        double tmpEnergia = deltaEnergia + this.energia;
+        
+        if(tmpEnergia > 1.0) {
+            this.energia = 1.0;
+        } else {
+            this.energia += deltaEnergia;    
+        }
+        
+    }
+    /**
      * Atualiza o interesse do personagem pelo usuário
      * @param deltaInteresse 
      */    
-    public void atualizarInteresse(int deltaInteresse) {
-        int tmpInteresse = this.interesse + deltaInteresse;
-        
-        if(tmpInteresse < 0) {
-            this.interesse = 0;
-        }         
-        else if(tmpInteresse > 100) {
-            this.interesse = 100;
-        }         
-        else {
-            this.interesse += deltaInteresse;
-        }
+    public void atualizarInteresse(double deltaInteresse) {      
+        this.interesse += deltaInteresse;
     }
     
     /**
@@ -196,26 +214,8 @@ public class Personagem {
     public void atualizarHumor(String humorFinal) {
         this.humor = humorFinal;
     }
-    
-    /**
-     * Atualiza a energia do personagem após um diálogo
-     * @param deltaEnergia 
-     */
-    public void atualizarEnergia(int deltaEnergia) {
-        int tmpEnergia = this.energia + deltaEnergia;
-        
-        if(tmpEnergia < 0) {
-            this.energia = 0;
-        }         
-        else if(tmpEnergia > 100) {
-            this.energia = 100;
-        }         
-        else {
-            this.energia += deltaEnergia;
-        }
-    }
-    
-    public void atualizarColega(int deltaInteresse, int deltaEnergia) {
+       
+    public void atualizarColega(double deltaInteresse, double deltaEnergia) {
         
     }
     
