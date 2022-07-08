@@ -7,13 +7,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <AnchorPane maxWidth="1280.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaPersonagensController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0">
+=======
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaPersonagensController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="50.0">
+>>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
          <image>
             <Image url="@../../assets/img/Tela%20Personagens.png" />
          </image>
       </ImageView>
+<<<<<<< HEAD
       <Button fx:id="btnSairDoJogo" layoutX="1120.0" layoutY="28.0" mnemonicParsing="false" onAction="#handlerButtonSairDoJogo" prefHeight="42.0" prefWidth="128.0" styleClass="btn" stylesheets="@../../css/buttons.css" text="VOLTAR" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
@@ -22,35 +29,60 @@
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <Button layoutX="911.0" layoutY="656.0" mnemonicParsing="false" onAction="#handlerButtonEmaMontenegro" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Ema Montenegro" textFill="WHITE">
+=======
+      <Button fx:id="btnSairDoJogo" layoutX="737.0" layoutY="6.0" mnemonicParsing="false" onAction="#handlerButtonSairDoJogo" prefHeight="31.0" prefWidth="89.0" text="Sair do jogo" />
+      <Button id="ema" layoutX="664.0" layoutY="642.0" mnemonicParsing="false" onAction="#handlerButtonEmaMontenegro" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Ema Montenegro" textFill="WHITE">
+>>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+<<<<<<< HEAD
       <Button layoutX="392.0" layoutY="603.0" mnemonicParsing="false" onAction="#handlerButtonDarioAgostini" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Dario Agostini" textFill="WHITE">
+=======
+      <Button id="ema" layoutX="260.0" layoutY="477.0" mnemonicParsing="false" onAction="#handlerButtonDarioAgostini" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Dario Agostini" textFill="WHITE">
+>>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+<<<<<<< HEAD
       <Button layoutX="666.0" layoutY="583.0" mnemonicParsing="false" onAction="#handlerButtonJudyWillis" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Judy Willis" textFill="WHITE">
+=======
+      <Button id="ema" layoutX="451.0" layoutY="578.0" mnemonicParsing="false" onAction="#handlerButtonJudyWillis" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Judy Willis" textFill="WHITE">
+>>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+<<<<<<< HEAD
       <Button layoutX="34.0" layoutY="197.0" mnemonicParsing="false" onAction="#handlerButtonDylanAyala" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Dylan Ayala" textFill="WHITE">
+=======
+      <Button id="ema" layoutX="8.0" layoutY="171.0" mnemonicParsing="false" onAction="#handlerButtonDylanAyala" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Dylan Ayala" textFill="WHITE">
+>>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+<<<<<<< HEAD
       <Button layoutX="334.0" layoutY="273.0" mnemonicParsing="false" onAction="#handlerButtonMatthewWilliams" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Matthew Williams" textFill="WHITE">
+=======
+      <Button id="ema" layoutX="219.0" layoutY="220.0" mnemonicParsing="false" onAction="#handlerButtonMatthewWilliams" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Matthew Williams" textFill="WHITE">
+>>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+<<<<<<< HEAD
       <Button layoutX="911.0" layoutY="347.0" mnemonicParsing="false" onAction="#handlerButtonSusanneLefort" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Susanne Lefort" textFill="WHITE">
+=======
+      <Button id="ema" layoutX="658.0" layoutY="387.0" mnemonicParsing="false" onAction="#handlerButtonSusanneLefort" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Susanne Lefort" textFill="WHITE">
+>>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+<<<<<<< HEAD
       <Button layoutX="640.0" layoutY="334.0" mnemonicParsing="false" onAction="#handlerButtonCaioLopes" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Caio Lopes" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -62,6 +94,9 @@
          </cursor>
       </Button>
       <Button layoutX="137.0" layoutY="458.0" mnemonicParsing="false" onAction="#handlerButtonMatthewWilliams" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Catherine Williams" textFill="WHITE">
+=======
+      <Button id="ema" layoutX="451.0" layoutY="306.0" mnemonicParsing="false" onAction="#handlerButtonCaioLopes" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-style: solid; -fx-border-color: transparent;" stylesheets="@../../css/TelaPersonagens.css" text="Caio Lopes" textFill="WHITE">
+>>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
