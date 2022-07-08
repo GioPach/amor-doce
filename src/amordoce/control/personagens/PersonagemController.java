@@ -46,7 +46,6 @@ public class PersonagemController implements Initializable {
         labelEnergia.setText("Energia: " + personagem.getEnergia() + "%");
         labelHumor.setText("Humor: " + personagem.getHumor());
         labelInteresse.setText("Interesse: " + personagem.getInteresse() + "%");
-        labelNivel.setText("Nivel: " + personagem.getNivel());
     }
     
     public void carregarConversa(Personagem personagem) {

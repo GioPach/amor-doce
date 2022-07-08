@@ -20,10 +20,6 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Label fx:id="labelHumor" alignment="CENTER" layoutX="1016.0" layoutY="188.0" prefHeight="34.0" prefWidth="191.0" style="-fx-background-color: #fff; -fx-background-radius: 10px; -fx-border-color: #000; -fx-border-width: 2px; -fx-border-radius: 10px;" />
-      <Label fx:id="labelEnergia" alignment="CENTER" layoutX="1016.0" layoutY="238.0" prefHeight="34.0" prefWidth="191.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: #FFF; -fx-background-radius: 10px;" />
-      <Label fx:id="labelNivel" alignment="CENTER" layoutX="1016.0" layoutY="343.0" prefHeight="34.0" prefWidth="191.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: #FFF; -fx-background-radius: 10px;" />
-      <Label fx:id="labelInteresse" alignment="CENTER" layoutX="1016.0" layoutY="289.0" prefHeight="34.0" prefWidth="191.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: #FFF; -fx-background-radius: 10px;" />
       <Label fx:id="labelPergunta" alignment="CENTER" layoutX="450.0" layoutY="205.0" prefHeight="146.0" prefWidth="430.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" textAlignment="CENTER">
          <font>
             <Font size="25.0" />
@@ -62,6 +58,25 @@
                   <Font size="18.0" />
                </font>
             </Button>
+         </children>
+      </VBox>
+      <VBox layoutX="967.0" layoutY="220.0" prefHeight="146.0" prefWidth="220.0" spacing="20.0">
+         <children>
+            <Label fx:id="labelHumor" alignment="CENTER" prefHeight="34.0" prefWidth="220.0" style="-fx-background-color: #fff; -fx-background-radius: 10px; -fx-border-color: #000; -fx-border-width: 2px; -fx-border-radius: 10px;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelEnergia" alignment="CENTER" prefHeight="34.0" prefWidth="220.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelInteresse" alignment="CENTER" prefHeight="34.0" prefWidth="220.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
          </children>
       </VBox>
    </children>
