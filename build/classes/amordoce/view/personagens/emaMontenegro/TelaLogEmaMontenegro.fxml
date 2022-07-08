@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<<<<<<< HEAD
 <?import javafx.scene.Cursor?>
-=======
->>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
 <AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.emaMontenegro.TelaLogEmaMontenegroController">
    <children>
       <Button fx:id="btnVoltar" layoutX="1132.0" layoutY="29.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" prefHeight="31.0" prefWidth="89.0" text="Voltar">
@@ -23,16 +19,5 @@
          </font>
       </Label>
       <ListView fx:id="listView" layoutX="306.0" layoutY="93.0" prefHeight="534.0" prefWidth="668.0" />
-=======
-<AnchorPane id="AnchorPane" prefHeight="697.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.emaMontenegro.TelaLogEmaMontenegroController">
-   <children>
-      <Button fx:id="btnVoltar" layoutX="713.0" layoutY="41.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" prefHeight="31.0" prefWidth="89.0" text="Voltar" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="41.0" prefHeight="39.0" prefWidth="232.0" text="Ema Montenegro" textAlignment="CENTER" textFill="#5e5e5e">
-         <font>
-            <Font name="System Bold" size="19.0" />
-         </font>
-      </Label>
-      <ListView fx:id="listView" layoutX="118.0" layoutY="111.0" prefHeight="508.0" prefWidth="595.0" />
->>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
    </children>
 </AnchorPane>
