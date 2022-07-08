@@ -7,32 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
 <AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaInicialController">
-=======
-<AnchorPane id="AnchorPane" prefHeight="710.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaInicialController">
->>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
     <children>
       <ImageView fitHeight="710.0" fitWidth="907.0">
          <image>
             <Image url="@../../assets/img/Tela%20Inicial.png" />
          </image>
       </ImageView>
-<<<<<<< HEAD
       <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="6.0">
          <image>
             <Image url="@../../assets/img/Tela%20Inicial.png" />
          </image>
       </ImageView>
       <Button alignment="CENTER" contentDisplay="CENTER" layoutX="546.0" layoutY="603.0" mnemonicParsing="false" onAction="#handlerButtonJogar" prefHeight="66.0" prefWidth="200.0" styleClass="btn" stylesheets="@../../css/buttons.css" text="JOGAR" textAlignment="CENTER" textFill="WHITE">
-=======
-      <ImageView fitHeight="710.0" fitWidth="907.0">
-         <image>
-            <Image url="@../../assets/img/TelaI.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="585.0" layoutY="559.0" mnemonicParsing="false" onAction="#handlerButtonJogar" prefHeight="90.0" prefWidth="207.0" text="Jogar">
->>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
          <font>
             <Font name="Berlin Sans FB" size="24.0" />
          </font>

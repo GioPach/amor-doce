@@ -28,11 +28,7 @@ public class App extends Application {
         scene = new Scene(loadFXML("TelaInicial"), 1280, 720);
         stage.setScene(scene);
         stage.show();
-<<<<<<< HEAD
         new AudioHandler().startPlaylist();
-=======
-        //new AudioHandler().startPlaylist();
->>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
     }
 
     /**

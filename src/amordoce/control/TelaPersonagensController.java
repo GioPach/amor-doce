@@ -50,11 +50,7 @@ public class TelaPersonagensController implements Initializable {
     }
     //Caio Lopes
            @FXML
-<<<<<<< HEAD
     private void handlerButtonCaioLopes(ActionEvent event) throws Exception {
-=======
-    private void handlerButtonCaoiLopes(ActionEvent event) throws Exception {
->>>>>>> 9ae3262e5503c7bf19e1365121a9f5b11232c134
         App.setRoot("personagens/caioLopes/TelaCaioLopes"); 
     }
     //Renzo Andreotti
