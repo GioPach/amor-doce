@@ -166,13 +166,9 @@ public class Personagem {
      * @param idConversa 
      */
     public void concluirConversa(int idConversa) {
-        for(Conversa conversa : this.conversas) {
-            if(conversa.getId() == idConversa) {
-                this.conversasConcluidas.add(conversa);
-                this.conversas.remove(conversa);
-                return;
-            }
-        }
+        Conversa conversaConcluida = this.conversas.stream().filter(conversa -> conversa.getId() == idConversa).findFirst().orElse(new Conversa());
+        this.conversasConcluidas.add(conversaConcluida);
+        this.conversas.remove(conversaConcluida);
     }
     
     /**

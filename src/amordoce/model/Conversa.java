@@ -129,12 +129,10 @@ public class Conversa {
      * @return o objeto da reação do personagem
      */
     private Resposta buscarReacao(int idResposta) {
-        for(Resposta reacao : this.reacoesPossiveis) {
-            if(reacao.getId() == idResposta) {
-                return reacao;
-            }
-        }
-        throw new Error("Modelo Conversa -> metodo buscarReacao: reacao nao encontrada...");
+        return this.reacoesPossiveis.stream()
+            .filter(conversa -> conversa.getId() == idResposta)
+            .findFirst()
+            .orElse(new Resposta());
     }
     
     /**
@@ -143,12 +141,10 @@ public class Conversa {
      * @return o objeto da resposta do usuário
      */
     private Resposta buscarResposta(int idResposta) {
-        for(Resposta resposta : this.respostasPossiveis) {
-            if(resposta.getId() == idResposta) {
-                return resposta;
-            }
-        }
-        throw new Error("Modelo Conversa -> metodo buscarResposta: resposta nao encontrada...");
+        return this.respostasPossiveis.stream()
+            .filter(conversa -> conversa.getId() == idResposta)
+            .findFirst()
+            .orElse(new Resposta());
     }
 
     @Override

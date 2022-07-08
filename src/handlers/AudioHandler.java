@@ -8,29 +8,19 @@ import javafx.scene.media.MediaPlayer;
 
 public class AudioHandler {
     
-    private boolean isPlaying = false;
     final private List<MediaPlayer> players = new ArrayList<MediaPlayer>();
     
     /** Executa os procedimentos para a composição da playlist e toca o primeiro MediaPlayer da lista */
     public void startPlaylist() {
-        this.isPlaying = true;
         
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while(isPlaying) {
-                    try {
-                        criarMediaPlayers(); 
-                    } catch(Exception e) {
-                        System.out.println("AudioHandler: " + e);
-                    }        
-                    setPlaylist();
-                    players.get(0).play();
-                }
-               
-            }
-        }).start();
-     
+        try {
+            criarMediaPlayers(); 
+        } catch(Exception e) {
+            System.out.println("AudioHandler: " + e);
+        }        
+        setPlaylist();
+        players.get(0).play();
+           
     }
     
     
