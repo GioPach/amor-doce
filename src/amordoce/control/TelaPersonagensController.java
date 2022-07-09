@@ -61,7 +61,7 @@ public class TelaPersonagensController implements Initializable {
     //Sphie Porto
          @FXML
     private void handlerButtonSophiePorto(ActionEvent event) throws Exception {
-        App.setRoot("personagens/sophiePorto/TelaSpohiePorto"); 
+        App.setRoot("personagens/sophiePorto/TelaSophiePorto"); 
     }
     //Catherine Jones
          @FXML

@@ -3,23 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/gisig/OneDrive/Documentos/NetBeansProjects/amor-doce/src/amordoce/control/personagens/emaMontenegro/TelaEmaMontenegroController.java</file>
-            <file>file:/C:/Users/gisig/OneDrive/Documentos/NetBeansProjects/amor-doce/src/amordoce/control/personagens/PersonagemController.java</file>
-            <file>file:/C:/Users/gisig/OneDrive/Documentos/NetBeansProjects/amor-doce/src/amordoce/model/Personagem.java</file>
-            <file>file:/C:/Users/gisig/OneDrive/Documentos/NetBeansProjects/amor-doce/src/amordoce/model/personagens/EmaMontenegro.java</file>
-=======
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/amor-doce/src/amordoce/App.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/amor-doce/src/amordoce/control/personagens/susanneLefort/TelaLogSusanneLefortController.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/amor-doce/src/amordoce/control/TelaPersonagensController.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/amor-doce/src/amordoce/control/personagens/dylanAyala/TelaDylanAyalaController.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/amor-doce/src/amordoce/control/personagens/susanneLefort/TelaSusanneLefortController.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/amor-doce/src/amordoce/control/personagens/dylanAyala/TelaLogDylanAyalaController.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/amor-doce/src/amordoce/view/personagens/dylanAyala/TelaDylanAyala.fxml</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/amor-doce/src/amordoce/control/personagens/darioAgostini/TelaEmaMontenegroController.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/amor-doce/src/amordoce/view/personagens/judyWllis/TelaJudyWillis.fxml</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/amor-doce/src/amordoce/view/TelaPersonagens.fxml</file>
->>>>>>> d281e171f7522bf44ac6ee804632f4de6e897cd9
+            <file>file:/C:/Users/gisig/OneDrive/Documentos/NetBeansProjects/amor-doce/src/amordoce/App.java</file>
+            <file>file:/C:/Users/gisig/OneDrive/Documentos/NetBeansProjects/amor-doce/src/amordoce/control/TelaPersonagensController.java</file>
+            <file>file:/C:/Users/gisig/OneDrive/Documentos/NetBeansProjects/amor-doce/src/amordoce/control/personagens/matthewWilliams/TelaMatthewWilliamsController.java</file>
+            <file>file:/C:/Users/gisig/OneDrive/Documentos/NetBeansProjects/amor-doce/src/amordoce/control/personagens/matthewWilliams/TelaLogMatthewWilliamsController.java</file>
         </group>
     </open-files>
 </project-private>

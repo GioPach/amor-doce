@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package amordoce.control.personagens.mattewWilliams;
+package amordoce.control.personagens.matthewWilliams;
 
 import amordoce.App;
 import java.net.URL;
@@ -18,7 +18,7 @@ import javafx.scene.control.ListView;
  *
  * @author gisig
  */
-public class TelaLogMattewWilliamsController implements Initializable {
+public class TelaLogMatthewWilliamsController implements Initializable {
     
     public ObservableList<String> listaPerguntasRespostas;
     
@@ -31,7 +31,7 @@ public class TelaLogMattewWilliamsController implements Initializable {
     @Override
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        this.listaPerguntasRespostas = TelaMattewWilliamsController.ema.logPersonagem();
+        this.listaPerguntasRespostas = TelaMatthewWilliamsController.ema.logPersonagem();
         listView.setItems(listaPerguntasRespostas);
     }    
     

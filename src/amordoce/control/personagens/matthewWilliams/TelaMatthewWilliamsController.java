@@ -1,4 +1,4 @@
-package amordoce.control.personagens.mattewWilliams;
+package amordoce.control.personagens.matthewWilliams;
 
 import amordoce.App;
 import amordoce.control.personagens.PersonagemController;
@@ -15,7 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-public class TelaMattewWilliamsController extends PersonagemController implements Initializable {
+public class TelaMatthewWilliamsController extends PersonagemController implements Initializable {
     
     public static EmaMontenegro ema = new EmaMontenegro("Ema Montenegro", "DS3", 21, "Gêmeos", "Espanhola", 'F', "Neutro", NivelDificuldade.FACIL);
     
