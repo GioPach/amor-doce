@@ -20,24 +20,16 @@
   font-family: "Berlin Sans FB";
   -fx-font-size: 16px;
   font-size: 16px;
-  -fx-text-fill: #3e3e3e;
-  -fx-background-color: #fff;
-  background-color: #fff;
-  -fx-border-radius: 5px;
+  -fx-text-fill: #fff;
+  -fx-background-color: #eb3455;
+  background-color: #eb3455;
   -fx-background-radius: 5px;
-  border-radius: 5px;
-  -fx-border-width: 2px;
-  border-width: 2px;
-  -fx-border-style: solid;
-  border-style: solid;
-  -fx-border-color: #fff;
-  border-color: #fff;
 }
 
 .btnPersonagem:hover {
   -fx-text-fill: #fff;
-  -fx-background-color: transparent;
-  background-color: transparent;
+  -fx-background-color: #9f233a;
+  background-color: #9f233a;
 }
 
 .btnNamoro {
@@ -54,6 +46,6 @@
 
 .btnNamoro:hover {
   -fx-text-fill: #d4d4d4;
-  -fx-background-color: #c42a47;
-  background-color: #c42a47;
+  -fx-background-color: #9f233a;
+  background-color: #9f233a;
 }
