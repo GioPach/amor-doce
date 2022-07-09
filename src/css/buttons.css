@@ -16,6 +16,8 @@
 }
 
 .btnPersonagem {
+  -fx-font-family: "Berlin Sans FB";
+  font-family: "Berlin Sans FB";
   -fx-font-size: 16px;
   font-size: 16px;
   -fx-text-fill: #3e3e3e;
@@ -36,4 +38,22 @@
   -fx-text-fill: #fff;
   -fx-background-color: transparent;
   background-color: transparent;
+}
+
+.btnNamoro {
+  -fx-font-family: "Berlin Sans FB";
+  font-family: "Berlin Sans FB";
+  -fx-font-size: 14px;
+  font-size: 14px;
+  -fx-font-weight: 600;
+  font-weight: 600;
+  -fx-background-radius: 10px;
+  -fx-background-color: #eb3455;
+  background-color: #eb3455;
+}
+
+.btnNamoro:hover {
+  -fx-text-fill: #d4d4d4;
+  -fx-background-color: #c42a47;
+  background-color: #c42a47;
 }

@@ -4,20 +4,28 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.emaMontenegro.TelaLogEmaMontenegroController">
    <children>
-      <Button fx:id="btnVoltar" layoutX="1132.0" layoutY="29.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" prefHeight="31.0" prefWidth="89.0" text="Voltar">
+      <ImageView fitHeight="720.0" fitWidth="1280.0">
+         <image>
+            <Image url="@../../../../assets/img/ambientes/IMG_20220701_171248.jpg" />
+         </image>
+      </ImageView>
+      <ListView fx:id="listView" layoutX="306.0" layoutY="93.0" prefHeight="534.0" prefWidth="668.0" style="-fx-background-color: #d4d4d4;" />
+      <Button fx:id="btnVoltar1" layoutX="1141.0" layoutY="33.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Voltar" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
+         </cursor>
+      </Button>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="488.0" layoutY="27.0" prefHeight="66.0" prefWidth="303.0" text="Ema Montenegro" textAlignment="CENTER" textFill="#5e5e5e">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Label>
-      <ListView fx:id="listView" layoutX="306.0" layoutY="93.0" prefHeight="534.0" prefWidth="668.0" />
    </children>
 </AnchorPane>

@@ -31,6 +31,8 @@ public class PersonagemController implements Initializable {
     public Button btnOpcaoC;
     @FXML
     public Button btnProxima;
+    @FXML
+    public Button btnNamoro;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -41,21 +43,29 @@ public class PersonagemController implements Initializable {
     private void handlerButtonVoltar(ActionEvent event) throws Exception {
         App.setRoot("TelaPersonagens");
     }
-    
+       
+    /**
+     * Atualiza as labels de atributos dinâmicos
+     * @param personagem 
+     */
     public void atualizarAtributosTela(Personagem personagem) {
         labelEnergia.setText("Energia: " + personagem.getEnergia() + "%");
         labelHumor.setText("Humor: " + personagem.getHumor());
         labelInteresse.setText("Interesse: " + personagem.getInteresse() + "%");
     }
     
+    /**
+     * Carrega a pergunta e as possíveis respostas do usuário
+     * @param personagem 
+     */
     public void carregarConversa(Personagem personagem) {
         Conversa conversa = personagem.getConversaAtual();
 
         if(conversa.getId() == -1) {
-            setVisibilityRespostas(false);
+            setVisibilidadeRespostas(false);
             labelPergunta.setText("...");
         } else {
-            setVisibilityRespostas(true);
+            setVisibilidadeRespostas(true);
             labelPergunta.setText(personagem.getConversaAtual().getPergunta());
             btnOpcaoA.setText(personagem.getConversaAtual().getResposta(0));
             btnOpcaoB.setText(personagem.getConversaAtual().getResposta(1));
@@ -64,14 +74,41 @@ public class PersonagemController implements Initializable {
     }
     
     @FXML
-    public void setVisibilityRespostas(boolean valor) {
-        btnOpcaoA.setVisible(valor);
-        btnOpcaoB.setVisible(valor);
-        btnOpcaoC.setVisible(valor);
+    public void esconderButtonNamoro() {
+        setVisibilidadeButton(this.btnNamoro, false);
     }
     
+    /**
+     * Checa se o grau de interesse satisfaz a possibilidade de pedir em namoro
+     * @param personagem 
+     */
     @FXML
-    public void setVisibilityButtonProxima(boolean valor) {
-        btnProxima.setVisible(valor);
+    public void listenVisibilidadeNamoro(Personagem personagem) {
+        if(personagem.validarInteresse()) {
+            setVisibilidadeButton(this.btnNamoro, true);
+        } else {
+            setVisibilidadeButton(this.btnNamoro, false);
+        }
+    }
+    
+    /**
+     * Altera a visibilidade das opções de respostas do usuário 
+     * @param visibilidade 
+     */
+    @FXML
+    public void setVisibilidadeRespostas(boolean visibilidade) {
+        btnOpcaoA.setVisible(visibilidade);
+        btnOpcaoB.setVisible(visibilidade);
+        btnOpcaoC.setVisible(visibilidade);
+    }
+    
+    /**
+     * Altera a visibilidade do botão passado como paramêtro
+     * @param button
+     * @param visibilidade 
+     */
+    @FXML
+    public void setVisibilidadeButton(Button button, boolean visibilidade) {
+        button.setVisible(visibilidade);
     }
 }

@@ -20,18 +20,30 @@ public class TelaEmaMontenegroController extends PersonagemController implements
     public static EmaMontenegro ema = new EmaMontenegro("Ema Montenegro", "DS3", 21, "Gêmeos", "Espanhola", 'F', "Neutro", NivelDificuldade.FACIL);
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) {      
+        esconderButtonNamoro();
         atualizarAtributosTela(ema);
-        ema.verificarRespostaConversa3();
+        listenVisibilidadeNamoro(ema);
+        ema.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(ema);
-        setVisibilityButtonProxima(false);
+        setVisibilidadeButton(this.btnProxima, false);
     }
     
     @FXML
-    private void handlerButtonProxima(ActionEvent event) throws Exception {              
+    private void handlerButtonProxima(ActionEvent event) throws Exception {        
+        listenVisibilidadeNamoro(ema);
         ema.verificarRespostaConversa3();
         carregarConversa(ema);
-        setVisibilityButtonProxima(false);
+        setVisibilidadeButton(this.btnProxima, false);
+    }
+    
+     @FXML
+    public void handlerPedirEmNamoro(ActionEvent event) throws Exception {
+        if(ema.pedirEmNamoro()) {
+            System.out.println("SIM");
+        } else {
+            System.out.println("NAO");
+        }
     }
     
     @FXML
@@ -69,7 +81,7 @@ public class TelaEmaMontenegroController extends PersonagemController implements
         atualizarAtributosTela(ema);
         labelPergunta.setText(ema.getConversaAtual().getReacao(idResposta));
         ema.concluirConversa(ema.getConversaAtual().getId());
-        setVisibilityRespostas(false);
-        setVisibilityButtonProxima(true);
+        setVisibilidadeRespostas(false);
+        setVisibilidadeButton(this.btnProxima, true);
     }
 }

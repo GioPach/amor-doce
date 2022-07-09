@@ -38,7 +38,7 @@ public class Personagem {
         this.genero = genero;
         this.humor = humor;
         this.energia = 1.0;
-        this.interesse = -1.0; // começa como -1.0 por padrão para implementar a lógica de sorteio do pedido de namoro
+        this.interesse = 0.0; // começa por padrão para implementar a lógica de sorteio do pedido de namoro
         this.nivel = nivel;
         this.setFatorNivel();
     }
@@ -143,19 +143,7 @@ public class Personagem {
     }
 
     public int getInteresse() {
-        if(this.interesse < 0) {
-            /*
-                * Exemplo de exposição do dado:
-                *   Se interesse for -1.0 (início) e o usuário acertar uma pergunta que aumenta 5% (+0.05):
-                *       interesse = -1.0 + 0.05 = -0.95
-                *       Módulo do valor -> Math.abs(-0.95) = 0.95
-                *       1 - 0.95 = 0.05 = 5% de interesse
-                *
-            */
-            return (int) (Math.round((1.0 - Math.abs(this.interesse)) * converterParaPorcentagem));
-        } else {
-            return (int) Math.round(this.interesse * converterParaPorcentagem);
-        }
+        return (int) Math.round(this.interesse * converterParaPorcentagem);
     }
 
     public void setInteresse(double interesse) {
@@ -206,7 +194,7 @@ public class Personagem {
      * @param deltaEnergia 
      */
     public void atualizarEnergia(double deltaEnergia) {
-        double tmpEnergia = deltaEnergia + this.energia;
+        double tmpEnergia = arredondarDuasCasasDecimais(deltaEnergia + this.energia);
         
         if(tmpEnergia > 1.0) {
             this.energia = 1.0;
@@ -221,7 +209,7 @@ public class Personagem {
      * @param deltaInteresse 
      */    
     public void atualizarInteresse(double deltaInteresse) {   
-        double interesseFinal = this.interesse + deltaInteresse;
+        double interesseFinal = arredondarDuasCasasDecimais(this.interesse + deltaInteresse);
         if(interesseFinal < -1) {
             this.interesse = -1.0;
         } else {
@@ -257,7 +245,7 @@ public class Personagem {
      * possibilitando o pedido de namoro, que será executado pelo método pedirEmNamoro.
      * @return true se o personagem tiver 50% de interesse no mínimo; false caso contrário.
      */
-    public boolean checarInteresse() {
+    public boolean validarInteresse() {
         return this.interesse >= 0.5;
     }   
     
@@ -276,12 +264,13 @@ public class Personagem {
      * @return true para responder "SIM" (número sorteado maior ou igual a 0.5); false caso contrário
      */
     public boolean pedirEmNamoro() {
-        if(!checarInteresse()) {
+        if(!validarInteresse()) {
             throw new Error("Modelo Personagem -> pedirEmNamoro: interesse menor que 50%...");
         }
+        final double corretorIntervalo = 0.5;
         Random rand = new Random();
-        double resposta = arredondarDuasCasasDecimais(rand.nextDouble(this.interesse, this.fatorNivel));
-
+        double resposta = arredondarDuasCasasDecimais(rand.nextDouble(this.interesse - corretorIntervalo, this.fatorNivel));
+        System.out.println("Sorteado: " + resposta);
         return resposta >= 0.5;        
     }
     

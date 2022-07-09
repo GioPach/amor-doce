@@ -79,5 +79,10 @@
             </Label>
          </children>
       </VBox>
+      <Button fx:id="btnNamoro" layoutX="997.0" layoutY="409.0" mnemonicParsing="false" onAction="#handlerPedirEmNamoro" prefHeight="70.0" prefWidth="158.0" styleClass="btnNamoro" stylesheets="@../../../../css/buttons.css" text="PEDIR EM NAMORO" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>
