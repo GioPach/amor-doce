@@ -26,7 +26,7 @@ public class Personagem {
     public Personagem() {
     }
 
-    public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, double energia, double interesse, NivelDificuldade nivel) {
+    public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, NivelDificuldade nivel) {
         this.nome = nome;
         this.turma = turma;
         this.idade = idade;
@@ -34,8 +34,8 @@ public class Personagem {
         this.nacionalidade = nacionalidade;
         this.genero = genero;
         this.humor = humor;
-        this.energia = energia;
-        this.interesse = interesse;
+        this.energia = 1.0;
+        this.interesse = -1.0;
         this.nivel = nivel;
         this.setDescontoNivel();
     }
@@ -141,7 +141,7 @@ public class Personagem {
 
     public int getInteresse() {
         if(this.interesse < 0) {
-            return 0;
+            return (int) ((1.0 - Math.abs(this.interesse)) * 100);
         } else {
             return (int) Math.round(this.interesse * 100);
         }
