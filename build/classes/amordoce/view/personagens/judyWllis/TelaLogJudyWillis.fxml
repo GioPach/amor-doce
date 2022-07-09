@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.emaMontenegro.TelaLogEmaMontenegroController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.judyWillis.TelaLogJudyWillisController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0">
          <image>
@@ -22,7 +22,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="488.0" layoutY="27.0" prefHeight="66.0" prefWidth="303.0" text="Ema Montenegro" textAlignment="CENTER" textFill="#5e5e5e">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="488.0" layoutY="27.0" prefHeight="66.0" prefWidth="303.0" text="Judy Willis" textAlignment="CENTER" textFill="#5e5e5e">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
