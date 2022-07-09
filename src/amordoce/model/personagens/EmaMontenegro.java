@@ -84,13 +84,13 @@ public class EmaMontenegro extends Personagem {
     private Conversa criarConversa4() {
         // Respostas que podem ser escolhidas pelo usuário
         Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Sim! Tenho que levar alguma coisa?", this.getHumor(), 0.07, 0.07));
+        respostasPossiveis.add(new Resposta(0, "Sim! Tenho que levar alguma coisa?", "Envergonhada", 0.07, 0.07));
         respostasPossiveis.add(new Resposta(1, "Obrigado pelo convite, mas já tenho compromisso", "Irritada", -0.2, -0.2));
         respostasPossiveis.add(new Resposta(2, "Claro! Onde vai ser?", this.getHumor(), 0.05, 0.05));
         
         // Possíveis reações a resposta do usuário
         Set<Resposta> reacoesPossiveis = new HashSet();
-        reacoesPossiveis.add(new Resposta(0, "Traz esse teu rostinho e \nvai estar tudo certo!", "Envergonhada"));
+        reacoesPossiveis.add(new Resposta(0, "Traz esse teu rostinho e \nvai estar tudo certo!"));
         reacoesPossiveis.add(new Resposta(1, "Mas eu nem disse quando vai ser!"));
         reacoesPossiveis.add(new Resposta(2, "Aqui no campus mesmo! A festa dos calouros é uma das melhores..."));
 
