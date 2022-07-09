@@ -1,16 +1,15 @@
 package amordoce;
 
+import test.TesteSorteio;
 import handlers.AudioHandler;
 import amordoce.model.Personagem;
-
+        
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.util.Set;
-import java.util.HashSet;
 
 public class App extends Application {
     
