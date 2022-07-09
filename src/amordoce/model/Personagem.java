@@ -292,7 +292,7 @@ public class Personagem {
     public ObservableList<String> logPersonagem() {
         ObservableList<String> perguntaResposta = FXCollections.observableArrayList();
         this.conversasConcluidas.forEach((conversa) -> {
-            perguntaResposta.add(conversa.getPergunta() + " " + conversa.getRespostaUsuario().getTexto());
+            perguntaResposta.add(this.nome + ": " + conversa.getPergunta() + " Você: " + conversa.getRespostaUsuario().getTexto());
         });
         return perguntaResposta;    
     }

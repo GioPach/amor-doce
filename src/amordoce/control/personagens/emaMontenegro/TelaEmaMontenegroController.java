@@ -2,10 +2,14 @@ package amordoce.control.personagens.emaMontenegro;
 
 import amordoce.App;
 import amordoce.control.personagens.PersonagemController;
+import amordoce.model.Conversa;
+import amordoce.model.Resposta;
 import amordoce.model.personagens.EmaMontenegro;
 import enums.NivelDificuldade;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.ResourceBundle;
+import java.util.Set;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,12 +22,14 @@ public class TelaEmaMontenegroController extends PersonagemController implements
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         atualizarAtributosTela(ema);
+        ema.verificarRespostaConversa3();
         carregarConversa(ema);
         setVisibilityButtonProxima(false);
     }
     
     @FXML
-    private void handlerButtonProxima(ActionEvent event) throws Exception {
+    private void handlerButtonProxima(ActionEvent event) throws Exception {              
+        ema.verificarRespostaConversa3();
         carregarConversa(ema);
         setVisibilityButtonProxima(false);
     }

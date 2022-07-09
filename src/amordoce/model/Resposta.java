@@ -21,19 +21,31 @@ public class Resposta {
         this.texto = reacao;
     }    
     
-    public Resposta(int id, String texto, String humorFinal, double deltaInteresse) {
+    public Resposta(int id, String reacao, String humorFinal) {
+        this.id = id;
+        this.texto = reacao;
+        this.humorFinal = humorFinal;
+    }
+    
+    public Resposta(int id, String texto, double deltaInteresse) {
+        this.id = id;
+        this.texto = texto;
+        this.deltaInteresse = deltaInteresse;
+    } 
+    
+    public Resposta(int id, String texto, String humorFinal, double deltaInteresse) {  
         this.id = id;
         this.humorFinal = humorFinal;
         this.texto = texto;
         this.deltaInteresse = deltaInteresse;
     }
     
-     public Resposta(int id, String texto, String humorFinal, double deltaEnergia, double deltaInteresse) {
+    public Resposta(int id, String texto, String humorFinal, double deltaInteresse, double deltaEnergia) {
         this.id = id;
         this.humorFinal = humorFinal;
         this.texto = texto;
-        this.deltaEnergia = deltaEnergia;
         this.deltaInteresse = deltaInteresse;
+        this.deltaEnergia = deltaEnergia;
     }
 
     /*===============================
