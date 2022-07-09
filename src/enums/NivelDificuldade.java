@@ -10,9 +10,9 @@ package enums;
  */
 public enum NivelDificuldade {
     
-    FACIL(0.0),
-    MEDIO(-0.1),
-    DIFICIL(-0.25);
+    FACIL(1.0),
+    MEDIO(0.8),
+    DIFICIL(0.6);
 
     private double desconto;
 

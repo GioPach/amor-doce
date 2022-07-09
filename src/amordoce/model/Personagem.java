@@ -20,7 +20,7 @@ public class Personagem {
     private double energia; // barra
     private double interesse; // barra
     private NivelDificuldade nivel;
-    private double descontoNivel;
+    private double fatorNivel; // determina o valor máximo do intervalo a ser utilizado para sorteio ao pedir em namoro
     public List<Conversa> conversas = new ArrayList<>(); // conversas do personagem
     public List<Conversa> conversasConcluidas = new ArrayList<>(); // conversas concluídas para gerar o log de conversas
     
@@ -40,7 +40,7 @@ public class Personagem {
         this.energia = 1.0;
         this.interesse = -1.0; // começa como -1.0 por padrão para implementar a lógica de sorteio do pedido de namoro
         this.nivel = nivel;
-        this.setDescontoNivel();
+        this.setFatorNivel();
     }
     
     /*===============================
@@ -173,12 +173,15 @@ public class Personagem {
         this.nivel = nivel;
     }
 
-    public double getDescontoNivel() {
-        return descontoNivel;
+    public double getFatorNivel() {
+        return this.fatorNivel;
     }
 
-    public void setDescontoNivel() {
-        this.descontoNivel = this.getNivel().getDesconto();
+    /**
+     * Setta o desconto para o valor configurado no enum NivelDificuldade
+     */
+    public final void setFatorNivel() {
+        this.fatorNivel = this.getNivel().getDesconto();
     }  
      
     /**
@@ -255,35 +258,31 @@ public class Personagem {
      * @return true se o personagem tiver 50% de interesse no mínimo; false caso contrário.
      */
     public boolean checarInteresse() {
-        if(this.interesse >= 0.5) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.interesse >= 0.5;
     }   
     
+    /**
+     * Método utilizado para garantir a validade do valor sorteado ao pedir em namoro
+     * @param valor
+     * @return valor com duas casas decimais
+     */
     private double arredondarDuasCasasDecimais(double valor) {
         return Math.round(valor * 100.0) / 100.0;
     }
     
     /**
      * Método chamado quando o usuário clicar no botão Pedir Em Namoro.
-     * Sorteará um número
-     * @return false caso o número sorteado equivalha a "NÃO" (menor que 0.5); true caso contrário
+     * Sorteará um número dentro do intervalo interesse-nivel
+     * @return true para responder "SIM" (número sorteado maior ou igual a 0.5); false caso contrário
      */
     public boolean pedirEmNamoro() {
-    
-        double min = this.interesse;
-        double max = 1 - this.descontoNivel;
-        Random rand = new Random();
-        
-        double resposta = arredondarDuasCasasDecimais(rand.nextDouble((max - min) + 1) + min);
-        if(resposta < 0.5) {
-            return false;
-        } else {
-            return true;
+        if(!checarInteresse()) {
+            throw new Error("Modelo Personagem -> pedirEmNamoro: interesse menor que 50%...");
         }
-        
+        Random rand = new Random();
+        double resposta = arredondarDuasCasasDecimais(rand.nextDouble(this.interesse, this.fatorNivel));
+
+        return resposta >= 0.5;        
     }
     
     /**
