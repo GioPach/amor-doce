@@ -1,8 +1,9 @@
 package amordoce.model;
 
 import enums.NivelDificuldade;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Random;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -20,8 +21,8 @@ public class Personagem {
     private double interesse; // barra
     private NivelDificuldade nivel;
     private double descontoNivel;
-    public Set<Conversa> conversas = new HashSet<>(); // conversas do personagem
-    public Set<Conversa> conversasConcluidas = new HashSet<>(); // conversas concluídas para gerar o log de conversas
+    public List<Conversa> conversas = new ArrayList<>(); // conversas do personagem
+    public List<Conversa> conversasConcluidas = new ArrayList<>(); // conversas concluídas para gerar o log de conversas
     
     final private int converterParaPorcentagem = 100;
 
@@ -110,19 +111,19 @@ public class Personagem {
         this.humor = humor;
     }
 
-    public Set<Conversa> getConversas() {
+    public List<Conversa> getConversas() {
         return conversas;
     }
 
-    public void setConversas(Set<Conversa> conversas) {
+    public void setConversas(List<Conversa> conversas) {
         this.conversas = conversas;
     }
 
-    public Set<Conversa> getConversasConcluidas() {
+    public List<Conversa> getConversasConcluidas() {
         return conversasConcluidas;
     }
 
-    public void setConversasConcluidas(Set<Conversa> conversasConcluidas) {
+    public void setConversasConcluidas(List<Conversa> conversasConcluidas) {
         this.conversasConcluidas = conversasConcluidas;
     }
 
@@ -151,7 +152,7 @@ public class Personagem {
                 *       1 - 0.95 = 0.05 = 5% de interesse
                 *
             */
-            return (int) ((1.0 - Math.abs(this.interesse)) * converterParaPorcentagem);
+            return (int) (Math.round((1.0 - Math.abs(this.interesse)) * converterParaPorcentagem));
         } else {
             return (int) Math.round(this.interesse * converterParaPorcentagem);
         }
@@ -179,11 +180,7 @@ public class Personagem {
     public void setDescontoNivel() {
         this.descontoNivel = this.getNivel().getDesconto();
     }  
-    
-    /*===============================
-    # Demais métodos
-    ===============================*/
-    
+     
     /**
      * O Padrão Iterator fornece uma maneira de acessar sequencialmente os elementos de um objeto agregado sem expor a sua representação subjacente
      * @return o primeiro elemento da fila de conversas
@@ -194,7 +191,52 @@ public class Personagem {
         } else {
             return this.conversas.iterator().next();
         }
-    }    
+    }  
+    
+    /*===============================
+    # Demais métodos
+    ===============================*/
+    
+    
+    /**
+     * Atualiza a energia do personagem após um diálogo
+     * @param deltaEnergia 
+     */
+    public void atualizarEnergia(double deltaEnergia) {
+        double tmpEnergia = deltaEnergia + this.energia;
+        
+        if(tmpEnergia > 1.0) {
+            this.energia = 1.0;
+        } else {
+            this.energia += deltaEnergia;    
+        }
+        
+    }
+    
+    /**
+     * Atualiza o interesse do personagem pelo usuário
+     * @param deltaInteresse 
+     */    
+    public void atualizarInteresse(double deltaInteresse) {   
+        double interesseFinal = this.interesse + deltaInteresse;
+        if(interesseFinal < -1) {
+            this.interesse = -1.0;
+        } else {
+            this.interesse = interesseFinal;
+        }
+    }
+    
+    /**
+     * Atualiza o humor do personagem após um diálogo
+     * @param humorFinal 
+     */
+    public void atualizarHumor(String humorFinal) {
+        this.humor = humorFinal;
+    }
+       
+    public void atualizarColega(double deltaInteresse, double deltaEnergia) {
+        
+    }
     
     /**
      * Conclui uma conversa (diálogo) e adiciona ela às já concluídas para ter o log de conversas no futuro
@@ -218,46 +260,35 @@ public class Personagem {
         } else {
             return false;
         }
+    }   
+    
+    private double arredondarDuasCasasDecimais(double valor) {
+        return Math.round(valor * 100.0) / 100.0;
     }
     
     /**
-     * Atualiza a energia do personagem após um diálogo
-     * @param deltaEnergia 
+     * Método chamado quando o usuário clicar no botão Pedir Em Namoro.
+     * Sorteará um número
+     * @return false caso o número sorteado equivalha a "NÃO" (menor que 0.5); true caso contrário
      */
-    public void atualizarEnergia(double deltaEnergia) {
-        double tmpEnergia = deltaEnergia + this.energia;
+    public boolean pedirEmNamoro() {
+    
+        double min = this.interesse;
+        double max = 1 - this.descontoNivel;
+        Random rand = new Random();
         
-        if(tmpEnergia > 1.0) {
-            this.energia = 1.0;
+        double resposta = arredondarDuasCasasDecimais(rand.nextDouble((max - min) + 1) + min);
+        if(resposta < 0.5) {
+            return false;
         } else {
-            this.energia += deltaEnergia;    
+            return true;
         }
         
     }
     
     /**
-     * Atualiza o interesse do personagem pelo usuário
-     * @param deltaInteresse 
-     */    
-    public void atualizarInteresse(double deltaInteresse) {      
-        this.interesse += deltaInteresse;
-    }
-    
-    /**
-     * Atualiza o humor do personagem após um diálogo
-     * @param humorFinal 
-     */
-    public void atualizarHumor(String humorFinal) {
-        this.humor = humorFinal;
-    }
-       
-    public void atualizarColega(double deltaInteresse, double deltaEnergia) {
-        
-    }
-    
-    /**
-     * ObservableList??
-     * @return 
+     * ObservableList utilizada para o componente ListView logar as conversas concluídas
+     * @return lista de strings compostas pela pergunta do personagem e a resposta escolhida pelo usuário
      */
     public ObservableList<String> logPersonagem() {
         ObservableList<String> perguntaResposta = FXCollections.observableArrayList();

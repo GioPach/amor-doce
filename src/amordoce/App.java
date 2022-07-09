@@ -15,7 +15,6 @@ import java.util.HashSet;
 public class App extends Application {
     
     public static Personagem usuario;
-    public static Set<Personagem> personagens = new HashSet<>();
     private static Scene scene;
     
     /**

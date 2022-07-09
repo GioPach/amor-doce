@@ -23,16 +23,11 @@ public class EmaMontenegro extends Personagem {
     }
     
     private void setarConversas() {
-        Conversa conversa1 = criarConversa1();
-        Conversa conversa2 = criarConversa2();
-         // Conversa conversa3 = criarConversa1();
-         //  Conversa conversa4 = criarConversa1();
-           // Conversa conversa5 = criarConversa1();
-        this.conversas.add(conversa1);
-        this.conversas.add(conversa2);
-       // this.conversas.add(conversa3);
-       // this.conversas.add(conversa4);
-       // this.conversas.add(conversa5);
+        this.conversas.add(0, criarConversa1());
+        this.conversas.add(1, criarConversa2());
+        //this.conversas.add(2, criarConversa3());
+        //this.conversas.add(3, criarConversa4());
+        //this.conversas.add(4, criarConversa5());
     }
     
     private Conversa criarConversa1() {
@@ -49,7 +44,7 @@ public class EmaMontenegro extends Personagem {
         reacoesPossiveis.add(new Resposta(2, "Como?"));
 
         // Implementa a pergunta, criando um objeto Conversa e o colocando no array de conversas
-        return new Conversa(this, "Você é novo por aqui, né?", respostasPossiveis, reacoesPossiveis);
+        return new Conversa(this, "Oi, você é novo por aqui, né?", respostasPossiveis, reacoesPossiveis);
     }
     
       private Conversa criarConversa2() {
