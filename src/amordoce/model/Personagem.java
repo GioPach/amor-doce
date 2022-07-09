@@ -22,10 +22,12 @@ public class Personagem {
     private double descontoNivel;
     public Set<Conversa> conversas = new HashSet<>(); // conversas do personagem
     public Set<Conversa> conversasConcluidas = new HashSet<>(); // conversas concluídas para gerar o log de conversas
+    
+    final private int converterParaPorcentagem = 100;
 
     public Personagem() {
     }
-
+    
     public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, NivelDificuldade nivel) {
         this.nome = nome;
         this.turma = turma;
@@ -35,7 +37,7 @@ public class Personagem {
         this.genero = genero;
         this.humor = humor;
         this.energia = 1.0;
-        this.interesse = -1.0;
+        this.interesse = -1.0; // começa como -1.0 por padrão para implementar a lógica de sorteio do pedido de namoro
         this.nivel = nivel;
         this.setDescontoNivel();
     }
@@ -128,7 +130,7 @@ public class Personagem {
           if(this.energia < 0) {
             return 0;
         } else {
-            return (int) Math.round(this.energia * 100);
+            return (int) Math.round(this.energia * converterParaPorcentagem);
         }
     }
 
@@ -141,9 +143,17 @@ public class Personagem {
 
     public int getInteresse() {
         if(this.interesse < 0) {
-            return (int) ((1.0 - Math.abs(this.interesse)) * 100);
+            /*
+                * Exemplo de exposição do dado:
+                *   Se interesse for -1.0 (início) e o usuário acertar uma pergunta que aumenta 5% (+0.05):
+                *       interesse = -1.0 + 0.05 = -0.95
+                *       Módulo do valor -> Math.abs(-0.95) = 0.95
+                *       1 - 0.95 = 0.05 = 5% de interesse
+                *
+            */
+            return (int) ((1.0 - Math.abs(this.interesse)) * converterParaPorcentagem);
         } else {
-            return (int) Math.round(this.interesse * 100);
+            return (int) Math.round(this.interesse * converterParaPorcentagem);
         }
     }
 
@@ -197,6 +207,20 @@ public class Personagem {
     }
     
     /**
+     * Método usado para settar visibilidade do botão de pedir em namoro. O botão
+     * se tornará visível ao usuário caso o personagem tenha atingido 50% de interesse,
+     * possibilitando o pedido de namoro, que será executado pelo método pedirEmNamoro.
+     * @return true se o personagem tiver 50% de interesse no mínimo; false caso contrário.
+     */
+    public boolean checarInteresse() {
+        if(this.interesse >= 0.5) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    /**
      * Atualiza a energia do personagem após um diálogo
      * @param deltaEnergia 
      */
@@ -210,6 +234,7 @@ public class Personagem {
         }
         
     }
+    
     /**
      * Atualiza o interesse do personagem pelo usuário
      * @param deltaInteresse 
