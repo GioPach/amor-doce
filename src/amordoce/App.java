@@ -1,6 +1,5 @@
 package amordoce;
 
-import test.TesteSorteio;
 import handlers.AudioHandler;
 import amordoce.model.Personagem;
         
@@ -26,7 +25,7 @@ public class App extends Application {
         scene = new Scene(loadFXML("TelaInicial"), 1280, 720);
         stage.setScene(scene);
         stage.show();
-        new AudioHandler().startPlaylist();
+        //new AudioHandler().startPlaylist(); 
     }
 
     /**
