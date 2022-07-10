@@ -239,10 +239,10 @@ public class Personagem {
             String fofocaMensagem = this.getNome() + " fofocou com " + colega.getNome() + ".\nO interesse de " + colega.getNome();
             
             if(deltaInteresse > 0) {
-                fofocaMensagem += " aumentou em " + (deltaInteresse * 100) + "%.";
+                fofocaMensagem += " aumentou em " + arredondarDuasCasasDecimais(deltaInteresse * converterParaPorcentagem) + "%.";
             }
             else if (deltaInteresse < 0){
-                fofocaMensagem += " diminuiu em " + (deltaInteresse * 100) + "%.";
+                fofocaMensagem += " diminuiu em " + arredondarDuasCasasDecimais(deltaInteresse * converterParaPorcentagem) + "%.";
             }
             else {
                 fofocaMensagem += " permaneceu igual.";
@@ -293,7 +293,6 @@ public class Personagem {
         final double corretorIntervalo = 0.5;
         Random rand = new Random();
         double resposta = arredondarDuasCasasDecimais(rand.nextDouble(this.interesse - corretorIntervalo, this.fatorNivel));
-        System.out.println("Sorteado: " + resposta);
         return resposta >= 0.5;        
     }
     
@@ -304,7 +303,7 @@ public class Personagem {
     public ObservableList<String> logPersonagem() {
         ObservableList<String> perguntaResposta = FXCollections.observableArrayList();
         this.conversasConcluidas.forEach((conversa) -> {
-            perguntaResposta.add(this.nome + ": " + conversa.getPergunta() + "\nVocê: " + conversa.getRespostaUsuario().getTexto());
+            perguntaResposta.add(this.nome + ": " + conversa.getPergunta().replace("\n", " ") + "\nVocê: " + conversa.getRespostaUsuario().getTexto().replace("\n", " "));
         });
         return perguntaResposta;    
     }
