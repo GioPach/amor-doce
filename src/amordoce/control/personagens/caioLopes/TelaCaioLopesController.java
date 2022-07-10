@@ -16,6 +16,7 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
     public void initialize(URL url, ResourceBundle rb) {      
         atualizarAtributosTela(TelaPersonagensController.caioLopes);
         listenVisibilidadeNamoro(TelaPersonagensController.caioLopes);
+        listenVisibilidadeFofoca(TelaPersonagensController.caioLopes);
         TelaPersonagensController.caioLopes.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.caioLopes);
         setVisibilidadeButton(this.btnProxima, false);
@@ -24,7 +25,10 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
+        TelaPersonagensController.caioLopes.setFofoca("");
+        
         listenVisibilidadeNamoro(TelaPersonagensController.caioLopes);
+        listenVisibilidadeFofoca(TelaPersonagensController.caioLopes);
         TelaPersonagensController.caioLopes.verificarRespostaConversa3();
         carregarConversa(TelaPersonagensController.caioLopes);
         setVisibilidadeButton(this.btnProxima, false);

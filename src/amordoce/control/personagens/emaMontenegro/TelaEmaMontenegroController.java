@@ -16,6 +16,7 @@ public class TelaEmaMontenegroController extends PersonagemController implements
     public void initialize(URL url, ResourceBundle rb) {      
         atualizarAtributosTela(TelaPersonagensController.emaMontenegro);
         listenVisibilidadeNamoro(TelaPersonagensController.emaMontenegro);
+        listenVisibilidadeFofoca(TelaPersonagensController.emaMontenegro);
         TelaPersonagensController.emaMontenegro.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.emaMontenegro);
         setVisibilidadeButton(this.btnProxima, false);
@@ -23,8 +24,11 @@ public class TelaEmaMontenegroController extends PersonagemController implements
     }
     
     @FXML
-    private void handlerButtonProxima(ActionEvent event) throws Exception {        
+    private void handlerButtonProxima(ActionEvent event) throws Exception { 
+        TelaPersonagensController.emaMontenegro.setFofoca("");
+        
         listenVisibilidadeNamoro(TelaPersonagensController.emaMontenegro);
+        listenVisibilidadeFofoca(TelaPersonagensController.emaMontenegro);
         TelaPersonagensController.emaMontenegro.verificarRespostaConversa3();
         carregarConversa(TelaPersonagensController.emaMontenegro);
         setVisibilidadeButton(this.btnProxima, false);

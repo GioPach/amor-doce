@@ -89,7 +89,7 @@ public class Conversa {
         this.personagem.atualizarInteresse(this.respostaUsuario.getDeltaInteresse()); // atualiza barra de interesse
         this.personagem.atualizarHumor(this.respostaUsuario.getHumorFinal()); // atualiza barra de humor
         this.personagem.atualizarEnergia(this.respostaUsuario.getDeltaEnergia()); // atualiza barra de energia  
-        this.personagem.atualizarColegas(this.respostaUsuario.getDeltaInteresse() / 2, this.respostaUsuario.getDeltaEnergia() / 2); // fofoca com Personagem da mesma turma (50% de influência)
+        this.personagem.atualizarColegas(this.respostaUsuario.getDeltaInteresse() / 2); // fofoca com Personagem da mesma turma (50% de influência)
     }
     
     /*===============================
@@ -145,11 +145,4 @@ public class Conversa {
             .findFirst()
             .orElse(new Resposta());
     }
-
-    @Override
-    public String toString() {
-        return "Conversa{" + "id=" + id + ", personagem=" + personagem + ", pergunta=" + pergunta + ", respostasPossiveis=" + respostasPossiveis + ", reacoesPossiveis=" + reacoesPossiveis + ", respostaUsuario=" + respostaUsuario + ", numRespostasPossiveis=" + numRespostasPossiveis + '}';
-    }
-    
-    
 }

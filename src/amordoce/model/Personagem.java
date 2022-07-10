@@ -23,6 +23,7 @@ public class Personagem {
     private double interesse; // barra
     private NivelDificuldade nivel;
     private double fatorNivel; // determina o valor máximo do intervalo a ser utilizado para sorteio ao pedir em namoro
+    private String fofoca;
     public List<Conversa> conversas = new ArrayList<>(); // conversas do personagem
     public List<Conversa> conversasConcluidas = new ArrayList<>(); // conversas concluídas para gerar o log de conversas
     
@@ -43,6 +44,7 @@ public class Personagem {
         this.interesse = 0.0; // começa por padrão para implementar a lógica de sorteio do pedido de namoro
         this.nivel = nivel;
         this.setFatorNivel();
+        this.fofoca = "";
     }
     
     /*===============================
@@ -162,7 +164,15 @@ public class Personagem {
      */
     public final void setFatorNivel() {
         this.fatorNivel = this.getNivel().getDesconto();
-    }  
+    }
+    
+    public String getFofoca() {
+        return fofoca;
+    }
+
+    public void setFofoca(String fofoca) {
+        this.fofoca = fofoca;
+    }
      
     /**
      * O Padrão Iterator fornece uma maneira de acessar sequencialmente os elementos de um objeto agregado sem expor a sua representação subjacente
@@ -174,7 +184,7 @@ public class Personagem {
         } else {
             return this.conversas.iterator().next();
         }
-    }  
+    }
     
     /*===============================
     # Demais métodos
@@ -222,10 +232,23 @@ public class Personagem {
         this.humor = humorFinal;
     }
        
-    public void atualizarColegas(double deltaInteresse, double deltaEnergia) {
+    public void atualizarColegas(double deltaInteresse) {
         for(Personagem colega : this.colegas) {
             colega.atualizarInteresse(deltaInteresse);
-            colega.atualizarEnergia(deltaEnergia);
+            
+            String fofocaMensagem = this.getNome() + " fofocou com " + colega.getNome() + ".\nO interesse de " + colega.getNome();
+            
+            if(deltaInteresse > 0) {
+                fofocaMensagem += " aumentou em " + (deltaInteresse * 100) + "%.";
+            }
+            else if (deltaInteresse < 0){
+                fofocaMensagem += " diminuiu em " + (deltaInteresse * 100) + "%.";
+            }
+            else {
+                fofocaMensagem += " permaneceu igual.";
+            }
+            
+            colega.setFofoca(fofocaMensagem);
         }
     }
     

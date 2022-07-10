@@ -16,6 +16,7 @@ public class TelaJudyWillisController extends PersonagemController implements In
     public void initialize(URL url, ResourceBundle rb) {      
         atualizarAtributosTela(TelaPersonagensController.judyWillis);
         listenVisibilidadeNamoro(TelaPersonagensController.judyWillis);
+        listenVisibilidadeFofoca(TelaPersonagensController.judyWillis);
         TelaPersonagensController.judyWillis.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.judyWillis);
         setVisibilidadeButton(this.btnProxima, false);
@@ -24,7 +25,10 @@ public class TelaJudyWillisController extends PersonagemController implements In
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
+        TelaPersonagensController.judyWillis.setFofoca("");
+        
         listenVisibilidadeNamoro(TelaPersonagensController.judyWillis);
+        listenVisibilidadeFofoca(TelaPersonagensController.judyWillis);
         TelaPersonagensController.judyWillis.verificarRespostaConversa3();
         carregarConversa(TelaPersonagensController.judyWillis);
         setVisibilidadeButton(this.btnProxima, false);

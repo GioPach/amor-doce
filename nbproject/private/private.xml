@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/gisig/OneDrive/Documentos/NetBeansProjects/amor-doce/src/amordoce/App.java</file>
-            <file>file:/C:/Users/gisig/OneDrive/Documentos/NetBeansProjects/amor-doce/src/amordoce/view/TelaPersonagens.fxml</file>
-            <file>file:/C:/Users/gisig/OneDrive/Documentos/NetBeansProjects/amor-doce/src/amordoce/model/personagens/DarioAgostini.java</file>
-            <file>file:/C:/Users/gisig/OneDrive/Documentos/NetBeansProjects/amor-doce/src/amordoce/control/TelaPersonagensController.java</file>
+            <file>file:/C:/code/amor-doce/src/amordoce/control/TelaPersonagensController.java</file>
+            <file>file:/C:/code/amor-doce/src/amordoce/control/personagens/emaMontenegro/TelaEmaMontenegroController.java</file>
+            <file>file:/C:/code/amor-doce/src/amordoce/control/personagens/PersonagemController.java</file>
         </group>
     </open-files>
 </project-private>

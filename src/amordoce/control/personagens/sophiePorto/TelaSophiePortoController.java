@@ -16,6 +16,7 @@ public class TelaSophiePortoController extends PersonagemController implements I
     public void initialize(URL url, ResourceBundle rb) {      
         atualizarAtributosTela(TelaPersonagensController.sophiePorto);
         listenVisibilidadeNamoro(TelaPersonagensController.sophiePorto);
+        listenVisibilidadeFofoca(TelaPersonagensController.sophiePorto);
         TelaPersonagensController.sophiePorto.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.sophiePorto);
         setVisibilidadeButton(this.btnProxima, false);
@@ -24,7 +25,10 @@ public class TelaSophiePortoController extends PersonagemController implements I
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
+        TelaPersonagensController.sophiePorto.setFofoca("");
+        
         listenVisibilidadeNamoro(TelaPersonagensController.sophiePorto);
+        listenVisibilidadeFofoca(TelaPersonagensController.sophiePorto);
         TelaPersonagensController.sophiePorto.verificarRespostaConversa3();
         carregarConversa(TelaPersonagensController.sophiePorto);
         setVisibilidadeButton(this.btnProxima, false);

@@ -16,6 +16,7 @@ public class TelaDylanAyalaController extends PersonagemController implements In
     public void initialize(URL url, ResourceBundle rb) {      
         atualizarAtributosTela(TelaPersonagensController.dylanAyala);
         listenVisibilidadeNamoro(TelaPersonagensController.dylanAyala);
+        listenVisibilidadeFofoca(TelaPersonagensController.dylanAyala);
         TelaPersonagensController.dylanAyala.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.dylanAyala);
         setVisibilidadeButton(this.btnProxima, false);
@@ -24,7 +25,10 @@ public class TelaDylanAyalaController extends PersonagemController implements In
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
+        TelaPersonagensController.dylanAyala.setFofoca("");
+        
         listenVisibilidadeNamoro(TelaPersonagensController.dylanAyala);
+        listenVisibilidadeFofoca(TelaPersonagensController.dylanAyala);
         TelaPersonagensController.dylanAyala.verificarRespostaConversa3();
         carregarConversa(TelaPersonagensController.dylanAyala);
         setVisibilidadeButton(this.btnProxima, false);

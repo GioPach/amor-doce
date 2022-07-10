@@ -206,6 +206,7 @@
             </HBox>
          </children>
       </VBox>
+      <Label fx:id="labelFofoca" alignment="CENTER" layoutX="373.0" layoutY="89.0" prefHeight="62.0" prefWidth="577.0" styleClass="labelFofoca" stylesheets="@../../../../css/labelFofoca.css" textAlignment="CENTER" visible="false" wrapText="true" />
       <Pane fx:id="btnNamoro" layoutX="995.0" layoutY="401.0" prefHeight="146.0" prefWidth="183.0">
          <children>
             <ImageView fitHeight="135.0" fitWidth="166.0" layoutX="9.0" layoutY="7.0">
