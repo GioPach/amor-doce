@@ -31,14 +31,14 @@ public class Personagem {
     public Personagem() {
     }
     
-    public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, NivelDificuldade nivel) {
+    public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, NivelDificuldade nivel) {
         this.nome = nome;
         this.turma = turma;
         this.idade = idade;
         this.signo = signo;
         this.nacionalidade = nacionalidade;
         this.genero = genero;
-        this.humor = humor;
+        this.humor = "Neutro";
         this.energia = 1.0;
         this.interesse = 0.0; // começa por padrão para implementar a lógica de sorteio do pedido de namoro
         this.nivel = nivel;

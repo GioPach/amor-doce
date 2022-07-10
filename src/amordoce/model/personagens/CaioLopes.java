@@ -17,8 +17,8 @@ public class CaioLopes extends Personagem {
         
     }
     
-    public CaioLopes(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, NivelDificuldade nivel) {
-        super(nome, turma, idade, signo, nacionalidade, genero, humor, nivel);
+    public CaioLopes(String nome, String turma, int idade, String signo, String nacionalidade, char genero, NivelDificuldade nivel) {
+        super(nome, turma, idade, signo, nacionalidade, genero, nivel);
         setarConversas();
     }
     
