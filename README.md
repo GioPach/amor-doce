@@ -78,7 +78,7 @@ Após fazer os passos anteriores:
 - Altere o diretório de trabalho atual para o local em que deseja ter o diretório clonado;
 - Digite ``git clone`` (clonar git) e cole a URL que você copiou anteriormente. Ficará assim, com seu nome de usuário do GitHub no lugar de ``YOUR-USERNAME`` e o do respectivo repositório em ``YOUR_FORK``:
 
-    $ git clone https://github.com/YOUR-USERNAME/YOUR_FORK.git
+        $ git clone https://github.com/YOUR-USERNAME/YOUR_FORK.git
 
 - Pressione **Enter**. Seu clone local estará criado.
 
@@ -86,21 +86,21 @@ Após fazer os passos anteriores:
 
 - Pelo Git Bash, acessando o seu repositório local que foi criado, digite ``git remote -v`` e pressione **Enter**. Você verá o repositório remote atual configurado para sua bifurcação.
 
-    $ git remote -v
-    > origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
-    > origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+        $ git remote -v
+        > origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
+        > origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
 
 - Digite ``git remote add upstream``, cole o URL que você copiou anteriormente e pressione Enter. Ficará assim:
 
-    $ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+        
 
 - Para verificar o novo repositório upstream que você especificou para sua bifurcação, digite novamente ``git remote -v``. Você deverá visualizar a URL da sua bifurcação como ``origin`` (origem) e a URL do repositório original como ``upstream``.
 
-    $ git remote -v
-    > origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
-    > origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
-    > upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)
-    > upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
+        $ git remote -v
+        > origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
+        > origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+        > upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)
+        > upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
 
 Agora é possível manter a bifurcação sincronizada com o repositório upstream usando apenas alguns comandos Git. Para obter mais informações, consulte "[Sincronizar uma bifurcação](https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)".
 
