@@ -1,9 +1,8 @@
 package amordoce.control.personagens.judyWillis;
 
 import amordoce.App;
+import amordoce.control.TelaPersonagensController;
 import amordoce.control.personagens.PersonagemController;
-import amordoce.model.personagens.JudyWillis;
-import enums.NivelDificuldade;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -12,30 +11,28 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
 public class TelaJudyWillisController extends PersonagemController implements Initializable {
-    
-    public static JudyWillis judyWillis = new JudyWillis("Judy Willis", "Administração", 22, "Sagitário", "Alemã", 'F', "Neutro", NivelDificuldade.FACIL);
-    
+        
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
         esconderButtonNamoro();
-        atualizarAtributosTela(judyWillis);
-        listenVisibilidadeNamoro(judyWillis);
-        judyWillis.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
-        carregarConversa(judyWillis);
+        atualizarAtributosTela(TelaPersonagensController.judyWillis);
+        listenVisibilidadeNamoro(TelaPersonagensController.judyWillis);
+        TelaPersonagensController.judyWillis.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
+        carregarConversa(TelaPersonagensController.judyWillis);
         setVisibilidadeButton(this.btnProxima, false);
     }
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
-        listenVisibilidadeNamoro(judyWillis);
-        judyWillis.verificarRespostaConversa3();
-        carregarConversa(judyWillis);
+        listenVisibilidadeNamoro(TelaPersonagensController.judyWillis);
+        TelaPersonagensController.judyWillis.verificarRespostaConversa3();
+        carregarConversa(TelaPersonagensController.judyWillis);
         setVisibilidadeButton(this.btnProxima, false);
     }
     
      @FXML
     public void handlerPedirEmNamoro(ActionEvent event) throws Exception {
-        if(judyWillis.pedirEmNamoro()) {
+        if(TelaPersonagensController.judyWillis.pedirEmNamoro()) {
             System.out.println("SIM");
         } else {
             System.out.println("NAO");
@@ -73,10 +70,10 @@ public class TelaJudyWillisController extends PersonagemController implements In
                 
         }
         
-        judyWillis.getConversaAtual().escolherResposta(idResposta);
-        atualizarAtributosTela(judyWillis);
-        labelPergunta.setText(judyWillis.getConversaAtual().getReacao(idResposta));
-        judyWillis.concluirConversa(judyWillis.getConversaAtual().getId());
+        TelaPersonagensController.judyWillis.getConversaAtual().escolherResposta(idResposta);
+        atualizarAtributosTela(TelaPersonagensController.judyWillis);
+        labelPergunta.setText(TelaPersonagensController.judyWillis.getConversaAtual().getReacao(idResposta));
+        TelaPersonagensController.judyWillis.concluirConversa(TelaPersonagensController.judyWillis.getConversaAtual().getId());
         setVisibilidadeRespostas(false);
         setVisibilidadeButton(this.btnProxima, true);
     }

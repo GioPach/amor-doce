@@ -1,9 +1,8 @@
 package amordoce.control.personagens.susanneLefort;
 
 import amordoce.App;
+import amordoce.control.TelaPersonagensController;
 import amordoce.control.personagens.PersonagemController;
-import amordoce.model.personagens.SusanneLefort;
-import enums.NivelDificuldade;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -12,30 +11,28 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
 public class TelaSusanneLefortController extends PersonagemController implements Initializable {
-    
-    public static SusanneLefort susanneLefort = new SusanneLefort("Susanne Lefort", "Informática", 23, "Leão", "Francesa", 'F', "Neutro", NivelDificuldade.FACIL);
-    
+        
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
         esconderButtonNamoro();
-        atualizarAtributosTela(susanneLefort);
-        listenVisibilidadeNamoro(susanneLefort);
-        susanneLefort.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
-        carregarConversa(susanneLefort);
+        atualizarAtributosTela(TelaPersonagensController.susanneLefort);
+        listenVisibilidadeNamoro(TelaPersonagensController.susanneLefort);
+        TelaPersonagensController.susanneLefort.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
+        carregarConversa(TelaPersonagensController.susanneLefort);
         setVisibilidadeButton(this.btnProxima, false);
     }
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
-        listenVisibilidadeNamoro(susanneLefort);
-        susanneLefort.verificarRespostaConversa3();
-        carregarConversa(susanneLefort);
+        listenVisibilidadeNamoro(TelaPersonagensController.susanneLefort);
+        TelaPersonagensController.susanneLefort.verificarRespostaConversa3();
+        carregarConversa(TelaPersonagensController.susanneLefort);
         setVisibilidadeButton(this.btnProxima, false);
     }
     
      @FXML
     public void handlerPedirEmNamoro(ActionEvent event) throws Exception {
-        if(susanneLefort.pedirEmNamoro()) {
+        if(TelaPersonagensController.susanneLefort.pedirEmNamoro()) {
             System.out.println("SIM");
         } else {
             System.out.println("NAO");
@@ -73,10 +70,10 @@ public class TelaSusanneLefortController extends PersonagemController implements
                 
         }
         
-        susanneLefort.getConversaAtual().escolherResposta(idResposta);
-        atualizarAtributosTela(susanneLefort);
-        labelPergunta.setText(susanneLefort.getConversaAtual().getReacao(idResposta));
-        susanneLefort.concluirConversa(susanneLefort.getConversaAtual().getId());
+        TelaPersonagensController.susanneLefort.getConversaAtual().escolherResposta(idResposta);
+        atualizarAtributosTela(TelaPersonagensController.susanneLefort);
+        labelPergunta.setText(TelaPersonagensController.susanneLefort.getConversaAtual().getReacao(idResposta));
+        TelaPersonagensController.susanneLefort.concluirConversa(TelaPersonagensController.susanneLefort.getConversaAtual().getId());
         setVisibilidadeRespostas(false);
         setVisibilidadeButton(this.btnProxima, true);
     }

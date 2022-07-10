@@ -2,8 +2,6 @@ package amordoce.control.personagens.darioAgostini;
 
 import amordoce.App;
 import amordoce.control.personagens.PersonagemController;
-import amordoce.model.personagens.DarioAgostini;
-import enums.NivelDificuldade;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -12,30 +10,28 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
 public class TelaDarioAgostiniController extends PersonagemController implements Initializable {
-    
-    public static DarioAgostini darioAgostini = new DarioAgostini("Dario Agostini", "Informática", 20, "Câncer", "Italiano", 'M', "Neutro", NivelDificuldade.FACIL);
-    
+        
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
         esconderButtonNamoro();
-        atualizarAtributosTela(darioAgostini);
-        listenVisibilidadeNamoro(darioAgostini);
-        darioAgostini.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
-        carregarConversa(darioAgostini);
+        atualizarAtributosTela(TelaPersonagensController.darioAgostini);
+        listenVisibilidadeNamoro(TelaPersonagensController.darioAgostini);
+        TelaPersonagensController.darioAgostini.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
+        carregarConversa(TelaPersonagensController.darioAgostini);
         setVisibilidadeButton(this.btnProxima, false);
     }
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
-        listenVisibilidadeNamoro(darioAgostini);
-        darioAgostini.verificarRespostaConversa3();
-        carregarConversa(darioAgostini);
+        listenVisibilidadeNamoro(TelaPersonagensController.darioAgostini);
+        TelaPersonagensController.darioAgostini.verificarRespostaConversa3();
+        carregarConversa(TelaPersonagensController.darioAgostini);
         setVisibilidadeButton(this.btnProxima, false);
     }
     
      @FXML
     public void handlerPedirEmNamoro(ActionEvent event) throws Exception {
-        if(darioAgostini.pedirEmNamoro()) {
+        if(TelaPersonagensController.darioAgostini.pedirEmNamoro()) {
             System.out.println("SIM");
         } else {
             System.out.println("NAO");
@@ -73,10 +69,10 @@ public class TelaDarioAgostiniController extends PersonagemController implements
                 
         }
         
-        darioAgostini.getConversaAtual().escolherResposta(idResposta);
-        atualizarAtributosTela(darioAgostini);
-        labelPergunta.setText(darioAgostini.getConversaAtual().getReacao(idResposta));
-        darioAgostini.concluirConversa(darioAgostini.getConversaAtual().getId());
+        TelaPersonagensController.darioAgostini.getConversaAtual().escolherResposta(idResposta);
+        atualizarAtributosTela(TelaPersonagensController.darioAgostini);
+        labelPergunta.setText(TelaPersonagensController.darioAgostini.getConversaAtual().getReacao(idResposta));
+        TelaPersonagensController.darioAgostini.concluirConversa(TelaPersonagensController.darioAgostini.getConversaAtual().getId());
         setVisibilidadeRespostas(false);
         setVisibilidadeButton(this.btnProxima, true);
     }

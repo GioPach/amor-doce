@@ -1,9 +1,8 @@
 package amordoce.control.personagens.catherineJones;
 
 import amordoce.App;
+import amordoce.control.TelaPersonagensController;
 import amordoce.control.personagens.PersonagemController;
-import amordoce.model.personagens.CatherineJones;
-import enums.NivelDificuldade;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -13,29 +12,27 @@ import javafx.scene.control.Button;
 
 public class TelaCatherineJonesController extends PersonagemController implements Initializable {
     
-    public static CatherineJones catherineJones = new CatherineJones("Catherine Jones", "Música", 22, "Libra", "Britânica", 'F', "Neutro", NivelDificuldade.MEDIO);
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
         esconderButtonNamoro();
-        atualizarAtributosTela(catherineJones);
-        listenVisibilidadeNamoro(catherineJones);
-        catherineJones.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
-        carregarConversa(catherineJones);
+        atualizarAtributosTela(TelaPersonagensController.catherineJones);
+        listenVisibilidadeNamoro(TelaPersonagensController.catherineJones);
+        TelaPersonagensController.catherineJones.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
+        carregarConversa(TelaPersonagensController.catherineJones);
         setVisibilidadeButton(this.btnProxima, false);
     }
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
-        listenVisibilidadeNamoro(catherineJones);
-        catherineJones.verificarRespostaConversa3();
-        carregarConversa(catherineJones);
+        listenVisibilidadeNamoro(TelaPersonagensController.catherineJones);
+        TelaPersonagensController.catherineJones.verificarRespostaConversa3();
+        carregarConversa(TelaPersonagensController.catherineJones);
         setVisibilidadeButton(this.btnProxima, false);
     }
     
      @FXML
     public void handlerPedirEmNamoro(ActionEvent event) throws Exception {
-        if(catherineJones.pedirEmNamoro()) {
+        if(TelaPersonagensController.catherineJones.pedirEmNamoro()) {
             System.out.println("SIM");
         } else {
             System.out.println("NAO");
@@ -73,10 +70,10 @@ public class TelaCatherineJonesController extends PersonagemController implement
                 
         }
         
-        catherineJones.getConversaAtual().escolherResposta(idResposta);
-        atualizarAtributosTela(catherineJones);
-        labelPergunta.setText(catherineJones.getConversaAtual().getReacao(idResposta));
-        catherineJones.concluirConversa(catherineJones.getConversaAtual().getId());
+        TelaPersonagensController.catherineJones.getConversaAtual().escolherResposta(idResposta);
+        atualizarAtributosTela(TelaPersonagensController.catherineJones);
+        labelPergunta.setText(TelaPersonagensController.catherineJones.getConversaAtual().getReacao(idResposta));
+        TelaPersonagensController.catherineJones.concluirConversa(TelaPersonagensController.catherineJones.getConversaAtual().getId());
         setVisibilidadeRespostas(false);
         setVisibilidadeButton(this.btnProxima, true);
     }

@@ -5,6 +5,7 @@
 package amordoce.control.personagens.caioLopes;
 
 import amordoce.App;
+import amordoce.control.TelaPersonagensController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
@@ -31,7 +32,7 @@ public class TelaLogCaioLopesController implements Initializable {
     @Override
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        this.listaPerguntasRespostas = TelaCaioLopesController.caioLopes.logPersonagem();
+        this.listaPerguntasRespostas = TelaPersonagensController.caioLopes.logPersonagem();
         listView.setItems(listaPerguntasRespostas);
     }    
     

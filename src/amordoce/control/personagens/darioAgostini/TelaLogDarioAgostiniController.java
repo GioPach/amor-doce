@@ -5,6 +5,7 @@
 package amordoce.control.personagens.darioAgostini;
 
 import amordoce.App;
+import amordoce.control.TelaPersonagensController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
@@ -31,7 +32,7 @@ public class TelaLogDarioAgostiniController implements Initializable {
     @Override
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        this.listaPerguntasRespostas = TelaDarioAgostiniController.darioAgostini.logPersonagem();
+        this.listaPerguntasRespostas = TelaPersonagensController.darioAgostini.logPersonagem();
         listView.setItems(listaPerguntasRespostas);
     }    
     
