@@ -21,5 +21,9 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
+      <Button layoutX="196.0" layoutY="74.0" mnemonicParsing="false" onAction="#handlerButtonEasterEgg" prefHeight="48.0" prefWidth="51.0" style="-fx-background-color: transparent;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
     </children>
 </AnchorPane>
