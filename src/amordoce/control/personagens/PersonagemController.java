@@ -1,11 +1,9 @@
 package amordoce.control.personagens;
 
-import amordoce.App;
 import amordoce.model.Conversa;
 import amordoce.model.Personagem;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -37,11 +35,6 @@ public class PersonagemController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
-    
-    @FXML
-    private void handlerButtonVoltar(ActionEvent event) throws Exception {
-        App.setRoot("TelaPersonagens");
     }
        
     /**
