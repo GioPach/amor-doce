@@ -88,9 +88,8 @@ public class Conversa {
         this.respostaUsuario = respostaUsuario;
         this.personagem.atualizarInteresse(this.respostaUsuario.getDeltaInteresse()); // atualiza barra de interesse
         this.personagem.atualizarHumor(this.respostaUsuario.getHumorFinal()); // atualiza barra de humor
-        this.personagem.atualizarEnergia(this.respostaUsuario.getDeltaEnergia()); // atualiza barra de energia
-    // arredondar deltas:   
-    // this.personagem.atualizarColega(this.respostaUsuario.getDeltaEnergia() / 2, this.respostaUsuario.getDeltaEnergia() / 2); // fofoca com Personagem da mesma turma (50% de influência)
+        this.personagem.atualizarEnergia(this.respostaUsuario.getDeltaEnergia()); // atualiza barra de energia  
+        this.personagem.atualizarColegas(this.respostaUsuario.getDeltaInteresse() / 2, this.respostaUsuario.getDeltaEnergia() / 2); // fofoca com Personagem da mesma turma (50% de influência)
     }
     
     /*===============================

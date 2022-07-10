@@ -2,6 +2,8 @@ package amordoce.control;
 
 import amordoce.App;
 import amordoce.model.Personagem;
+import amordoce.model.personagens.CaioLopes;
+import amordoce.model.personagens.CatherineJones;
 import amordoce.model.personagens.EmaMontenegro;
 import enums.NivelDificuldade;
 import java.net.URL;
@@ -12,8 +14,8 @@ import javafx.fxml.Initializable;
 
 public class TelaPersonagensController implements Initializable {
     
-    //public static CaioLopes caioLopes = new CaioLopes("Caio Lopes", "Música", 21, "Peixes", "Brasileiro", 'M', "Neutro", NivelDificuldade.MEDIO);
-    //public static CatherineJones catherineJones = new CatherineJones("Catherine Jones", "Música", 22, "Libra", "Britânica", 'F', "Neutro", NivelDificuldade.MEDIO);
+    public static CaioLopes caioLopes = new CaioLopes("Caio Lopes", "Música", 21, "Peixes", "Brasileiro", 'M', "Neutro", NivelDificuldade.MEDIO);
+    public static CatherineJones catherineJones = new CatherineJones("Catherine Jones", "Música", 22, "Libra", "Britânica", 'F', "Neutro", NivelDificuldade.MEDIO);
     //public static DarioAgostini darioAgostini = new DarioAgostini("Dario Agostini", "Informática", 20, "Câncer", "Italiano", 'M', "Neutro", NivelDificuldade.FACIL);
     //public static DylanAyala dylanAyala = new DylanAyala("Dylan Ayala", "Eletrônica", 21, "Escorpião", "Britânico", 'M', "Neutro", NivelDificuldade.MEDIO);
     public static EmaMontenegro emaMontenegro = new EmaMontenegro("Ema Montenegro", "Música", 21, "Gêmeos", "Espanhola", 'F', "Neutro", NivelDificuldade.DIFICIL);
@@ -28,8 +30,8 @@ public class TelaPersonagensController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         if(TelaPersonagensController.start) {
-            //App.personagens.add(caioLopes);
-            //App.personagens.add(catherineJones);
+            App.personagens.add(caioLopes);
+            App.personagens.add(catherineJones);
             //App.personagens.add(darioAgostini);
             //App.personagens.add(dylanAyala);
             App.personagens.add(emaMontenegro);

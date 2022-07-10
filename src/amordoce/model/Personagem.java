@@ -130,18 +130,11 @@ public class Personagem {
     }
 
     public int getEnergia() {
-          if(this.energia < 0) {
-            return 0;
-        } else {
-            return (int) Math.round(this.energia * converterParaPorcentagem);
-        }
+        return (int) Math.round(this.energia * converterParaPorcentagem);
     }
 
     public void setEnergia(double energia) {
-        if(energia < -1 && energia > 1) {
-            throw new Error("Modelo Personagem: energia passada inválida...menor que -1 ou maior que 1");
-        }
-        this.energia = energia;
+        this.atualizarEnergia(energia);
     }
 
     public int getInteresse() {
@@ -149,10 +142,7 @@ public class Personagem {
     }
 
     public void setInteresse(double interesse) {
-        if(interesse < -1 && interesse > 1) {
-            throw new Error("Modelo Personagem: interesse passado inválida...menor que -1 ou maior que 1");
-        }
-        this.interesse = interesse;
+        this.atualizarInteresse(interesse);
     }
 
     public NivelDificuldade getNivel() {
@@ -232,8 +222,11 @@ public class Personagem {
         this.humor = humorFinal;
     }
        
-    public void atualizarColega(double deltaInteresse, double deltaEnergia) {
-        
+    public void atualizarColegas(double deltaInteresse, double deltaEnergia) {
+        for(Personagem colega : this.colegas) {
+            colega.atualizarInteresse(deltaInteresse);
+            colega.atualizarEnergia(deltaEnergia);
+        }
     }
     
     /**
