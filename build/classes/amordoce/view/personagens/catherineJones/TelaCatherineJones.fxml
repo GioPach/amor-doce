@@ -207,14 +207,14 @@
          </children>
       </VBox>
       <Label fx:id="labelFofoca" alignment="CENTER" layoutX="373.0" layoutY="79.0" prefHeight="62.0" prefWidth="577.0" styleClass="labelFofoca" stylesheets="@../../../../css/labelFofoca.css" textAlignment="CENTER" visible="false" wrapText="true" />
-      <Pane layoutX="995.0" layoutY="401.0" prefHeight="146.0" prefWidth="183.0">
+      <Pane fx:id="btnNamoro" layoutX="995.0" layoutY="401.0" prefHeight="146.0" prefWidth="183.0">
          <children>
             <ImageView fitHeight="135.0" fitWidth="166.0" layoutX="9.0" layoutY="7.0">
                <image>
                   <Image url="@../../../../assets/img/iconeCoracao.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnNamoro" layoutX="17.0" layoutY="16.0" mnemonicParsing="false" onAction="#handlerPedirEmNamoro" prefHeight="114.0" prefWidth="150.0" styleClass="btnNamoro" stylesheets="@../../../../css/buttons.css" text="PEDIR EM NAMORO" textFill="WHITE">
+            <Button layoutX="17.0" layoutY="16.0" mnemonicParsing="false" onAction="#handlerPedirEmNamoro" prefHeight="114.0" prefWidth="150.0" styleClass="btnNamoro" stylesheets="@../../../../css/buttons.css" text="PEDIR EM NAMORO" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
