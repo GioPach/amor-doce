@@ -22,10 +22,25 @@ public class TelaPersonagensController implements Initializable {
     //public static SophiePorto sophiePorto = new SophiePorto("Sophie Porto", "Administração", 23, "Escorpião", "Brasileira", 'F', "Neutro", NivelDificuldade.MEDIO);
     //public static SusanneLefort susanneLefort = new SusanneLefort("Susanne Lefort", "Informática", 23, "Leão", "Francesa", 'F', "Neutro", NivelDificuldade.FACIL);
     
+    private static boolean start = true;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }   
+        if(TelaPersonagensController.start) {
+            //App.personagens.add(caioLopes);
+            //App.personagens.add(catherineJones);
+            //App.personagens.add(darioAgostini);
+            //App.personagens.add(dylanAyala);
+            App.personagens.add(emaMontenegro);
+            //App.personagens.add(judyWillis);
+            //App.personagens.add(matthewWilliams);
+            //App.personagens.add(renzoAndreotti);
+            //App.personagens.add(sophiePorto);
+            //App.personagens.add(susanneLefort);
+            
+            TelaPersonagensController.start = false;
+        }
+    }
     
     //Ema Montenegro
     @FXML

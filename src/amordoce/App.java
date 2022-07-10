@@ -1,7 +1,8 @@
 package amordoce;
 
-import handlers.AudioHandler;
 import amordoce.model.Personagem;
+import java.util.HashSet;
+import java.util.Set;
         
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import javafx.stage.Stage;
 public class App extends Application {
     
     public static Personagem usuario;
+    public static Set<Personagem> personagens = new HashSet<>();
     private static Scene scene;
     
     /**
