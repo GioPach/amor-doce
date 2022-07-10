@@ -14,7 +14,6 @@ public class TelaEmaMontenegroController extends PersonagemController implements
         
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
-        esconderButtonNamoro();
         atualizarAtributosTela(TelaPersonagensController.emaMontenegro);
         listenVisibilidadeNamoro(TelaPersonagensController.emaMontenegro);
         listenVisibilidadeFofoca(TelaPersonagensController.emaMontenegro);

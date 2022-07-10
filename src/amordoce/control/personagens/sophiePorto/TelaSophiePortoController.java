@@ -14,7 +14,6 @@ public class TelaSophiePortoController extends PersonagemController implements I
         
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
-        esconderButtonNamoro();
         atualizarAtributosTela(TelaPersonagensController.sophiePorto);
         listenVisibilidadeNamoro(TelaPersonagensController.sophiePorto);
         listenVisibilidadeFofoca(TelaPersonagensController.sophiePorto);

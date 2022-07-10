@@ -14,7 +14,6 @@ public class TelaDarioAgostiniController extends PersonagemController implements
         
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
-        esconderButtonNamoro();
         atualizarAtributosTela(TelaPersonagensController.darioAgostini);
         listenVisibilidadeNamoro(TelaPersonagensController.darioAgostini);
         listenVisibilidadeFofoca(TelaPersonagensController.darioAgostini);

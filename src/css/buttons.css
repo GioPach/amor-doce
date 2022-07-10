@@ -39,13 +39,7 @@
   font-size: 14px;
   -fx-font-weight: 600;
   font-weight: 600;
-  -fx-background-radius: 10px;
-  -fx-background-color: #eb3455;
-  background-color: #eb3455;
+  -fx-background-color: transparent;
+  background-color: transparent;
 }
 
-.btnNamoro:hover {
-  -fx-text-fill: #d4d4d4;
-  -fx-background-color: #9f233a;
-  background-color: #9f233a;
-}
