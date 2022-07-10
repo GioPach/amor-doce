@@ -3,7 +3,9 @@ package amordoce.model;
 import enums.NivelDificuldade;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -11,7 +13,7 @@ public class Personagem {
 
     private String nome;
     private String turma;
-    private Personagem colega;
+    private Set<Personagem> colegas = new HashSet<>();
     private int idade;
     private String signo;
     private String nacionalidade;
@@ -63,12 +65,12 @@ public class Personagem {
         this.turma = turma;
     }
 
-    public Personagem getColega() {
-        return colega;
+    public Set<Personagem> getColegas() {
+        return this.colegas;
     }
 
     public void setColega(Personagem colega) {
-        this.colega = colega;
+        this.colegas.add(colega);
     }
 
     public int getIdade() {

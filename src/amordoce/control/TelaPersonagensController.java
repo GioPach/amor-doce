@@ -1,6 +1,7 @@
 package amordoce.control;
 
 import amordoce.App;
+import amordoce.model.Personagem;
 import amordoce.model.personagens.EmaMontenegro;
 import enums.NivelDificuldade;
 import java.net.URL;
@@ -37,6 +38,15 @@ public class TelaPersonagensController implements Initializable {
             //App.personagens.add(renzoAndreotti);
             //App.personagens.add(sophiePorto);
             //App.personagens.add(susanneLefort);
+            
+            // Verica para cada personagem a turma dos outros e coloca dentro de um array aqueles que forem da turma dele
+            for(Personagem personagem : App.personagens) {
+                for(Personagem colega : App.personagens) {
+                    if(colega != personagem && colega.getTurma().equals(personagem.getTurma())) {
+                        personagem.setColega(colega);
+                    }
+                }
+            }
             
             TelaPersonagensController.start = false;
         }
