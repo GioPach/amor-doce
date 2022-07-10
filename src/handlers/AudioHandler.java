@@ -3,29 +3,51 @@ package handlers;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.concurrent.Task;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-public class AudioHandler {
+/*
+    @author Giovani
+*/
+
+public abstract class AudioHandler extends Task<Boolean> {
     
-    final private List<MediaPlayer> players = new ArrayList<MediaPlayer>();
+    final protected List<MediaPlayer> players = new ArrayList<MediaPlayer>();
     
     /** Executa os procedimentos para a composição da playlist e toca o primeiro MediaPlayer da lista */
-    public void startPlaylist() {
+    protected void startPlaylist() {
         
-        try {
-            criarMediaPlayers(); 
-        } catch(Exception e) {
-            System.out.println("AudioHandler: " + e);
-        }        
-        setPlaylist();
-        players.get(0).play();
+        Task playlist = new Task() {
+            @Override
+            protected Boolean call() throws Exception {
+                try {
+                    criarMediaPlayers(); 
+                } catch(Exception e) {
+                    System.out.println("AudioHandler: " + e);
+                }        
+                
+                return setPlaylist();
+                
+            }
+            
+            @Override
+            protected void succeeded() {
+                players.get(0).play();
+            }
+            
+        };
+        
+        Thread thread = new Thread(playlist);
+        thread.setDaemon(true);
+        thread.start();
+        
            
     }
     
     
     /** Compõe a playlist settando o MediaPlayer a tocar após o término do anterior */
-    private void setPlaylist() {
+    protected boolean setPlaylist() {
         for (int i = 0; i < players.size(); i++) {
             final MediaPlayer player = players.get(i);
             final MediaPlayer nextPlayer = players.get((i + 1) % players.size()); // garante que reiniciará a playlist após o último MediaPlayer
@@ -36,11 +58,16 @@ public class AudioHandler {
             });   
         }
         
+        if(players.get(0).getOnEndOfMedia() != null) {
+            return true;
+        } else {
+            return false;
+        }
     }
     
     /** adiciona um MediaPlayer à lista de players para cada arquivo do diretório fonte pelo path ("diretório fonte/nome do arquivo") */
     // gera exceção caso a url do diretório fonte seja mal informada
-    private void criarMediaPlayers() throws Exception {
+    protected void criarMediaPlayers() throws Exception {
      
         final File dir = new File("src/assets/audio"); // determina o diretório fonte para a playlist 
 
@@ -55,7 +82,7 @@ public class AudioHandler {
     }
     
     /** @return um MediaPlayer para determinado áudio que reportará qualquer erro encontrado */
-    private MediaPlayer criarPlayer(String pathAudio) {
+    protected MediaPlayer criarPlayer(String pathAudio) {
         
         final MediaPlayer player = new MediaPlayer(new Media(pathAudio));
         player.setOnError(new Runnable() {

@@ -1,7 +1,7 @@
 package amordoce;
 
 import amordoce.model.Personagem;
-import handlers.AudioHandler;
+import handlers.Playlist;
 import java.util.HashSet;
 import java.util.Set;
         
@@ -17,6 +17,7 @@ public class App extends Application {
     public static Personagem usuario;
     public static Set<Personagem> personagens = new HashSet<>();
     private static Scene scene;
+    private boolean playlistPlaying;
     
     /**
      * Inicia o programa aplicando a TelaInicial como cena e implementa música de fundo
@@ -25,10 +26,10 @@ public class App extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
+        new Playlist();
         scene = new Scene(loadFXML("TelaInicial"), 1280, 720);
         stage.setScene(scene);
         stage.show();
-        new AudioHandler().startPlaylist(); 
     }
 
     /**
