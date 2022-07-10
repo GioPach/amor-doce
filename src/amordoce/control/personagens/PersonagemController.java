@@ -67,6 +67,10 @@ public class PersonagemController implements Initializable {
         }
     }
     
+    /**
+     * Gera os stats (descrição) de cada personagem que vai para a statsBox de cada personagem
+     * @param personagem 
+     */
     public void gerarStats(Personagem personagem) {
         labelNome.setText(personagem.getNome());
         labelIdade.setText(Integer.toString(personagem.getIdade()) + " anos");
