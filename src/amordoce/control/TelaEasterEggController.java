@@ -8,20 +8,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-public class TelaInicialController implements Initializable {
+public class TelaEasterEggController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
     
-    @FXML
-    private void handlerButtonJogar(ActionEvent event) throws Exception {
-        App.setRoot("TelaPersonagens");
-    }
-    
-    @FXML private void handlerButtonEasterEgg() throws Exception {
-        App.setRoot("TelaEasterEgg");
+    @FXML private void handlerButtonVoltar() throws Exception {
+        App.setRoot("TelaInicial");
     }
     
 }
