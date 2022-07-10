@@ -12,6 +12,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 
 /**
@@ -25,12 +26,13 @@ public class TelaLogEmaMontenegroController implements Initializable {
     
     @FXML
     public ListView<String> listView;
+    @FXML
+    private Button btnVoltar1;
 
     /**
      * Initializes the controller class.
      */
     @Override
-    @FXML
     public void initialize(URL url, ResourceBundle rb) {
         this.listaPerguntasRespostas = TelaPersonagensController.emaMontenegro.logPersonagem();
         listView.setItems(listaPerguntasRespostas);

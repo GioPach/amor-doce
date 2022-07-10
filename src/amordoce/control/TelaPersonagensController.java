@@ -13,7 +13,6 @@ import amordoce.model.personagens.RenzoAndreotti;
 import amordoce.model.personagens.SophiePorto;
 import amordoce.model.personagens.SusanneLefort;
 import enums.NivelDificuldade;
-import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -70,93 +69,63 @@ public class TelaPersonagensController implements Initializable {
     }
     
     //Ema Montenegro
-    private void handlerButtonEmaMontenegro(ActionEvent event) throws Exception {
+    @FXML
+    private void handlerButtonEmaMontenegro() throws Exception {
         App.setRoot("personagens/emaMontenegro/TelaEmaMontenegro");
     }
     
     //Judy Willis
-    private void handlerButtonJudyWillis(ActionEvent event) throws Exception {
+    @FXML
+    private void handlerButtonJudyWillis() throws Exception {
         App.setRoot("personagens/judyWillis/TelaJudyWillis");
     }
     
     //Dylan Ayala
-    private void handlerButtonDylanAyala(ActionEvent event) throws Exception {
+    @FXML
+    private void handlerButtonDylanAyala() throws Exception {
         App.setRoot("personagens/dylanAyala/TelaDylanAyala");
     }
     
     //Dario Agostini
-    private void handlerButtonDarioAgostini(ActionEvent event) throws Exception {
+    @FXML
+    private void handlerButtonDarioAgostini() throws Exception {
         App.setRoot("personagens/darioAgostini/TelaDarioAgostini");
     }
     
     //Matthew Williams
-    private void handlerButtonMatthewWilliams(ActionEvent event) throws Exception {
+    @FXML
+    private void handlerButtonMatthewWilliams() throws Exception {
         App.setRoot("personagens/matthewWilliams/TelaMatthewWilliams"); 
     }
     
     //Susanne Lefort
-    private void handlerButtonSusanneLefort(ActionEvent event) throws Exception {
+    @FXML
+    private void handlerButtonSusanneLefort() throws Exception {
         App.setRoot("personagens/susanneLefort/TelaSusanneLefort"); 
     }
     
     //Caio Lopes
-    private void handlerButtonCaioLopes(ActionEvent event) throws Exception {
+    @FXML
+    private void handlerButtonCaioLopes() throws Exception {
         App.setRoot("personagens/caioLopes/TelaCaioLopes"); 
     }
     
     //Renzo Andreotti
-    private void handlerButtonRenzoAndreotti(ActionEvent event) throws Exception {
+    @FXML
+    private void handlerButtonRenzoAndreotti() throws Exception {
         App.setRoot("personagens/renzoAndreotti/TelaRenzoAndreotti"); 
     }
     
     //Sophie Porto
-    private void handlerButtonSophiePorto(ActionEvent event) throws Exception {
+    @FXML
+    private void handlerButtonSophiePorto() throws Exception {
         App.setRoot("personagens/sophiePorto/TelaSophiePorto"); 
     }
     
     //Catherine Jones
-    private void handlerButtonCatherineJones(ActionEvent event) throws Exception {
+    @FXML
+    private void handlerButtonCatherineJones() throws Exception {
         App.setRoot("personagens/catherineJones/TelaCatherineJones"); 
     }
 
-    @FXML
-    private void handlerButtonEmaMontenegro(javafx.event.ActionEvent event) {
-    }
-
-    @FXML
-    private void handlerButtonDarioAgostini(javafx.event.ActionEvent event) {
-    }
-
-    @FXML
-    private void handlerButtonJudyWillis(javafx.event.ActionEvent event) {
-    }
-
-    @FXML
-    private void handlerButtonDylanAyala(javafx.event.ActionEvent event) {
-    }
-
-    @FXML
-    private void handlerButtonMatthewWilliams(javafx.event.ActionEvent event) {
-    }
-
-    @FXML
-    private void handlerButtonSusanneLefort(javafx.event.ActionEvent event) {
-    }
-
-    @FXML
-    private void handlerButtonCaioLopes(javafx.event.ActionEvent event) {
-    }
-
-    @FXML
-    private void handlerButtonSophiePorto(javafx.event.ActionEvent event) {
-    }
-
-    @FXML
-    private void handlerButtonCatherineJones(javafx.event.ActionEvent event) {
-    }
-
-    @FXML
-    private void handlerButtonRenzoAndreotti(javafx.event.ActionEvent event) {
-    }
-    
 }
