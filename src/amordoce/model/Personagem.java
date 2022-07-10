@@ -200,8 +200,10 @@ public class Personagem {
         
         if(tmpEnergia > 1.0) {
             this.energia = 1.0;
+        } else if (tmpEnergia < 0.0){
+            this.energia = 0.0;
         } else {
-            this.energia += deltaEnergia;    
+            this.energia = tmpEnergia;
         }
         
     }
@@ -212,8 +214,11 @@ public class Personagem {
      */    
     public void atualizarInteresse(double deltaInteresse) {   
         double interesseFinal = arredondarDuasCasasDecimais(this.interesse + deltaInteresse);
-        if(interesseFinal < -1) {
-            this.interesse = -1.0;
+        
+        if(interesseFinal > 1) {
+            this.interesse = 1.0;
+        } else if(interesseFinal < 0) {
+            this.interesse = 0.0;
         } else {
             this.interesse = interesseFinal;
         }
