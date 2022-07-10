@@ -37,88 +37,126 @@ public class TelaPersonagensController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         if(TelaPersonagensController.start) {
-            App.personagens.add(caioLopes);
-            App.personagens.add(catherineJones);
-            App.personagens.add(darioAgostini);
-            App.personagens.add(dylanAyala);
-            App.personagens.add(emaMontenegro);
-            App.personagens.add(judyWillis);
-            App.personagens.add(matthewWilliams);
-            App.personagens.add(renzoAndreotti);
-            App.personagens.add(sophiePorto);
-            App.personagens.add(susanneLefort);
-            
-            // Verica para cada personagem a turma dos outros e coloca dentro de um array aqueles que forem da turma dele
-            for(Personagem personagem : App.personagens) {
-                for(Personagem colega : App.personagens) {
-                    if(colega != personagem && colega.getTurma().equals(personagem.getTurma())) {
-                        personagem.setColega(colega);
-                    }
-                }
-            }
-            
+            initPersonagens();          
             TelaPersonagensController.start = false;
         }
     }
     
+    private void initPersonagens() {
+        App.personagens.add(caioLopes);
+        App.personagens.add(catherineJones);
+        App.personagens.add(darioAgostini);
+        App.personagens.add(dylanAyala);
+        App.personagens.add(emaMontenegro);
+        App.personagens.add(judyWillis);
+        App.personagens.add(matthewWilliams);
+        App.personagens.add(renzoAndreotti);
+        App.personagens.add(sophiePorto);
+        App.personagens.add(susanneLefort);
+        
+        instanciarColegas();
+                
+    }
+    
+    private void instanciarColegas() {
+        // Verica para cada personagem a turma dos outros e coloca dentro de um array aqueles que forem da turma dele
+        for(Personagem personagem : App.personagens) {
+            for(Personagem colega : App.personagens) {
+                if(colega != personagem && colega.getTurma().equals(personagem.getTurma())) {
+                    personagem.setColega(colega);
+                }
+            }
+        }
+    }
+    
     //Ema Montenegro
-    @FXML
     private void handlerButtonEmaMontenegro(ActionEvent event) throws Exception {
         App.setRoot("personagens/emaMontenegro/TelaEmaMontenegro");
     }
     
     //Judy Willis
-    @FXML
     private void handlerButtonJudyWillis(ActionEvent event) throws Exception {
         App.setRoot("personagens/judyWillis/TelaJudyWillis");
     }
     
     //Dylan Ayala
-    @FXML
     private void handlerButtonDylanAyala(ActionEvent event) throws Exception {
         App.setRoot("personagens/dylanAyala/TelaDylanAyala");
     }
     
     //Dario Agostini
-    @FXML
     private void handlerButtonDarioAgostini(ActionEvent event) throws Exception {
         App.setRoot("personagens/darioAgostini/TelaDarioAgostini");
     }
     
     //Matthew Williams
-    @FXML
     private void handlerButtonMatthewWilliams(ActionEvent event) throws Exception {
         App.setRoot("personagens/matthewWilliams/TelaMatthewWilliams"); 
     }
     
     //Susanne Lefort
-    @FXML
     private void handlerButtonSusanneLefort(ActionEvent event) throws Exception {
         App.setRoot("personagens/susanneLefort/TelaSusanneLefort"); 
     }
     
     //Caio Lopes
-    @FXML
     private void handlerButtonCaioLopes(ActionEvent event) throws Exception {
         App.setRoot("personagens/caioLopes/TelaCaioLopes"); 
     }
     
     //Renzo Andreotti
-    @FXML
     private void handlerButtonRenzoAndreotti(ActionEvent event) throws Exception {
         App.setRoot("personagens/renzoAndreotti/TelaRenzoAndreotti"); 
     }
     
     //Sophie Porto
-    @FXML
     private void handlerButtonSophiePorto(ActionEvent event) throws Exception {
         App.setRoot("personagens/sophiePorto/TelaSophiePorto"); 
     }
     
     //Catherine Jones
-    @FXML
     private void handlerButtonCatherineJones(ActionEvent event) throws Exception {
         App.setRoot("personagens/catherineJones/TelaCatherineJones"); 
+    }
+
+    @FXML
+    private void handlerButtonEmaMontenegro(javafx.event.ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerButtonDarioAgostini(javafx.event.ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerButtonJudyWillis(javafx.event.ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerButtonDylanAyala(javafx.event.ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerButtonMatthewWilliams(javafx.event.ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerButtonSusanneLefort(javafx.event.ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerButtonCaioLopes(javafx.event.ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerButtonSophiePorto(javafx.event.ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerButtonCatherineJones(javafx.event.ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerButtonRenzoAndreotti(javafx.event.ActionEvent event) {
     }
     
 }
