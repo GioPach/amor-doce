@@ -14,7 +14,6 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
         
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
-        esconderButtonNamoro();
         atualizarAtributosTela(TelaPersonagensController.caioLopes);
         listenVisibilidadeNamoro(TelaPersonagensController.caioLopes);
         TelaPersonagensController.caioLopes.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3

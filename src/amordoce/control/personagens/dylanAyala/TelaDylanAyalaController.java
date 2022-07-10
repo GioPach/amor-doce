@@ -14,7 +14,6 @@ public class TelaDylanAyalaController extends PersonagemController implements In
         
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
-        esconderButtonNamoro();
         atualizarAtributosTela(TelaPersonagensController.dylanAyala);
         listenVisibilidadeNamoro(TelaPersonagensController.dylanAyala);
         TelaPersonagensController.dylanAyala.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3

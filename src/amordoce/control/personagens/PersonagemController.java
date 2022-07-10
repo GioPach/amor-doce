@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 public class PersonagemController implements Initializable {
@@ -33,7 +34,7 @@ public class PersonagemController implements Initializable {
     @FXML
     public Button btnProxima;
     @FXML
-    public Button btnNamoro;
+    public Pane btnNamoro;
     @FXML
     public VBox statsBox;
     @FXML
@@ -49,7 +50,7 @@ public class PersonagemController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        esconderButtonNamoro();
     }
     
     @FXML
@@ -110,7 +111,12 @@ public class PersonagemController implements Initializable {
     
     @FXML
     public void esconderButtonNamoro() {
-        this.setVisibilidadeButton(this.btnNamoro, false);
+        this.btnNamoro.setVisible(false);
+    }
+    
+    @FXML
+    public void mostrarButtonNamoro() {
+        this.btnNamoro.setVisible(true);
     }
     
     /**
@@ -120,9 +126,9 @@ public class PersonagemController implements Initializable {
     @FXML
     public void listenVisibilidadeNamoro(Personagem personagem) {
         if(personagem.validarInteresse()) {
-            this.setVisibilidadeButton(this.btnNamoro, true);
+            mostrarButtonNamoro();
         } else {
-            this.setVisibilidadeButton(this.btnNamoro, false);
+            esconderButtonNamoro();
         }
     }
     
@@ -146,4 +152,6 @@ public class PersonagemController implements Initializable {
     public void setVisibilidadeButton(Button button, boolean visibilidade) {
         button.setVisible(visibilidade);
     }
+    
+   
 }

@@ -14,7 +14,6 @@ public class TelaJudyWillisController extends PersonagemController implements In
         
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
-        esconderButtonNamoro();
         atualizarAtributosTela(TelaPersonagensController.judyWillis);
         listenVisibilidadeNamoro(TelaPersonagensController.judyWillis);
         TelaPersonagensController.judyWillis.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3

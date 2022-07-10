@@ -14,7 +14,6 @@ public class TelaMatthewWilliamsController extends PersonagemController implemen
         
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
-        esconderButtonNamoro();
         atualizarAtributosTela(TelaPersonagensController.matthewWilliams);
         listenVisibilidadeNamoro(TelaPersonagensController.matthewWilliams);
         TelaPersonagensController.matthewWilliams.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
