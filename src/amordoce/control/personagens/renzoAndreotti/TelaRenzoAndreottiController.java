@@ -17,6 +17,7 @@ public class TelaRenzoAndreottiController extends PersonagemController implement
         esconderButtonNamoro();
         atualizarAtributosTela(TelaPersonagensController.renzoAndreotti);
         listenVisibilidadeNamoro(TelaPersonagensController.renzoAndreotti);
+        listenVisibilidadeFofoca(TelaPersonagensController.renzoAndreotti);
         TelaPersonagensController.renzoAndreotti.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.renzoAndreotti);
         setVisibilidadeButton(this.btnProxima, false);
@@ -25,7 +26,10 @@ public class TelaRenzoAndreottiController extends PersonagemController implement
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
+        TelaPersonagensController.renzoAndreotti.setFofoca("");
+        
         listenVisibilidadeNamoro(TelaPersonagensController.renzoAndreotti);
+        listenVisibilidadeFofoca(TelaPersonagensController.renzoAndreotti);
         TelaPersonagensController.renzoAndreotti.verificarRespostaConversa3();
         carregarConversa(TelaPersonagensController.renzoAndreotti);
         setVisibilidadeButton(this.btnProxima, false);

@@ -1,0 +1,15 @@
+.labelFofoca {
+    -fx-background-color: #ffd900;
+    background-color: #ffd900;
+    -fx-background-radius: 10px;
+    -fx-font-family: "Berlin Sans FB";
+    font-family: "Berlin Sans FB";
+    -fx-font-size: 17px;
+    font-size: 17px;
+    -fx-font-weight: 600;
+    font-weight: 600;
+    -fx-padding: 5px;
+    padding: 5px;
+    -fx-text-alignment: center;
+    text-align: center;
+}

@@ -17,6 +17,7 @@ public class TelaSusanneLefortController extends PersonagemController implements
         esconderButtonNamoro();
         atualizarAtributosTela(TelaPersonagensController.susanneLefort);
         listenVisibilidadeNamoro(TelaPersonagensController.susanneLefort);
+        listenVisibilidadeFofoca(TelaPersonagensController.susanneLefort);
         TelaPersonagensController.susanneLefort.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.susanneLefort);
         setVisibilidadeButton(this.btnProxima, false);
@@ -25,7 +26,10 @@ public class TelaSusanneLefortController extends PersonagemController implements
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
+        TelaPersonagensController.susanneLefort.setFofoca("");
+        
         listenVisibilidadeNamoro(TelaPersonagensController.susanneLefort);
+        listenVisibilidadeFofoca(TelaPersonagensController.susanneLefort);
         TelaPersonagensController.susanneLefort.verificarRespostaConversa3();
         carregarConversa(TelaPersonagensController.susanneLefort);
         setVisibilidadeButton(this.btnProxima, false);

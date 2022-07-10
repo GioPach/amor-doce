@@ -17,6 +17,7 @@ public class TelaDarioAgostiniController extends PersonagemController implements
         esconderButtonNamoro();
         atualizarAtributosTela(TelaPersonagensController.darioAgostini);
         listenVisibilidadeNamoro(TelaPersonagensController.darioAgostini);
+        listenVisibilidadeFofoca(TelaPersonagensController.darioAgostini);
         TelaPersonagensController.darioAgostini.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.darioAgostini);
         setVisibilidadeButton(this.btnProxima, false);
@@ -25,7 +26,10 @@ public class TelaDarioAgostiniController extends PersonagemController implements
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
+        TelaPersonagensController.darioAgostini.setFofoca("");
+        
         listenVisibilidadeNamoro(TelaPersonagensController.darioAgostini);
+        listenVisibilidadeFofoca(TelaPersonagensController.darioAgostini);
         TelaPersonagensController.darioAgostini.verificarRespostaConversa3();
         carregarConversa(TelaPersonagensController.darioAgostini);
         setVisibilidadeButton(this.btnProxima, false);

@@ -17,6 +17,7 @@ public class TelaMatthewWilliamsController extends PersonagemController implemen
         esconderButtonNamoro();
         atualizarAtributosTela(TelaPersonagensController.matthewWilliams);
         listenVisibilidadeNamoro(TelaPersonagensController.matthewWilliams);
+        listenVisibilidadeFofoca(TelaPersonagensController.matthewWilliams);
         TelaPersonagensController.matthewWilliams.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.matthewWilliams);
         setVisibilidadeButton(this.btnProxima, false);
@@ -25,7 +26,10 @@ public class TelaMatthewWilliamsController extends PersonagemController implemen
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
+        TelaPersonagensController.matthewWilliams.setFofoca("");
+        
         listenVisibilidadeNamoro(TelaPersonagensController.matthewWilliams);
+        listenVisibilidadeFofoca(TelaPersonagensController.matthewWilliams);
         TelaPersonagensController.matthewWilliams.verificarRespostaConversa3();
         carregarConversa(TelaPersonagensController.matthewWilliams);
         setVisibilidadeButton(this.btnProxima, false);

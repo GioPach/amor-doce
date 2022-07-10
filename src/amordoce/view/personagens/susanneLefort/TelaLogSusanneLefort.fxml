@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.emaMontenegro.TelaLogEmaMontenegroController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.susanneLefort.TelaLogSusanneLefortController">
    <children>
       <ListView fx:id="listView" layoutX="306.0" layoutY="93.0" prefHeight="534.0" prefWidth="668.0" style="-fx-background-color: #d4d4d4;" />
       <Button fx:id="btnVoltar1" layoutX="1141.0" layoutY="33.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Voltar" textFill="WHITE">

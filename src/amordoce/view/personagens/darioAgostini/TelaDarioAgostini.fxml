@@ -210,5 +210,6 @@
             </HBox>
          </children>
       </VBox>
+      <Label fx:id="labelFofoca" alignment="CENTER" layoutX="355.0" layoutY="77.0" prefHeight="62.0" prefWidth="577.0" styleClass="labelFofoca" stylesheets="@../../../../css/labelFofoca.css" textAlignment="CENTER" visible="false" wrapText="true" />
    </children>
 </AnchorPane>

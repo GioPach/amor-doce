@@ -46,6 +46,8 @@ public class PersonagemController implements Initializable {
     public Label labelNacionalidade;
     @FXML
     public Label labelTurma;
+    @FXML
+    public Label labelFofoca;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -77,6 +79,20 @@ public class PersonagemController implements Initializable {
         labelSigno.setText(personagem.getSigno());
         labelNacionalidade.setText(personagem.getNacionalidade());
         labelTurma.setText(personagem.getTurma());
+    }
+    
+    /**
+     * Verifica se alguém fofocou com o personagem e ativa ou desativa a visibilidade da label de fofoca
+     * @param personagem 
+     */
+    public void listenVisibilidadeFofoca(Personagem personagem) {
+        if(!personagem.getFofoca().isEmpty()) {
+            labelFofoca.setVisible(true);
+            labelFofoca.setText(personagem.getFofoca());
+        }
+        else {
+            labelFofoca.setVisible(false);
+        }
     }
     
     /**
