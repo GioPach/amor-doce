@@ -1,6 +1,9 @@
 import java.util.Random;
 import java.util.Scanner;
-
+/**
+ *
+ * @author Giovani
+ */
 public class TesteSorteio {
     
     /*
