@@ -20,6 +20,7 @@ public class TelaDylanAyalaController extends PersonagemController implements In
         TelaPersonagensController.dylanAyala.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.dylanAyala);
         setVisibilidadeButton(this.btnProxima, false);
+        gerarStats(TelaPersonagensController.dylanAyala);
     }
     
     @FXML

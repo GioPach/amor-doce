@@ -20,6 +20,7 @@ public class TelaCatherineJonesController extends PersonagemController implement
         TelaPersonagensController.catherineJones.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.catherineJones);
         setVisibilidadeButton(this.btnProxima, false);
+        gerarStats(TelaPersonagensController.catherineJones);
     }
     
     @FXML

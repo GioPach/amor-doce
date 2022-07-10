@@ -20,6 +20,7 @@ public class TelaRenzoAndreottiController extends PersonagemController implement
         TelaPersonagensController.renzoAndreotti.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.renzoAndreotti);
         setVisibilidadeButton(this.btnProxima, false);
+        gerarStats(TelaPersonagensController.renzoAndreotti);
     }
     
     @FXML

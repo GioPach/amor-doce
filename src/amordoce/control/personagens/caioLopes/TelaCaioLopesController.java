@@ -20,6 +20,7 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
         TelaPersonagensController.caioLopes.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.caioLopes);
         setVisibilidadeButton(this.btnProxima, false);
+        gerarStats(TelaPersonagensController.caioLopes);
     }
     
     @FXML

@@ -20,6 +20,7 @@ public class TelaJudyWillisController extends PersonagemController implements In
         TelaPersonagensController.judyWillis.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.judyWillis);
         setVisibilidadeButton(this.btnProxima, false);
+        gerarStats(TelaPersonagensController.judyWillis);
     }
     
     @FXML

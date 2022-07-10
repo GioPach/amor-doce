@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
 public class PersonagemController implements Initializable {
     
@@ -33,6 +34,18 @@ public class PersonagemController implements Initializable {
     public Button btnProxima;
     @FXML
     public Button btnNamoro;
+    @FXML
+    public VBox statsBox;
+    @FXML
+    public Label labelNome;
+    @FXML
+    public Label labelIdade;
+    @FXML
+    public Label labelSigno;
+    @FXML
+    public Label labelNacionalidade;
+    @FXML
+    public Label labelTurma;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -42,6 +55,24 @@ public class PersonagemController implements Initializable {
     @FXML
     private void handlerButtonVoltar(ActionEvent event) throws Exception {
         App.setRoot("TelaPersonagens");
+    }
+    
+    @FXML
+    private void handlerMostrarStats(ActionEvent event) throws Exception {
+        if(statsBox.isVisible()) {
+            statsBox.setVisible(false);
+        }
+        else {
+            statsBox.setVisible(true);
+        }
+    }
+    
+    public void gerarStats(Personagem personagem) {
+        labelNome.setText(personagem.getNome());
+        labelIdade.setText(Integer.toString(personagem.getIdade()) + " anos");
+        labelSigno.setText(personagem.getSigno());
+        labelNacionalidade.setText(personagem.getNacionalidade());
+        labelTurma.setText(personagem.getTurma());
     }
     
     /**

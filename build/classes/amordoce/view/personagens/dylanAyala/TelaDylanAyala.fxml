@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -32,7 +34,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <VBox layoutX="323.0" layoutY="460.0" prefHeight="168.0" prefWidth="602.0" spacing="20.0">
+      <VBox layoutX="332.0" layoutY="459.0" prefHeight="168.0" prefWidth="602.0" spacing="20.0">
          <children>
             <Button fx:id="btnOpcaoA" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="602.0" wrapText="true">
                <cursor>
@@ -84,5 +86,129 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Button layoutX="235.0" layoutY="450.0" mnemonicParsing="false" onAction="#handlerMostrarStats" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Stats" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <VBox fx:id="statsBox" layoutX="30.0" layoutY="494.0" prefHeight="161.0" prefWidth="273.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px; -fx-border-color: #000; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-padding: 10px;" visible="false">
+         <children>
+            <HBox prefWidth="249.0">
+               <children>
+                  <Label text="Nome:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelNome" prefHeight="20.0" prefWidth="205.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefWidth="249.0">
+               <children>
+                  <Label text="Idade:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelIdade" prefHeight="20.0" prefWidth="208.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefWidth="249.0">
+               <children>
+                  <Label text="Signo:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelSigno" prefHeight="20.0" prefWidth="201.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefWidth="249.0">
+               <children>
+                  <Label text="Nacionalidade:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelNacionalidade" prefHeight="20.0" prefWidth="150.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="22.0" layoutY="22.0" prefWidth="249.0">
+               <children>
+                  <Label text="Turma:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelTurma" prefHeight="20.0" prefWidth="201.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

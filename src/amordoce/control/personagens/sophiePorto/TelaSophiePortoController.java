@@ -20,6 +20,7 @@ public class TelaSophiePortoController extends PersonagemController implements I
         TelaPersonagensController.sophiePorto.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.sophiePorto);
         setVisibilidadeButton(this.btnProxima, false);
+        gerarStats(TelaPersonagensController.sophiePorto);
     }
     
     @FXML

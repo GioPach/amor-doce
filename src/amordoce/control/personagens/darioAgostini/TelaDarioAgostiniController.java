@@ -1,6 +1,7 @@
 package amordoce.control.personagens.darioAgostini;
 
 import amordoce.App;
+import amordoce.control.TelaPersonagensController;
 import amordoce.control.personagens.PersonagemController;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +20,7 @@ public class TelaDarioAgostiniController extends PersonagemController implements
         TelaPersonagensController.darioAgostini.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.darioAgostini);
         setVisibilidadeButton(this.btnProxima, false);
+        gerarStats(TelaPersonagensController.darioAgostini);
     }
     
     @FXML

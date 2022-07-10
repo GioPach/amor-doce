@@ -20,6 +20,7 @@ public class TelaMatthewWilliamsController extends PersonagemController implemen
         TelaPersonagensController.matthewWilliams.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.matthewWilliams);
         setVisibilidadeButton(this.btnProxima, false);
+        gerarStats(TelaPersonagensController.matthewWilliams);
     }
     
     @FXML

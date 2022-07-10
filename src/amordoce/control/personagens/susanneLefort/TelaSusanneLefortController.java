@@ -20,6 +20,7 @@ public class TelaSusanneLefortController extends PersonagemController implements
         TelaPersonagensController.susanneLefort.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.susanneLefort);
         setVisibilidadeButton(this.btnProxima, false);
+        gerarStats(TelaPersonagensController.susanneLefort);
     }
     
     @FXML

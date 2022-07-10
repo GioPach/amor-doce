@@ -20,6 +20,7 @@ public class TelaEmaMontenegroController extends PersonagemController implements
         TelaPersonagensController.emaMontenegro.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
         carregarConversa(TelaPersonagensController.emaMontenegro);
         setVisibilidadeButton(this.btnProxima, false);
+        gerarStats(TelaPersonagensController.emaMontenegro);
     }
     
     @FXML
