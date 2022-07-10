@@ -1,76 +1,47 @@
 # Amor Doce
-### Projeto JavaFx - IFRS Campus Canoas 2022/1
 
-<p>amordoce - diretório principal: telas, controladores, modelos, handlers e App.java</p>
-<p>assets - diretório de recursos: imagens, áudios, vídeos, etc.</p>
-<p>css - diretório de estilos CSS</p>
+    Projeto JavaFx - IFRS Campus Canoas 2022/1
 
-# Time de desenvolvimento
-<p>Filipe Siota</p>
-<p>Gabriela Estigarribia</p>
-<p>Giovani Signori</p>
+## Diretórios
 
-# Classes
+``src/amordoce`` - Diretório principal: telas, controladores, modelos, handlers e App.java
 
-## App (Comentada)
+``src/assets`` - Diretório de recursos: imagens, áudios, vídeos, etc.
 
-- [ ] `public static Personagem usuario` - Nome do usuário
-- [ ] `public static Set<Personagem> personagens = new HashSet<>()` - Array de personagens para fofoca
-- [x] `Scene` - Trocas de cena
+``src/css`` - Diretório de estilos CSS
 
-## Personagem (Comentada)
+## Time de desenvolvimento
 
-- [x] - nome: String
-- [x] - idade: int
-- [x] - signo: String
-- [x] - nacionalidade: String
-- [x] - genero: char
-- [x] + conversas: Set<Conversa>
-- [x] + conversasConcluidas: Set<Conversa>
+- [Filipe Siota](https://github.com/FilipeSiota)
+- [Gabriela Estigarribia](https://github.com/estigarribia08)
+- [Giovani Signori](https://github.com/GioPach)
 
-- Barras:
+## Regras de Commit
 
-- [x] - humor: String (feliz, empolgado, etc)
-- [ ] - energia: double (REVISAR)
-- [ ] - interesse: double (REVISAR)
-- [x] - nivel: String
+Se possível (e quando necessário), o commit deve manter um corpo estrutural padronizado. Utilizaremos o padrão utilizado em alguns projetos do Google (simplificado)
 
-- Métodos:
+``TYPE(TARGET): DESCRIPTION``
 
-- [x] + getConversaAtual(): Conversa
-- [x] + concluirConversa(): void (adicionado a conversa às já concluídas para ter o log depois)
-- [x] + atualizarInteresse(): void
-- [x] + atualizarHumor(): void
-- [x] + atualizarEnergia(): void
-- [x] + logPersonagem(): ObservableList<String> (????)
+O ``TARGET`` é o alvo de modificações do commit, podendo ser um arquivo, ou um módulo da aplicação. E a ``DESCRIPTION`` é uma descrição breve do que foi feito no commit.
 
-### Herança (NomePersonagem)
+### Types Permitidos
 
-- [ ] construção da personagem pelo método `super` dentro do contrutor (REVISAR)
-- [x] - setarConversas(): void (seta as conversas referentes a esta personagem)
+- FEAT: Commits com adição de funcionalidade (Seja ela pronta ou em progresso);
+- FIX: Um bugfix. Se houver uma Issue relacionada, deve-se fechá-la;
+- REFACT: Algumas melhorias de código (Sejam elas de performance, de limpeza, ou de documentação);
 
-## Conversa (Comentada)
+### Referenciando uma Issue ao commit
 
-- [x] - id: int
-- [x] - personagem: Personagem
-- [x] - pergunta: String
-- [x] - respostasPossiveis: Set<Resposta>
-- [x] - reacoesPossiveis: Set<Resposta> (possíveis respostas dos personagens de acordo com a opção escolhida pelo usuário)
-- [x] - respostaUsuario: Resposta
+Para referenciar um commit a uma determinada Issue cadastrada aqui no Github, o commit deve conter (por padrão):
 
-- Métodos:
+``COMMIT_MESSAGE #ISSUE_NUMBER``
 
-- [x] + setRespostaUsuario(): void (atualiza os valores das barras do personagem de acordo com a resposta escolhida pelo usuário)
-- [x] + getResposta(): String (o texto da resposta do usuário)
-- [x] + getReacao(): String (o texto da reação do personagem)
-- [x] + escolherResposta(): void (faz a escolha da resposta de uma conversa)
-- [x] - buscarReacao(): Resposta (valida a busca pela reação de acordo com a opção escolhida)
-- [x] - buscarResposta(): Resposta (valida a busca pela resposta de acordo com a opção escolhida)
+``COMMIT_MESSAGE`` sendo a mensagem em si e ``ISSUE_NUMBER`` o número da Issue aqui no Github.
 
-## Resposta (Comentada)
+### Fechando Issues
 
-- [x] - id: int
-- [x] - texto: String
-- [x] - humorFinal: String
-- [ ] - deltaEnergia: double (REVISAR)
-- [ ] - deltaInteresse: double (REVISAR)
+Para fechar uma Issue cadastrada aqui no Github, o commit deve conter (por padrão):
+
+``COMMIT_MESSAGE closes #ISSUE_NUMBER``
+
+``COMMIT_MESSAGE`` sendo a mensagem em si e ``ISSUE_NUMBER`` o número da Issue aqui no Github.
