@@ -2,14 +2,10 @@ package amordoce.control.personagens.judyWillis;
 
 import amordoce.App;
 import amordoce.control.personagens.PersonagemController;
-import amordoce.model.Conversa;
-import amordoce.model.Resposta;
-import amordoce.model.personagens.EmaMontenegro;
+import amordoce.model.personagens.JudyWillis;
 import enums.NivelDificuldade;
 import java.net.URL;
-import java.util.HashSet;
 import java.util.ResourceBundle;
-import java.util.Set;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,29 +13,29 @@ import javafx.scene.control.Button;
 
 public class TelaJudyWillisController extends PersonagemController implements Initializable {
     
-    public static EmaMontenegro ema = new EmaMontenegro("Ema Montenegro", "DS3", 21, "Gêmeos", "Espanhola", 'F', "Neutro", NivelDificuldade.FACIL);
+    public static JudyWillis judyWillis = new JudyWillis("Judy Willis", "Administração", 22, "Sagitário", "Alemã", 'F', "Neutro", NivelDificuldade.FACIL);
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
         esconderButtonNamoro();
-        atualizarAtributosTela(ema);
-        listenVisibilidadeNamoro(ema);
-        ema.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
-        carregarConversa(ema);
+        atualizarAtributosTela(judyWillis);
+        listenVisibilidadeNamoro(judyWillis);
+        judyWillis.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
+        carregarConversa(judyWillis);
         setVisibilidadeButton(this.btnProxima, false);
     }
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
-        listenVisibilidadeNamoro(ema);
-        ema.verificarRespostaConversa3();
-        carregarConversa(ema);
+        listenVisibilidadeNamoro(judyWillis);
+        judyWillis.verificarRespostaConversa3();
+        carregarConversa(judyWillis);
         setVisibilidadeButton(this.btnProxima, false);
     }
     
      @FXML
     public void handlerPedirEmNamoro(ActionEvent event) throws Exception {
-        if(ema.pedirEmNamoro()) {
+        if(judyWillis.pedirEmNamoro()) {
             System.out.println("SIM");
         } else {
             System.out.println("NAO");
@@ -48,7 +44,7 @@ public class TelaJudyWillisController extends PersonagemController implements In
     
     @FXML
     private void handlerLogConversas(ActionEvent event) throws Exception {
-        App.setRoot("personagens/emaMontenegro/TelaLogEmaMontenegro");
+        App.setRoot("personagens/judyWillis/TelaLogJudyWillis");
     }
     
     @FXML
@@ -77,10 +73,10 @@ public class TelaJudyWillisController extends PersonagemController implements In
                 
         }
         
-        ema.getConversaAtual().escolherResposta(idResposta);
-        atualizarAtributosTela(ema);
-        labelPergunta.setText(ema.getConversaAtual().getReacao(idResposta));
-        ema.concluirConversa(ema.getConversaAtual().getId());
+        judyWillis.getConversaAtual().escolherResposta(idResposta);
+        atualizarAtributosTela(judyWillis);
+        labelPergunta.setText(judyWillis.getConversaAtual().getReacao(idResposta));
+        judyWillis.concluirConversa(judyWillis.getConversaAtual().getId());
         setVisibilidadeRespostas(false);
         setVisibilidadeButton(this.btnProxima, true);
     }

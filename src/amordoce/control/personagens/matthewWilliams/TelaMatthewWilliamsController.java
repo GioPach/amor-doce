@@ -2,14 +2,10 @@ package amordoce.control.personagens.matthewWilliams;
 
 import amordoce.App;
 import amordoce.control.personagens.PersonagemController;
-import amordoce.model.Conversa;
-import amordoce.model.Resposta;
-import amordoce.model.personagens.EmaMontenegro;
+import amordoce.model.personagens.MatthewWilliams;
 import enums.NivelDificuldade;
 import java.net.URL;
-import java.util.HashSet;
 import java.util.ResourceBundle;
-import java.util.Set;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,29 +13,29 @@ import javafx.scene.control.Button;
 
 public class TelaMatthewWilliamsController extends PersonagemController implements Initializable {
     
-    public static EmaMontenegro ema = new EmaMontenegro("Ema Montenegro", "DS3", 21, "Gêmeos", "Espanhola", 'F', "Neutro", NivelDificuldade.FACIL);
+    public static MatthewWilliams matthewWilliams = new MatthewWilliams("Matthew Williams", "Música", 23, "Aquário", "Alemão", 'M', "Neutro", NivelDificuldade.FACIL);
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
         esconderButtonNamoro();
-        atualizarAtributosTela(ema);
-        listenVisibilidadeNamoro(ema);
-        ema.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
-        carregarConversa(ema);
+        atualizarAtributosTela(matthewWilliams);
+        listenVisibilidadeNamoro(matthewWilliams);
+        matthewWilliams.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
+        carregarConversa(matthewWilliams);
         setVisibilidadeButton(this.btnProxima, false);
     }
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
-        listenVisibilidadeNamoro(ema);
-        ema.verificarRespostaConversa3();
-        carregarConversa(ema);
+        listenVisibilidadeNamoro(matthewWilliams);
+        matthewWilliams.verificarRespostaConversa3();
+        carregarConversa(matthewWilliams);
         setVisibilidadeButton(this.btnProxima, false);
     }
     
      @FXML
     public void handlerPedirEmNamoro(ActionEvent event) throws Exception {
-        if(ema.pedirEmNamoro()) {
+        if(matthewWilliams.pedirEmNamoro()) {
             System.out.println("SIM");
         } else {
             System.out.println("NAO");
@@ -48,7 +44,7 @@ public class TelaMatthewWilliamsController extends PersonagemController implemen
     
     @FXML
     private void handlerLogConversas(ActionEvent event) throws Exception {
-        App.setRoot("personagens/emaMontenegro/TelaLogEmaMontenegro");
+        App.setRoot("personagens/matthewWilliams/TelaLogMatthewWilliams");
     }
     
     @FXML
@@ -77,10 +73,10 @@ public class TelaMatthewWilliamsController extends PersonagemController implemen
                 
         }
         
-        ema.getConversaAtual().escolherResposta(idResposta);
-        atualizarAtributosTela(ema);
-        labelPergunta.setText(ema.getConversaAtual().getReacao(idResposta));
-        ema.concluirConversa(ema.getConversaAtual().getId());
+        matthewWilliams.getConversaAtual().escolherResposta(idResposta);
+        atualizarAtributosTela(matthewWilliams);
+        labelPergunta.setText(matthewWilliams.getConversaAtual().getReacao(idResposta));
+        matthewWilliams.concluirConversa(matthewWilliams.getConversaAtual().getId());
         setVisibilidadeRespostas(false);
         setVisibilidadeButton(this.btnProxima, true);
     }

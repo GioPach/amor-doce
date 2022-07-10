@@ -31,13 +31,13 @@ public class TelaLogSophiePortoController implements Initializable {
     @Override
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        this.listaPerguntasRespostas = TelaSophiePortoController.ema.logPersonagem();
+        this.listaPerguntasRespostas = TelaSophiePortoController.sophiePorto.logPersonagem();
         listView.setItems(listaPerguntasRespostas);
     }    
     
     @FXML
     private void handlerButtonVoltar(ActionEvent event) throws Exception {
-        App.setRoot("personagens/emaMontenegro/TelaEmaMontenegro");
+        App.setRoot("personagens/sophiePorto/TelaSophiePorto");
     }
     
   

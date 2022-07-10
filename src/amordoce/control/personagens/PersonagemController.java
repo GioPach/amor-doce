@@ -62,10 +62,10 @@ public class PersonagemController implements Initializable {
         Conversa conversa = personagem.getConversaAtual();
 
         if(conversa.getId() == -1) {
-            setVisibilidadeRespostas(false);
+            this.setVisibilidadeRespostas(false);
             labelPergunta.setText("...");
         } else {
-            setVisibilidadeRespostas(true);
+            this.setVisibilidadeRespostas(true);
             labelPergunta.setText(personagem.getConversaAtual().getPergunta());
             btnOpcaoA.setText(personagem.getConversaAtual().getResposta(0));
             btnOpcaoB.setText(personagem.getConversaAtual().getResposta(1));
@@ -75,7 +75,7 @@ public class PersonagemController implements Initializable {
     
     @FXML
     public void esconderButtonNamoro() {
-        setVisibilidadeButton(this.btnNamoro, false);
+        this.setVisibilidadeButton(this.btnNamoro, false);
     }
     
     /**
@@ -85,9 +85,9 @@ public class PersonagemController implements Initializable {
     @FXML
     public void listenVisibilidadeNamoro(Personagem personagem) {
         if(personagem.validarInteresse()) {
-            setVisibilidadeButton(this.btnNamoro, true);
+            this.setVisibilidadeButton(this.btnNamoro, true);
         } else {
-            setVisibilidadeButton(this.btnNamoro, false);
+            this.setVisibilidadeButton(this.btnNamoro, false);
         }
     }
     

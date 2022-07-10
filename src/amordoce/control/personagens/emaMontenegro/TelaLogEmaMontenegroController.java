@@ -31,7 +31,7 @@ public class TelaLogEmaMontenegroController implements Initializable {
     @Override
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        this.listaPerguntasRespostas = TelaEmaMontenegroController.ema.logPersonagem();
+        this.listaPerguntasRespostas = TelaEmaMontenegroController.emaMontenegro.logPersonagem();
         listView.setItems(listaPerguntasRespostas);
     }    
     

@@ -31,13 +31,13 @@ public class TelaLogDylanAyalaController implements Initializable {
     @Override
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        this.listaPerguntasRespostas = TelaDylanAyalaController.ema.logPersonagem();
+        this.listaPerguntasRespostas = TelaDylanAyalaController.dylanAyala.logPersonagem();
         listView.setItems(listaPerguntasRespostas);
     }    
     
     @FXML
     private void handlerButtonVoltar(ActionEvent event) throws Exception {
-        App.setRoot("personagens/emaMontenegro/TelaEmaMontenegro");
+        App.setRoot("personagens/dylanAyala/TelaDylanAyala");
     }
     
   
