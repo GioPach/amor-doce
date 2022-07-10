@@ -91,7 +91,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <VBox fx:id="statsBox" layoutX="49.0" layoutY="513.0" prefHeight="161.0" prefWidth="273.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px; -fx-border-color: #000; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-padding: 10px;">
+      <VBox fx:id="statsBox" layoutX="49.0" layoutY="513.0" prefHeight="161.0" prefWidth="273.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px; -fx-border-color: #000; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-padding: 10px;" visible="false">
          <children>
             <HBox prefWidth="249.0">
                <children>
