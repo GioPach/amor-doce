@@ -27,10 +27,6 @@ public class TelaPersonagensController implements Initializable {
         // TODO
     }   
     
-    @FXML
-    private void handlerButtonSairDoJogo(ActionEvent event) throws Exception {
-        App.setRoot("TelaInicial");
-    }
     //Ema Montenegro
     @FXML
     private void handlerButtonEmaMontenegro(ActionEvent event) throws Exception {
