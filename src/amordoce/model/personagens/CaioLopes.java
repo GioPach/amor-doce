@@ -92,14 +92,14 @@ public class CaioLopes extends Personagem {
     private Conversa criarConversa3() {
         // Respostas que podem ser escolhidas pelo usuário
         Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Eae, o que vocês fazem pra se divertir aqui?", "Interessado", 0.1, 0.1));
-        respostasPossiveis.add(new Resposta(1, "Pois é...e esse tempo que não muda!", "Neutro", -0.05, -0.05));
+        respostasPossiveis.add(new Resposta(0, "Eae, o quê vocês fazem pra se divertir aqui?", "Interessado", 0.1, 0.1));
+        respostasPossiveis.add(new Resposta(1, "Sabe de algum projeto bom pra calouro entrar?", "Neutro", -0.08, -0.08));
         respostasPossiveis.add(new Resposta(2, "Que tipo de música tu gosta?", "Neutro", 0.05, 0.05));
         
         // Possíveis reações a resposta do usuário
         Set<Resposta> reacoesPossiveis = new HashSet();
-        reacoesPossiveis.add(new Resposta(0, "Opa! Agora de início geralmente\nfazemos uma festa privada\npara alguns calouros..."));
-        reacoesPossiveis.add(new Resposta(1, "Pois é..."));
+        reacoesPossiveis.add(new Resposta(0, "Opa! Agora de início geralmente fazemos uma festa privada para alguns calouros..."));
+        reacoesPossiveis.add(new Resposta(1, "Só lembro daquele as redações do Enem, mas esse já está cheio..."));
         reacoesPossiveis.add(new Resposta(2, "Escuto muito sertanejo universitário e pop."));
 
         // Implementa a pergunta, criando um objeto Conversa e o colocando no array de conversas
