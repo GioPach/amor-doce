@@ -256,14 +256,14 @@ public class Personagem {
     public void atualizarColegas(double deltaInteresse) {
         for(Personagem colega : this.colegas) {
             colega.atualizarInteresse(deltaInteresse);
-            
+            double influenciaFofoca = arredondarDuasCasasDecimais(deltaInteresse * converterParaPorcentagem);
             String fofocaMensagem = this.getNome() + " fofocou com " + colega.getNome() + ".\nO interesse de " + colega.getNome();
             
             if(deltaInteresse > 0) {
-                fofocaMensagem += " aumentou em " + arredondarDuasCasasDecimais(deltaInteresse * converterParaPorcentagem) + "%.";
+                fofocaMensagem += " aumentou em " + influenciaFofoca + "%.";
             }
             else if (deltaInteresse < 0){
-                fofocaMensagem += " diminuiu em " + arredondarDuasCasasDecimais(deltaInteresse * converterParaPorcentagem) + "%.";
+                fofocaMensagem += " diminuiu em " + influenciaFofoca + "%.";
             }
             else {
                 fofocaMensagem += " permaneceu igual.";
