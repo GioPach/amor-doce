@@ -62,7 +62,6 @@ public class TelaMatthewWilliamsController extends PersonagemController implemen
             else {
                 labelPergunta.setText("NÃO!");
                 setVisibilidadeButton(this.btnVoltar, true);
-                setVisibilidadeButton(this.btnConversas, true);
             }
             
         }

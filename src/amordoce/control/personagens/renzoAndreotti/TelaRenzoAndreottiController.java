@@ -62,7 +62,6 @@ public class TelaRenzoAndreottiController extends PersonagemController implement
             else {
                 labelPergunta.setText("NÃO!");
                 setVisibilidadeButton(this.btnVoltar, true);
-                setVisibilidadeButton(this.btnConversas, true);
             }
             
         }

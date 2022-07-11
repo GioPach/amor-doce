@@ -14,7 +14,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.dylanAyala.TelaDylanAyalaController">
    <children>
-      <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="6.0">
+      <ImageView fitHeight="720.0" fitWidth="1280.0">
          <image>
             <Image url="@../../../../assets/img/personagens/DylanAyala.png" />
          </image>
@@ -27,7 +27,7 @@
          <font>
             <Font size="25.0" />
          </font></Label>
-      <Button layoutX="1131.0" layoutY="30.0" mnemonicParsing="false" onAction="#handlerLogConversas" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Conversas" textFill="WHITE">
+      <Button fx:id="btnConversas" layoutX="1131.0" layoutY="30.0" mnemonicParsing="false" onAction="#handlerLogConversas" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Conversas" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -82,7 +82,7 @@
             </Label>
          </children>
       </VBox>
-      <Button layoutX="235.0" layoutY="450.0" mnemonicParsing="false" onAction="#handlerMostrarStats" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Stats" textFill="WHITE">
+      <Button fx:id="btnStats" layoutX="235.0" layoutY="447.0" mnemonicParsing="false" onAction="#handlerMostrarStats" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Stats" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

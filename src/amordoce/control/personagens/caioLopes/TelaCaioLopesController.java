@@ -25,16 +25,16 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
-        if(TelaPersonagensController.emaMontenegro.isPedidoEmNamoro()) {
+        if(TelaPersonagensController.caioLopes.isPedidoEmNamoro()) {
             App.setRoot("TelaFimDeJogoBom");
         }
         else {
-            TelaPersonagensController.emaMontenegro.setFofoca("");
+            TelaPersonagensController.caioLopes.setFofoca("");
         
-            listenVisibilidadeNamoro(TelaPersonagensController.emaMontenegro);
-            listenVisibilidadeFofoca(TelaPersonagensController.emaMontenegro);
-            TelaPersonagensController.emaMontenegro.verificarRespostaConversa3();
-            carregarConversa(TelaPersonagensController.emaMontenegro);
+            listenVisibilidadeNamoro(TelaPersonagensController.caioLopes);
+            listenVisibilidadeFofoca(TelaPersonagensController.caioLopes);
+            TelaPersonagensController.caioLopes.verificarRespostaConversa3();
+            carregarConversa(TelaPersonagensController.caioLopes);
             setVisibilidadeButton(this.btnProxima, false);
         }
     }
@@ -51,18 +51,17 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
     
     @FXML
     private void handlerButtonResposta(ActionEvent event) throws Exception {
-        if(TelaPersonagensController.emaMontenegro.isPedidoEmNamoro()) {
+        if(TelaPersonagensController.caioLopes.isPedidoEmNamoro()) {
             setVisibilidadeRespostas(false);
             Thread.sleep(2000);
             
-            if(TelaPersonagensController.emaMontenegro.pedirEmNamoro()) {
+            if(TelaPersonagensController.caioLopes.pedirEmNamoro()) {
                 labelPergunta.setText("SIM!");
                 setVisibilidadeButton(this.btnProxima, true);
             }
             else {
                 labelPergunta.setText("NÃO!");
                 setVisibilidadeButton(this.btnVoltar, true);
-                setVisibilidadeButton(this.btnConversas, true);
             }
             
         }
@@ -91,10 +90,10 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
 
             }
 
-            TelaPersonagensController.emaMontenegro.getConversaAtual().escolherResposta(idResposta);
-            atualizarAtributosTela(TelaPersonagensController.emaMontenegro);
-            labelPergunta.setText(TelaPersonagensController.emaMontenegro.getConversaAtual().getReacao(idResposta));
-            TelaPersonagensController.emaMontenegro.concluirConversa(TelaPersonagensController.emaMontenegro.getConversaAtual().getId());
+            TelaPersonagensController.caioLopes.getConversaAtual().escolherResposta(idResposta);
+            atualizarAtributosTela(TelaPersonagensController.caioLopes);
+            labelPergunta.setText(TelaPersonagensController.caioLopes.getConversaAtual().getReacao(idResposta));
+            TelaPersonagensController.caioLopes.concluirConversa(TelaPersonagensController.caioLopes.getConversaAtual().getId());
             setVisibilidadeRespostas(false);
             setVisibilidadeButton(this.btnProxima, true);
         }

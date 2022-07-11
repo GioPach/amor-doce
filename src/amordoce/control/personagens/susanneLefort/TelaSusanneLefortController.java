@@ -62,7 +62,6 @@ public class TelaSusanneLefortController extends PersonagemController implements
             else {
                 labelPergunta.setText("NÃO!");
                 setVisibilidadeButton(this.btnVoltar, true);
-                setVisibilidadeButton(this.btnConversas, true);
             }
             
         }

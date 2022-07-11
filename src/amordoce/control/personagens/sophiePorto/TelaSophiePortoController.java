@@ -62,7 +62,6 @@ public class TelaSophiePortoController extends PersonagemController implements I
             else {
                 labelPergunta.setText("NÃO!");
                 setVisibilidadeButton(this.btnVoltar, true);
-                setVisibilidadeButton(this.btnConversas, true);
             }
             
         }

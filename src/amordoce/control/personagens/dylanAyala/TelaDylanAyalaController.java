@@ -62,7 +62,6 @@ public class TelaDylanAyalaController extends PersonagemController implements In
             else {
                 labelPergunta.setText("NÃO!");
                 setVisibilidadeButton(this.btnVoltar, true);
-                setVisibilidadeButton(this.btnConversas, true);
             }
             
         }

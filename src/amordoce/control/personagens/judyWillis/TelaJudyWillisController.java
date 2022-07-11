@@ -62,7 +62,6 @@ public class TelaJudyWillisController extends PersonagemController implements In
             else {
                 labelPergunta.setText("NÃO!");
                 setVisibilidadeButton(this.btnVoltar, true);
-                setVisibilidadeButton(this.btnConversas, true);
             }
             
         }

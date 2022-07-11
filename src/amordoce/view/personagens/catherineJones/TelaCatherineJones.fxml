@@ -27,7 +27,7 @@
          <font>
             <Font size="25.0" />
          </font></Label>
-      <Button layoutX="1131.0" layoutY="30.0" mnemonicParsing="false" onAction="#handlerLogConversas" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Conversas" textFill="WHITE">
+      <Button fx:id="btnConversas" layoutX="1131.0" layoutY="30.0" mnemonicParsing="false" onAction="#handlerLogConversas" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Conversas" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -82,7 +82,7 @@
             </Label>
          </children>
       </VBox>
-      <Button layoutX="257.0" layoutY="466.0" mnemonicParsing="false" onAction="#handlerMostrarStats" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Stats" textFill="WHITE">
+       <Button fx:id="btnStats" layoutX="235.0" layoutY="447.0" mnemonicParsing="false" onAction="#handlerMostrarStats" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Stats" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
