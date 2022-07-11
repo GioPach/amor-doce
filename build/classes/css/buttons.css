@@ -8,6 +8,7 @@
   -fx-background-radius: 5px;
   -fx-background-color: #1a9e3d;
   background-color: #1a9e3d;
+  -fx-text-fill: #fff;
 }
 
 .btn:hover {

@@ -25,22 +25,23 @@ public class TelaRenzoAndreottiController extends PersonagemController implement
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
-        TelaPersonagensController.renzoAndreotti.setFofoca("");
-        
-        listenVisibilidadeNamoro(TelaPersonagensController.renzoAndreotti);
-        listenVisibilidadeFofoca(TelaPersonagensController.renzoAndreotti);
-        TelaPersonagensController.renzoAndreotti.verificarRespostaConversa3();
-        carregarConversa(TelaPersonagensController.renzoAndreotti);
-        setVisibilidadeButton(this.btnProxima, false);
+        if(TelaPersonagensController.renzoAndreotti.isPedidoEmNamoro()) {
+            App.setRoot("TelaFimDeJogoBom");
+        }
+        else {
+            TelaPersonagensController.renzoAndreotti.setFofoca("");
+            
+            listenVisibilidadeNamoro(TelaPersonagensController.renzoAndreotti);
+            listenVisibilidadeFofoca(TelaPersonagensController.renzoAndreotti);
+            TelaPersonagensController.renzoAndreotti.verificarRespostaConversa3();
+            carregarConversa(TelaPersonagensController.renzoAndreotti);
+            setVisibilidadeButton(this.btnProxima, false);
+        }
     }
     
      @FXML
     public void handlerPedirEmNamoro(ActionEvent event) throws Exception {
-        if(TelaPersonagensController.renzoAndreotti.pedirEmNamoro()) {
-            System.out.println("SIM");
-        } else {
-            System.out.println("NAO");
-        }
+        mostrarPedidoDeNamoro(TelaPersonagensController.renzoAndreotti);
     }
     
     @FXML
@@ -50,35 +51,52 @@ public class TelaRenzoAndreottiController extends PersonagemController implement
     
     @FXML
     private void handlerButtonResposta(ActionEvent event) throws Exception {
-        Button btn = (Button) event.getSource();
-        
-        int idResposta;
-        
-        switch(btn.getId())
-        {
-            case "btnOpcaoA":
-                idResposta = 0;
-                break;
+        if(TelaPersonagensController.renzoAndreotti.isPedidoEmNamoro()) {
+            setVisibilidadeRespostas(false);
+            Thread.sleep(2000);
             
-            case "btnOpcaoB":
-                idResposta = 1;
-                break;
-
-            case "btnOpcaoC":
-                idResposta = 2;
-                break;
-                
-            default:
-                idResposta = -1;
-                break;
-                
+            if(TelaPersonagensController.renzoAndreotti.pedirEmNamoro()) {
+                labelPergunta.setText("SIM!");
+                setVisibilidadeButton(this.btnProxima, true);
+            }
+            else {
+                labelPergunta.setText("NÃO!");
+                setVisibilidadeButton(this.btnVoltar, true);
+                setVisibilidadeButton(this.btnConversas, true);
+            }
+            
         }
-        
-        TelaPersonagensController.renzoAndreotti.getConversaAtual().escolherResposta(idResposta);
-        atualizarAtributosTela(TelaPersonagensController.renzoAndreotti);
-        labelPergunta.setText(TelaPersonagensController.renzoAndreotti.getConversaAtual().getReacao(idResposta));
-        TelaPersonagensController.renzoAndreotti.concluirConversa(TelaPersonagensController.renzoAndreotti.getConversaAtual().getId());
-        setVisibilidadeRespostas(false);
-        setVisibilidadeButton(this.btnProxima, true);
+        else {
+            Button btn = (Button) event.getSource();
+
+            int idResposta;
+
+            switch(btn.getId())
+            {
+                case "btnOpcaoA":
+                    idResposta = 0;
+                    break;
+
+                case "btnOpcaoB":
+                    idResposta = 1;
+                    break;
+
+                case "btnOpcaoC":
+                    idResposta = 2;
+                    break;
+
+                default:
+                    idResposta = -1;
+                    break;
+
+            }
+
+            TelaPersonagensController.renzoAndreotti.getConversaAtual().escolherResposta(idResposta);
+            atualizarAtributosTela(TelaPersonagensController.renzoAndreotti);
+            labelPergunta.setText(TelaPersonagensController.renzoAndreotti.getConversaAtual().getReacao(idResposta));
+            TelaPersonagensController.renzoAndreotti.concluirConversa(TelaPersonagensController.renzoAndreotti.getConversaAtual().getId());
+            setVisibilidadeRespostas(false);
+            setVisibilidadeButton(this.btnProxima, true);
+        }
     }
 }

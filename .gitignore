@@ -1,2 +1,7 @@
+# Compiled class file
+*.class
+
+# NetBeans files
 /dist/
 /build/built-jar.properties
+/nbproject/private/*

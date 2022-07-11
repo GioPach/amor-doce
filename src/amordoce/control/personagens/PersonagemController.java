@@ -22,8 +22,6 @@ public class PersonagemController implements Initializable {
     @FXML 
     public Label labelInteresse;
     @FXML
-    public Label labelNivel;
-    @FXML
     public Label labelPergunta;
     @FXML
     public Button btnOpcaoA;
@@ -32,7 +30,13 @@ public class PersonagemController implements Initializable {
     @FXML
     public Button btnOpcaoC;
     @FXML
+    public Button btnVoltar;
+    @FXML
     public Button btnProxima;
+    @FXML
+    public Button btnConversas;
+    @FXML
+    public Button btnStats;
     @FXML
     public Pane btnNamoro;
     @FXML
@@ -123,6 +127,28 @@ public class PersonagemController implements Initializable {
             btnOpcaoB.setText(personagem.getConversaAtual().getResposta(1));
             btnOpcaoC.setText(personagem.getConversaAtual().getResposta(2));
         }
+    }
+    
+    public void mostrarPedidoDeNamoro(Personagem personagem) {
+        personagem.setPedidoEmNamoro(true);
+        
+        btnVoltar.setVisible(false);
+        btnConversas.setVisible(false);
+        btnStats.setVisible(false);
+        btnProxima.setVisible(false);
+        btnNamoro.setVisible(false);
+        
+        labelFofoca.setVisible(false);
+        labelEnergia.setVisible(false);
+        labelHumor.setVisible(false);
+        labelInteresse.setVisible(false);
+              
+        btnOpcaoB.setVisible(false);
+        btnOpcaoC.setVisible(false);
+        
+        labelPergunta.setText("...");
+        btnOpcaoA.setVisible(true);
+        btnOpcaoA.setText(personagem.getNome() + ", você aceita namorar comigo?");
     }
     
     @FXML

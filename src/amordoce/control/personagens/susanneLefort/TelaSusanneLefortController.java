@@ -24,23 +24,24 @@ public class TelaSusanneLefortController extends PersonagemController implements
     }
     
     @FXML
-    private void handlerButtonProxima(ActionEvent event) throws Exception {        
-        TelaPersonagensController.susanneLefort.setFofoca("");
-        
-        listenVisibilidadeNamoro(TelaPersonagensController.susanneLefort);
-        listenVisibilidadeFofoca(TelaPersonagensController.susanneLefort);
-        TelaPersonagensController.susanneLefort.verificarRespostaConversa3();
-        carregarConversa(TelaPersonagensController.susanneLefort);
-        setVisibilidadeButton(this.btnProxima, false);
+    private void handlerButtonProxima(ActionEvent event) throws Exception {
+        if(TelaPersonagensController.susanneLefort.isPedidoEmNamoro()) {
+            App.setRoot("TelaFimDeJogoBom");
+        }
+        else {        
+            TelaPersonagensController.susanneLefort.setFofoca("");
+            
+            listenVisibilidadeNamoro(TelaPersonagensController.susanneLefort);
+            listenVisibilidadeFofoca(TelaPersonagensController.susanneLefort);
+            TelaPersonagensController.susanneLefort.verificarRespostaConversa3();
+            carregarConversa(TelaPersonagensController.susanneLefort);
+            setVisibilidadeButton(this.btnProxima, false);
+        }
     }
     
-     @FXML
+    @FXML
     public void handlerPedirEmNamoro(ActionEvent event) throws Exception {
-        if(TelaPersonagensController.susanneLefort.pedirEmNamoro()) {
-            System.out.println("SIM");
-        } else {
-            System.out.println("NAO");
-        }
+        mostrarPedidoDeNamoro(TelaPersonagensController.susanneLefort);
     }
     
     @FXML
@@ -50,35 +51,52 @@ public class TelaSusanneLefortController extends PersonagemController implements
     
     @FXML
     private void handlerButtonResposta(ActionEvent event) throws Exception {
-        Button btn = (Button) event.getSource();
-        
-        int idResposta;
-        
-        switch(btn.getId())
-        {
-            case "btnOpcaoA":
-                idResposta = 0;
-                break;
+        if(TelaPersonagensController.susanneLefort.isPedidoEmNamoro()) {
+            setVisibilidadeRespostas(false);
+            Thread.sleep(2000);
             
-            case "btnOpcaoB":
-                idResposta = 1;
-                break;
-
-            case "btnOpcaoC":
-                idResposta = 2;
-                break;
-                
-            default:
-                idResposta = -1;
-                break;
-                
+            if(TelaPersonagensController.susanneLefort.pedirEmNamoro()) {
+                labelPergunta.setText("SIM!");
+                setVisibilidadeButton(this.btnProxima, true);
+            }
+            else {
+                labelPergunta.setText("NÃO!");
+                setVisibilidadeButton(this.btnVoltar, true);
+                setVisibilidadeButton(this.btnConversas, true);
+            }
+            
         }
-        
-        TelaPersonagensController.susanneLefort.getConversaAtual().escolherResposta(idResposta);
-        atualizarAtributosTela(TelaPersonagensController.susanneLefort);
-        labelPergunta.setText(TelaPersonagensController.susanneLefort.getConversaAtual().getReacao(idResposta));
-        TelaPersonagensController.susanneLefort.concluirConversa(TelaPersonagensController.susanneLefort.getConversaAtual().getId());
-        setVisibilidadeRespostas(false);
-        setVisibilidadeButton(this.btnProxima, true);
+        else {
+            Button btn = (Button) event.getSource();
+            
+            int idResposta;
+            
+            switch(btn.getId())
+            {
+                case "btnOpcaoA":
+                    idResposta = 0;
+                    break;
+                
+                case "btnOpcaoB":
+                    idResposta = 1;
+                    break;
+
+                case "btnOpcaoC":
+                    idResposta = 2;
+                    break;
+                    
+                default:
+                    idResposta = -1;
+                    break;
+                    
+            }
+            
+            TelaPersonagensController.susanneLefort.getConversaAtual().escolherResposta(idResposta);
+            atualizarAtributosTela(TelaPersonagensController.susanneLefort);
+            labelPergunta.setText(TelaPersonagensController.susanneLefort.getConversaAtual().getReacao(idResposta));
+            TelaPersonagensController.susanneLefort.concluirConversa(TelaPersonagensController.susanneLefort.getConversaAtual().getId());
+            setVisibilidadeRespostas(false);
+            setVisibilidadeButton(this.btnProxima, true);
+        }
     }
 }
