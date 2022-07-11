@@ -26,8 +26,6 @@ public class TelaLogEmaMontenegroController implements Initializable {
     
     @FXML
     public ListView<String> listView;
-    @FXML
-    private Button btnVoltar1;
 
     /**
      * Initializes the controller class.
@@ -42,7 +40,4 @@ public class TelaLogEmaMontenegroController implements Initializable {
     private void handlerButtonVoltar(ActionEvent event) throws Exception {
         App.setRoot("personagens/emaMontenegro/TelaEmaMontenegro");
     }
-    
-  
-    
 }

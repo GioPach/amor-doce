@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 public class App extends Application {
     
     public static Personagem usuario;
+    public static Personagem namorado;
     public static Set<Personagem> personagens = new HashSet<>();
     private static Scene scene;
     

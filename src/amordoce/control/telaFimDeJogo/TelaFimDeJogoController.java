@@ -14,7 +14,7 @@ import javafx.scene.control.Label;
  * @author Filipe
  */
 
-public class TelaFimDeJogoController extends TelaInicialController implements Initializable {
+public class TelaFimDeJogoController implements Initializable {
 
     @FXML
     public Label labelMensagemFinal;
@@ -29,12 +29,12 @@ public class TelaFimDeJogoController extends TelaInicialController implements In
     }
     
     @FXML
-    public void handlerMostrarCreditos() {
+    public void handlerMostrarCreditos() throws Exception {
         //App.setRoot("TelaCreditos");
     }
     
     @FXML
-    public void handlerLogConversas() {
-        //App.setRoot("TelaLogConversas");
+    public void handlerLogConversas() throws Exception {
+        App.setRoot("TelaLogConversas");
     }
 }
