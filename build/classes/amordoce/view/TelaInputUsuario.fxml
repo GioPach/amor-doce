@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="amordoce.control.TelaInputUsuarioController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../assets/img/FundoTelaLog.jpg" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="391.0" layoutY="274.0" prefHeight="172.0" prefWidth="498.0" style="-fx-background-color: #FFF; -fx-background-radius: 5px; -fx-padding: 20px;">
+         <children>
+            <Label fx:id="inputLabel" prefHeight="32.0" prefWidth="491.0" text="Informe o seu nome:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="inputNome" prefHeight="36.0" prefWidth="345.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnProximo" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handlerButtonProximo" styleClass="btn" stylesheets="@../../css/buttons.css" text="Próximo" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

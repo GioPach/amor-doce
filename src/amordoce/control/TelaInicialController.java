@@ -17,7 +17,7 @@ public class TelaInicialController implements Initializable {
     
     @FXML
     private void handlerButtonJogar(ActionEvent event) throws Exception {
-        App.setRoot("TelaPersonagens");
+        App.setRoot("TelaInputUsuario");
     }
     
     @FXML private void handlerButtonEasterEgg() throws Exception {
