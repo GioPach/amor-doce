@@ -29,7 +29,7 @@ public class TelaFimDeJogoController implements Initializable {
     
     @FXML
     public void handlerMostrarCreditos() throws Exception {
-        //App.setRoot("TelaCreditos");
+        App.setRoot("TelaCreditos");
     }
     
     @FXML

@@ -12,14 +12,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaInicialController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.telaFimDeJogo.TelaCreditosController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../assets/img/TelaInicial.png" />
          </image>
       </ImageView>
-      <VBox fx:id="containerTimeDev" layoutX="773.0" layoutY="287.0" prefHeight="213.0" prefWidth="444.0" visible="false">
+      <VBox fx:id="containerTimeDev" layoutX="773.0" layoutY="287.0" prefHeight="213.0" prefWidth="444.0">
          <children>
             <Label fx:id="creditosTitulo" prefHeight="43.0" prefWidth="456.0" style="-fx-font-size: 24px; -fx-alignment: center; -fx-background-radius: 5px 5px 0px 0px;" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Time de desenvolvimento" textAlignment="CENTER">
                <font>
@@ -83,20 +83,7 @@
             </VBox>
          </children>
       </VBox>
-      <Button fx:id="btnVoltar" layoutX="941.0" layoutY="525.0" mnemonicParsing="false" onAction="#handlerButtonMostrarCreditos" prefHeight="43.0" prefWidth="109.0" styleClass="btn" stylesheets="@../../css/buttons.css" text="Voltar" visible="false">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Button layoutX="196.0" layoutY="74.0" mnemonicParsing="false" onAction="#handlerButtonEasterEgg" prefHeight="51.0" prefWidth="52.0" style="-fx-background-color: transparent;">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Button fx:id="btnJogar" layoutX="555.0" layoutY="515.0" mnemonicParsing="false" onAction="#handlerButtonJogar" prefHeight="58.0" prefWidth="171.0" styleClass="btn" stylesheets="@../../css/buttons.css" text="JOGAR">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Button fx:id="btnCreditos" layoutX="555.0" layoutY="590.0" mnemonicParsing="false" onAction="#handlerButtonMostrarCreditos" prefHeight="58.0" prefWidth="171.0" styleClass="btn" stylesheets="@../../css/buttons.css" text="CRÉDITOS">
+      <Button fx:id="btnVoltar" layoutX="941.0" layoutY="525.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" prefHeight="43.0" prefWidth="109.0" styleClass="btn" stylesheets="@../../css/buttons.css" text="Voltar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
