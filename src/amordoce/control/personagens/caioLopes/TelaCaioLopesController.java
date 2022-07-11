@@ -17,7 +17,7 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
         atualizarAtributosTela(TelaPersonagensController.caioLopes);
         listenVisibilidadeNamoro(TelaPersonagensController.caioLopes);
         listenVisibilidadeFofoca(TelaPersonagensController.caioLopes);
-        TelaPersonagensController.caioLopes.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
+        listenConversaAlternativa3();
         carregarConversa(TelaPersonagensController.caioLopes);
         setVisibilidadeButton(this.btnProxima, false);
         gerarStats(TelaPersonagensController.caioLopes);
@@ -33,9 +33,16 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
         
             listenVisibilidadeNamoro(TelaPersonagensController.caioLopes);
             listenVisibilidadeFofoca(TelaPersonagensController.caioLopes);
-            TelaPersonagensController.caioLopes.verificarRespostaConversa3();
+            listenConversaAlternativa3();
             carregarConversa(TelaPersonagensController.caioLopes);
             setVisibilidadeButton(this.btnProxima, false);
+        }
+    }
+    
+    private void listenConversaAlternativa3() {
+        int idConversa3 = 2;
+        if(TelaPersonagensController.caioLopes.getConversaAtual().getId() == idConversa3) {
+            TelaPersonagensController.caioLopes.verificarConversa2();
         }
     }
     
