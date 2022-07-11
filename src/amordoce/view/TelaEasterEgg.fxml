@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaEasterEggController">
    <children>
-      <ImageView fitHeight="720.0" fitWidth="1280.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="720.0" fitWidth="1280.0">
          <image>
             <Image url="@../../assets/img/EasterEgg.jpg" />
          </image>
@@ -20,9 +20,19 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label alignment="CENTER" layoutX="312.0" layoutY="35.0" prefHeight="108.0" prefWidth="655.0" text="Turma DS3 2022!!!" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="146.0" layoutY="33.0" prefHeight="110.0" prefWidth="253.0" text="TURMA" textFill="#3bd762" wrapText="true">
          <font>
-            <Font name="Berlin Sans FB" size="30.0" />
+            <Font name="Berlin Sans FB" size="36.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="246.0" layoutY="33.0" prefHeight="110.0" prefWidth="253.0" text="DS3" textFill="#d63c3c" wrapText="true">
+         <font>
+            <Font name="Berlin Sans FB" size="36.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="337.0" layoutY="33.0" prefHeight="110.0" prefWidth="253.0" text="2022!!!" textFill="#3bd762" wrapText="true">
+         <font>
+            <Font name="Berlin Sans FB" size="36.0" />
          </font>
       </Label>
    </children>
