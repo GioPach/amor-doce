@@ -26,6 +26,7 @@ public class TelaEmaMontenegroController extends PersonagemController implements
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception { 
         if(TelaPersonagensController.emaMontenegro.isPedidoEmNamoro()) {
+            App.namorado = TelaPersonagensController.emaMontenegro; // adiciona a pessoa que o usuário começou a namorar
             App.setRoot("TelaFimDeJogoBom");
         }
         else {

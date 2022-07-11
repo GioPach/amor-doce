@@ -1,4 +1,4 @@
-package amordoce.control;
+package amordoce.control.telaFimDeJogo;
 
 import amordoce.App;
 import java.awt.Desktop;
@@ -9,44 +9,33 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
-import javafx.scene.layout.VBox;
 
-public class TelaInicialController implements Initializable {
+/**
+ * FXML Controller class
+ *
+ * @author Filipe
+ */
+public class TelaCreditosController implements Initializable {
+
+    @FXML
+    public Hyperlink hyperlink;
     
-    @FXML
-    public VBox containerTimeDev;
-    @FXML
-    public Button btnVoltar;
-    @FXML
-    public Button btnJogar;
-    @FXML
-    public Button btnCreditos;
-    
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
     
     @FXML
-    private void handlerButtonJogar(ActionEvent event) throws Exception {
-        App.setRoot("TelaInputUsuario");
-    }
-    
-    @FXML
-    private void handlerButtonMostrarCreditos(ActionEvent event) throws Exception {
-        if(this.btnJogar.isVisible()) {
-            this.btnJogar.setVisible(false);
-            this.btnCreditos.setVisible(false);
-            this.containerTimeDev.setVisible(true);
-            this.btnVoltar.setVisible(true);
+    private void handlerButtonVoltar(ActionEvent event) throws Exception {
+        if(App.namorado == null) {
+            App.setRoot("TelaFimDeJogoRuim");
         }
         else {
-            this.btnJogar.setVisible(true);
-            this.btnCreditos.setVisible(true);
-            this.containerTimeDev.setVisible(false);
-            this.btnVoltar.setVisible(false);
+            App.setRoot("TelaFimDeJogoBom");
         }
     }
     
@@ -66,9 +55,4 @@ public class TelaInicialController implements Initializable {
                 break;
         }
     }
-    
-    @FXML private void handlerButtonEasterEgg() throws Exception {
-        App.setRoot("TelaEasterEgg");
-    }
-    
 }

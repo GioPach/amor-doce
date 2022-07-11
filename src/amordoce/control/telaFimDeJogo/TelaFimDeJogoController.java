@@ -1,7 +1,6 @@
 package amordoce.control.telaFimDeJogo;
 
 import amordoce.App;
-import amordoce.control.TelaInicialController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -14,7 +13,7 @@ import javafx.scene.control.Label;
  * @author Filipe
  */
 
-public class TelaFimDeJogoController extends TelaInicialController implements Initializable {
+public class TelaFimDeJogoController implements Initializable {
 
     @FXML
     public Label labelMensagemFinal;
@@ -29,12 +28,12 @@ public class TelaFimDeJogoController extends TelaInicialController implements In
     }
     
     @FXML
-    public void handlerMostrarCreditos() {
-        //App.setRoot("TelaCreditos");
+    public void handlerMostrarCreditos() throws Exception {
+        App.setRoot("TelaCreditos");
     }
     
     @FXML
-    public void handlerLogConversas() {
-        //App.setRoot("TelaLogConversas");
+    public void handlerLogConversas() throws Exception {
+        App.setRoot("TelaLogConversas");
     }
 }

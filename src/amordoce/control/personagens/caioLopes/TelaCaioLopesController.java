@@ -26,6 +26,7 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
         if(TelaPersonagensController.caioLopes.isPedidoEmNamoro()) {
+            App.namorado = TelaPersonagensController.caioLopes; // adiciona a pessoa que o usuário começou a namorar
             App.setRoot("TelaFimDeJogoBom");
         }
         else {
