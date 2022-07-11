@@ -27,10 +27,10 @@ public class Resposta {
         this.humorFinal = humorFinal;
     }
     
-    public Resposta(int id, String texto, double deltaInteresse) {
+    public Resposta(int id, String texto, double deltaEnergia) {
         this.id = id;
         this.texto = texto;
-        this.deltaInteresse = deltaInteresse;
+        this.deltaEnergia = deltaEnergia;
     } 
     
     public Resposta(int id, String texto, String humorFinal, double deltaInteresse) {  

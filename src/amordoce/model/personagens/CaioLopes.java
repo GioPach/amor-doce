@@ -30,61 +30,111 @@ public class CaioLopes extends Personagem {
         //this.conversas.add(4, criarConversa5());
     }
     
+    /********************************
+     * Conversa 1
+     *  
+    *******************************/
+    
     private Conversa criarConversa1() {
         // Respostas que podem ser escolhidas pelo usuário
         Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Sim. Eu sou o aluno novo!", "Empolgada", 0.2));
-        respostasPossiveis.add(new Resposta(1, "Sim...", "Neutro", 0.1));
-        respostasPossiveis.add(new Resposta(2, "E se eu fosse?", "Irritada", -0.2, -0.1));
+        respostasPossiveis.add(new Resposta(0, "Sim, sou. E tu?", this.getHumor(), 0.0, 0.0));
+        respostasPossiveis.add(new Resposta(1, "Sim. Tu é daqui?", "Irônico", -0.05, -0.05));
+        respostasPossiveis.add(new Resposta(2, "SIm. Tu é de que turma?", this.getHumor(), 0.0, 0.0));
                
         // Possíveis reações a resposta do usuário
         Set<Resposta> reacoesPossiveis = new HashSet();
-        reacoesPossiveis.add(new Resposta(0, "Que ótimo! Seja bem-vindo!"));
-        reacoesPossiveis.add(new Resposta(1, "Bem-vindo..."));
-        reacoesPossiveis.add(new Resposta(2, "Como?"));
+        reacoesPossiveis.add(new Resposta(0, this.getMsgApresentacao()));
+        reacoesPossiveis.add(new Resposta(1, "Não não...estudo lá na esquina!"));
+        reacoesPossiveis.add(new Resposta(2, this.getMsgApresentacao()));
 
         // Implementa a pergunta, criando um objeto Conversa e o colocando no array de conversas
-        return new Conversa(this, "Oi, você é novo por aqui, né?", respostasPossiveis, reacoesPossiveis);
+        return new Conversa(this, "Eae, tu é um dos alunos novos?", respostasPossiveis, reacoesPossiveis);
     }
+    
+    /********************************
+     * Conversa 2
+     *  
+    *******************************/
     
     private Conversa criarConversa2() {
         // Respostas que podem ser escolhidas pelo usuário        
         Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Nem eu sei hahaha! Será que você poderia me apresentar o campus?", this.getHumor(), -0.1, -0.1));
-        respostasPossiveis.add(new Resposta(1, "Sou de DS3, e tu?", this.getHumor(), 0.1, 0.1));
-        respostasPossiveis.add(new Resposta(2, "Sou de DS3.", this.getHumor(), 0.0, 0.0));
+        respostasPossiveis.add(new Resposta(0, "Sou de Administração.", this.getHumor(), 0.0, 0.0));
+        respostasPossiveis.add(new Resposta(1, "Sou de Música.", "Empolgado", 0.1, 0.1));
+        respostasPossiveis.add(new Resposta(2, "Sou de Informática", this.getHumor(), 0.0, 0.0));
         
         // Possíveis reações a resposta do usuário
         Set<Resposta> reacoesPossiveis = new HashSet();
-        reacoesPossiveis.add(new Resposta(0, "Que tipo de calouro não\nsabe nem a própria turma?"));
-        reacoesPossiveis.add(new Resposta(1, "Sou de ELE3, Ema, prazer."));
-        reacoesPossiveis.add(new Resposta(2, "Ah..."));
+        reacoesPossiveis.add(new Resposta(0, "Ah...legal."));
+        reacoesPossiveis.add(new Resposta(1, "AE! Tomara que curta o curso!"));
+        reacoesPossiveis.add(new Resposta(2, "Bacana...é um campo muito amplo."));
 
         // Implementa a pergunta, criando um objeto Conversa e o colocando no array de conversas
-        return new Conversa(this, "De que turma você é?", respostasPossiveis, reacoesPossiveis);
+        return new Conversa(this, "Tu é de que turma mesmo?", respostasPossiveis, reacoesPossiveis);
     }
+    
+    /**
+     * Carrega uma conversa diferente na quarta se o usuário tiver escolhido a segunda opção da segunda conversas
+     */
+    public void verificarConversa2() {
+        int idConversa2 = 1, idRespostaTarget = 1;
+        if(validarConversaAlternativa(idConversa2, idRespostaTarget)) {
+            this.getConversas().set(0, conversaAlternativa3());
+        }
+    }  
+    
+    /********************************
+     * Conversa 3
+     *  
+    *******************************/
     
     private Conversa criarConversa3() {
         // Respostas que podem ser escolhidas pelo usuário
         Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Tu curte um rock?", "Feliz", 0.1, 0.1));
-        respostasPossiveis.add(new Resposta(1, "Qual é o teu nome mesmo?", this.getHumor(), -0.1, -0.1));
-        respostasPossiveis.add(new Resposta(2, "Tô pensando em passar no laboratório de informática...", this.getHumor(), 0.0, 0.0));
+        respostasPossiveis.add(new Resposta(0, "Eae, o que vocês fazem pra se divertir aqui?", "Interessado", 0.1, 0.1));
+        respostasPossiveis.add(new Resposta(1, "Pois é...e esse tempo que não muda!", "Neutro", -0.05, -0.05));
+        respostasPossiveis.add(new Resposta(2, "Que tipo de música tu gosta?", "Neutro", 0.05, 0.05));
         
         // Possíveis reações a resposta do usuário
         Set<Resposta> reacoesPossiveis = new HashSet();
-        reacoesPossiveis.add(new Resposta(0, "Adoro! Sou muito fã de Queen!", "Alegre"));
-        reacoesPossiveis.add(new Resposta(1, "Me chamo Ema..."));
-        reacoesPossiveis.add(new Resposta(2, "É só virar à esquerda e entrar \nno segundo bloco \nda direita..."));
+        reacoesPossiveis.add(new Resposta(0, "Opa! Agora de início geralmente\nfazemos uma festa privada\npara alguns calouros..."));
+        reacoesPossiveis.add(new Resposta(1, "Pois é..."));
+        reacoesPossiveis.add(new Resposta(2, "Escuto muito sertanejo universitário e pop."));
 
         // Implementa a pergunta, criando um objeto Conversa e o colocando no array de conversas
         return new Conversa(this, "...", respostasPossiveis, reacoesPossiveis);
+    }  
+    
+    /**
+     * Instancia uma conversa alternativa para ser utilizada caso o usuário ter escolhido a segunda opção da segunda conversa
+     * @return conversa alternativa
+     */
+     private Conversa conversaAlternativa3() {
+        Set<Resposta> respostasPossiveis = new HashSet();
+        respostasPossiveis.add(new Resposta(0, "Sou do rock!", "Neutro", -0.05, -0.05));
+        respostasPossiveis.add(new Resposta(1, "Escuto muito sertanejo universitário.", this.getHumor(), 0.15, 0.15));
+        respostasPossiveis.add(new Resposta(2, "Curto música clássica...", "Neutro", -0.07, -0.07));
+        
+        // Possíveis reações a resposta do usuário
+        Set<Resposta> reacoesPossiveis = new HashSet();
+        reacoesPossiveis.add(new Resposta(0, "Legal..."));
+        reacoesPossiveis.add(new Resposta(1, "Jura?? Eu adoro sertanejo universitário!!"));
+        reacoesPossiveis.add(new Resposta(2, "Bacana..."));
+
+        // Implementa a pergunta, criando um objeto Conversa e o colocando no array de conversas
+        return new Conversa(this, "Qual é o teu estilo?", respostasPossiveis, reacoesPossiveis);
     }
+     
+    /********************************
+     * Conversa 4
+     *  
+    *******************************/
     
     private Conversa criarConversa4() {
         // Respostas que podem ser escolhidas pelo usuário
         Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Sim! Tenho que levar alguma coisa?", "Envergonhada", 0.07, 0.07));
+        respostasPossiveis.add(new Resposta(0, "Sim! Tenho que levar alguma coisa?", "Envergonhada", 0.1, 0.1));
         respostasPossiveis.add(new Resposta(1, "Obrigado pelo convite, mas já tenho compromisso", "Irritada", -0.2, -0.2));
         respostasPossiveis.add(new Resposta(2, "Claro! Onde vai ser?", this.getHumor(), 0.05, 0.05));
         
@@ -98,36 +148,8 @@ public class CaioLopes extends Personagem {
         return new Conversa(this, "Ei, segunda tem uma festa...\ntá afim de vir?", respostasPossiveis, reacoesPossiveis);
     }
     
-    /**
-     * Carrega uma conversa diferente na quarta se o usuário tiver escolhido a opção 0 na terceira conversa
-     */
-    public void verificarRespostaConversa3() {
-        if(this.getConversaAtual().getId() == 3) {
-            Resposta respostaAnterior = this.getConversasConcluidas().get(2).getRespostaUsuario();
-            if(respostaAnterior.getId() == 0) {
-                this.getConversas().set(0, conversaAlternativa4());
-            }
-        }
-    }
+   
+ 
     
-    /**
-     * Instancia uma conversa alternativa para ser utilizada caso o usuário ter escolhido a opção 0 na terceira conversa
-     * @return conversa alternativa
-     */
-    private Conversa conversaAlternativa4() {
-        Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Mais ou menos", "Neutro", -0.05, -0.05));
-        respostasPossiveis.add(new Resposta(1, "É a minha vida! Tenho uma banda desde piá!", this.getHumor(), 0.1, 0.1));
-        respostasPossiveis.add(new Resposta(2, "Mais ou menos...gosto mais de Imagine Dragons", "Irritada", -0.15, -0.15));
-        
-        // Possíveis reações a resposta do usuário
-        Set<Resposta> reacoesPossiveis = new HashSet();
-        reacoesPossiveis.add(new Resposta(0, "Hm..."));
-        reacoesPossiveis.add(new Resposta(1, "É mesmo?? Onde vocês tocam??"));
-        reacoesPossiveis.add(new Resposta(2, "Pff...Imagine Dragons nem é uma banda de rock!"));
-
-        // Implementa a pergunta, criando um objeto Conversa e o colocando no array de conversas
-        return new Conversa(this, "Tu curte também?", respostasPossiveis, reacoesPossiveis);
-    }
 }
     

@@ -18,6 +18,7 @@ public class Personagem {
     private String signo;
     private String nacionalidade;
     private char genero;
+    private String msgApresentacao;
     private String humor; // barra
     private double energia; // barra
     private double interesse; // barra
@@ -40,6 +41,8 @@ public class Personagem {
         this.signo = signo;
         this.nacionalidade = nacionalidade;
         this.genero = genero;
+        String primeiroNome = this.getNome().substring(0, this.getNome().indexOf(" "));
+        this.msgApresentacao = "Me chamo " + primeiroNome + ", sou da turma de " + this.getTurma();
         this.humor = "Neutro";
         this.energia = 1.0;
         this.interesse = 0.0; // começa por padrão para implementar a lógica de sorteio do pedido de namoro
@@ -107,6 +110,14 @@ public class Personagem {
 
     public void setGenero(char genero) {
         this.genero = genero;
+    }
+
+    public String getMsgApresentacao() {
+        return msgApresentacao;
+    }
+
+    public void setMsgApresentacao(String msgApresentacao) {
+        this.msgApresentacao = msgApresentacao;
     }
 
     public String getHumor() {
@@ -270,6 +281,22 @@ public class Personagem {
         Conversa conversaConcluida = this.conversas.stream().filter(conversa -> conversa.getId() == idConversa).findFirst().orElse(new Conversa());
         this.conversasConcluidas.add(conversaConcluida);
         this.conversas.remove(conversaConcluida);
+    }
+    
+    public boolean validarConversaAlternativa(int idConversa, int idRespostaTarget) {
+        Resposta respostaAnterior;
+        try {
+            respostaAnterior = this.conversasConcluidas.get(idConversa).getRespostaUsuario();
+        } catch (Exception e) {
+            System.out.println(e);
+            respostaAnterior = new Resposta();
+        }
+        
+        if(respostaAnterior.getId() == idRespostaTarget) {
+            return true;
+        } else {
+            return false;
+        }
     }
     
     /**
