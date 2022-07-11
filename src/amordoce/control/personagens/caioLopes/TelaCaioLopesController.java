@@ -17,7 +17,6 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
         atualizarAtributosTela(TelaPersonagensController.caioLopes);
         listenVisibilidadeNamoro(TelaPersonagensController.caioLopes);
         listenVisibilidadeFofoca(TelaPersonagensController.caioLopes);
-        listenConversasAlternativas();
         carregarConversa(TelaPersonagensController.caioLopes);
         setVisibilidadeButton(this.btnProxima, false);
         gerarStats(TelaPersonagensController.caioLopes);
@@ -34,40 +33,12 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
         
             listenVisibilidadeNamoro(TelaPersonagensController.caioLopes);
             listenVisibilidadeFofoca(TelaPersonagensController.caioLopes);
-            listenConversasAlternativas();
             carregarConversa(TelaPersonagensController.caioLopes);
             setVisibilidadeButton(this.btnProxima, false);
         }
-    }
+    }       
     
-    private void listenConversasAlternativas() {
-        listenConversaAlternativa3();
-        listenConversaAlternativa5();
-        listenConversaAlternativa7();
-    }
-    
-    private void listenConversaAlternativa3() {
-        int idConversa3 = 2;
-        if(TelaPersonagensController.caioLopes.getConversaAtual().getId() == idConversa3) {
-            TelaPersonagensController.caioLopes.verificarConversa2();
-        }
-    }
-    
-    private void listenConversaAlternativa5() {
-        int idConversa5 = 4;
-        if(TelaPersonagensController.caioLopes.getConversaAtual().getId() == idConversa5) {
-            TelaPersonagensController.caioLopes.verificarConversa4();
-        }
-    }
-    
-    private void listenConversaAlternativa7() {
-        int idConversa7 = 6;
-        if(TelaPersonagensController.caioLopes.getConversaAtual().getId() == idConversa7) {
-            TelaPersonagensController.caioLopes.verificarConversa6();
-        }
-    }
-    
-     @FXML
+    @FXML
     public void handlerPedirEmNamoro(ActionEvent event) throws Exception {
         mostrarPedidoDeNamoro(TelaPersonagensController.caioLopes);
     }

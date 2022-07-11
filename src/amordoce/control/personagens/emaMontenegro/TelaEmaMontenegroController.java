@@ -17,12 +17,12 @@ public class TelaEmaMontenegroController extends PersonagemController implements
         atualizarAtributosTela(TelaPersonagensController.emaMontenegro);
         listenVisibilidadeNamoro(TelaPersonagensController.emaMontenegro);
         listenVisibilidadeFofoca(TelaPersonagensController.emaMontenegro);
-        TelaPersonagensController.emaMontenegro.verificarRespostaConversa3(); // instanciar conversa alternativa de acordo com a resposta da conversa 3
+        listenConversasAlternativas();
         carregarConversa(TelaPersonagensController.emaMontenegro);
         setVisibilidadeButton(this.btnProxima, false);
         gerarStats(TelaPersonagensController.emaMontenegro);
     }
-    
+       
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception { 
         if(TelaPersonagensController.emaMontenegro.isPedidoEmNamoro()) {
@@ -30,13 +30,39 @@ public class TelaEmaMontenegroController extends PersonagemController implements
             App.setRoot("TelaFimDeJogoBom");
         }
         else {
-            TelaPersonagensController.emaMontenegro.setFofoca("");
-        
+            TelaPersonagensController.emaMontenegro.setFofoca("");        
             listenVisibilidadeNamoro(TelaPersonagensController.emaMontenegro);
             listenVisibilidadeFofoca(TelaPersonagensController.emaMontenegro);
-            TelaPersonagensController.emaMontenegro.verificarRespostaConversa3();
+            listenConversasAlternativas();
             carregarConversa(TelaPersonagensController.emaMontenegro);
             setVisibilidadeButton(this.btnProxima, false);
+        }
+    }
+    
+    private void listenConversasAlternativas() {
+        listenConversaAlternativa3();
+        listenConversaAlternativa5();
+        listenConversaAlternativa7();
+    }
+    
+    private void listenConversaAlternativa3() {
+        int idConversa3 = 2;
+        if(TelaPersonagensController.caioLopes.getConversaAtual().getId() == idConversa3) {
+            TelaPersonagensController.emaMontenegro.verificarConversa2();
+        }
+    }
+    
+    private void listenConversaAlternativa5() {
+        int idConversa5 = 4;
+        if(TelaPersonagensController.emaMontenegro.getConversaAtual().getId() == idConversa5) {
+            TelaPersonagensController.emaMontenegro.verificarConversa4();
+        }
+    }
+    
+    private void listenConversaAlternativa7() {
+        int idConversa7 = 6;
+        if(TelaPersonagensController.emaMontenegro.getConversaAtual().getId() == idConversa7) {
+            TelaPersonagensController.emaMontenegro.verificarConversa6();
         }
     }
     

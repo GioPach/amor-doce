@@ -57,7 +57,7 @@ public class DarioAgostini extends Personagem {
         // Possíveis reações a resposta do usuário
         Set<Resposta> reacoesPossiveis = new HashSet();
         reacoesPossiveis.add(new Resposta(0, "Que tipo de calouro não\nsabe nem a própria turma?"));
-        reacoesPossiveis.add(new Resposta(1, "Sou de ELE3, Ema, prazer."));
+        reacoesPossiveis.add(new Resposta(1, this.getMsgApresentacao()));
         reacoesPossiveis.add(new Resposta(2, "Ah..."));
 
         // Implementa a pergunta, criando um objeto Conversa e o colocando no array de conversas
@@ -74,7 +74,7 @@ public class DarioAgostini extends Personagem {
         // Possíveis reações a resposta do usuário
         Set<Resposta> reacoesPossiveis = new HashSet();
         reacoesPossiveis.add(new Resposta(0, "Adoro! Sou muito fã de Queen!", "Alegre"));
-        reacoesPossiveis.add(new Resposta(1, "Me chamo Ema..."));
+        reacoesPossiveis.add(new Resposta(1, "Me chamo Dario..."));
         reacoesPossiveis.add(new Resposta(2, "É só virar à esquerda e entrar \nno segundo bloco \nda direita..."));
 
         // Implementa a pergunta, criando um objeto Conversa e o colocando no array de conversas
