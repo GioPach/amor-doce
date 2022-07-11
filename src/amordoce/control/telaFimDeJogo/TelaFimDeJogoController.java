@@ -1,7 +1,6 @@
 package amordoce.control.telaFimDeJogo;
 
 import amordoce.App;
-import amordoce.control.TelaInicialController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;

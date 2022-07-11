@@ -26,6 +26,7 @@ public class TelaDarioAgostiniController extends PersonagemController implements
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
         if(TelaPersonagensController.darioAgostini.isPedidoEmNamoro()) {
+            App.namorado = TelaPersonagensController.darioAgostini; // adiciona a pessoa que o usuário começou a namorar
             App.setRoot("TelaFimDeJogoBom");
         }
         else {
