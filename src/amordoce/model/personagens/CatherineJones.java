@@ -51,7 +51,7 @@ public class CatherineJones extends Personagem {
         // Respostas que podem ser escolhidas pelo usuário        
         Set<Resposta> respostasPossiveis = new HashSet();
         respostasPossiveis.add(new Resposta(0, "Nem eu sei hahaha! Será que você poderia me apresentar o campus?", this.getHumor(), -0.1, -0.1));
-        respostasPossiveis.add(new Resposta(1, "Sou de DS3, e tu?", this.getHumor(), 0.1, 0.1));
+        respostasPossiveis.add(new Resposta(1, "Sou de DS3, e tu?", this.getHumor(), 0.3, 0.1));
         respostasPossiveis.add(new Resposta(2, "Sou de DS3.", this.getHumor(), 0.0, 0.0));
         
         // Possíveis reações a resposta do usuário
@@ -67,7 +67,7 @@ public class CatherineJones extends Personagem {
     private Conversa criarConversa3() {
         // Respostas que podem ser escolhidas pelo usuário
         Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Tu curte um rock?", "Feliz", 0.1, 0.1));
+        respostasPossiveis.add(new Resposta(0, "Tu curte um rock?", "Feliz", 0.25, 0.1));
         respostasPossiveis.add(new Resposta(1, "Qual é o teu nome mesmo?", this.getHumor(), -0.1, -0.1));
         respostasPossiveis.add(new Resposta(2, "Tô pensando em passar no laboratório de informática...", this.getHumor(), 0.0, 0.0));
         

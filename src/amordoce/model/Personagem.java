@@ -327,9 +327,13 @@ public class Personagem {
         if(!validarInteresse()) {
             throw new Error("Modelo Personagem -> pedirEmNamoro: interesse menor que 50%...");
         }
-        final double corretorIntervalo = 0.5;
+
         Random rand = new Random();
-        double resposta = arredondarDuasCasasDecimais(rand.nextDouble(this.interesse - corretorIntervalo, this.fatorNivel));
+        final double corretorIntervalo = 0.5;
+        double min = this.interesse - corretorIntervalo;
+        double max = this.fatorNivel;
+        double resposta = arredondarDuasCasasDecimais(rand.nextDouble(min, max));
+    
         return resposta >= 0.5;        
     }
     

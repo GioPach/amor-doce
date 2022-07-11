@@ -33,7 +33,7 @@ public class JudyWillis extends Personagem {
     private Conversa criarConversa1() {
         // Respostas que podem ser escolhidas pelo usuário
         Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Sim. Eu sou o aluno novo!", "Empolgada", 0.2));
+        respostasPossiveis.add(new Resposta(0, "Sim. Eu sou o aluno novo!", "Empolgada", 0.3));
         respostasPossiveis.add(new Resposta(1, "Sim...", "Neutro", 0.1));
         respostasPossiveis.add(new Resposta(2, "E se eu fosse?", "Irritada", -0.2, -0.1));
                
@@ -51,7 +51,7 @@ public class JudyWillis extends Personagem {
         // Respostas que podem ser escolhidas pelo usuário        
         Set<Resposta> respostasPossiveis = new HashSet();
         respostasPossiveis.add(new Resposta(0, "Nem eu sei hahaha! Será que você poderia me apresentar o campus?", this.getHumor(), -0.1, -0.1));
-        respostasPossiveis.add(new Resposta(1, "Sou de DS3, e tu?", this.getHumor(), 0.1, 0.1));
+        respostasPossiveis.add(new Resposta(1, "Sou de DS3, e tu?", this.getHumor(), 0.2, 0.1));
         respostasPossiveis.add(new Resposta(2, "Sou de DS3.", this.getHumor(), 0.0, 0.0));
         
         // Possíveis reações a resposta do usuário
@@ -67,7 +67,7 @@ public class JudyWillis extends Personagem {
     private Conversa criarConversa3() {
         // Respostas que podem ser escolhidas pelo usuário
         Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Tu curte um rock?", "Feliz", 0.1, 0.1));
+        respostasPossiveis.add(new Resposta(0, "Tu curte um rock?", "Feliz", 0.3, 0.1));
         respostasPossiveis.add(new Resposta(1, "Qual é o teu nome mesmo?", this.getHumor(), -0.1, -0.1));
         respostasPossiveis.add(new Resposta(2, "Tô pensando em passar no laboratório de informática...", this.getHumor(), 0.0, 0.0));
         
@@ -84,7 +84,7 @@ public class JudyWillis extends Personagem {
     private Conversa criarConversa4() {
         // Respostas que podem ser escolhidas pelo usuário
         Set<Resposta> respostasPossiveis = new HashSet();
-        respostasPossiveis.add(new Resposta(0, "Sim! Tenho que levar alguma coisa?", "Envergonhada", 0.07, 0.07));
+        respostasPossiveis.add(new Resposta(0, "Sim! Tenho que levar alguma coisa?", "Envergonhada", 0.2, 0.07));
         respostasPossiveis.add(new Resposta(1, "Obrigado pelo convite, mas já tenho compromisso", "Irritada", -0.2, -0.2));
         respostasPossiveis.add(new Resposta(2, "Claro! Onde vai ser?", this.getHumor(), 0.05, 0.05));
         
