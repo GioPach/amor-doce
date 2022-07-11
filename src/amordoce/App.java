@@ -17,7 +17,6 @@ public class App extends Application {
     public static Personagem usuario;
     public static Set<Personagem> personagens = new HashSet<>();
     private static Scene scene;
-    private boolean playlistPlaying;
     
     /**
      * Inicia o programa aplicando a TelaInicial como cena e implementa música de fundo
@@ -29,7 +28,7 @@ public class App extends Application {
         scene = new Scene(loadFXML("TelaInicial"), 1280, 720);
         stage.setScene(scene);
         stage.show();
-        new AudioHandler().startPlaylist();
+        new AudioHandler().start();
     }
 
     /**
@@ -50,7 +49,7 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view/" + fxml + ".fxml"));
         return fxmlLoader.load();
     }
-
+    
     public static void main(String[] args) {
         launch();
     }

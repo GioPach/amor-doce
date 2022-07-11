@@ -12,23 +12,20 @@ import javafx.scene.media.MediaPlayer;
 
 public class AudioHandler {
     
-    final protected List<MediaPlayer> players = new ArrayList<MediaPlayer>();
+    final protected static List<MediaPlayer> players = new ArrayList<MediaPlayer>();
     
     /** Executa os procedimentos para a composição da playlist e toca o primeiro MediaPlayer da lista */
-    public void startPlaylist() {
+    public void start() {
         
         try {
             criarMediaPlayers(); 
         } catch(Exception e) {
             System.out.println("AudioHandler: " + e);
         }        
-        
+
         setPlaylist();
-        
         players.get(0).play();
-            
     }
-    
     
     /** Compõe a playlist settando o MediaPlayer a tocar após o término do anterior */
     private void setPlaylist() {
@@ -37,7 +34,7 @@ public class AudioHandler {
             final MediaPlayer nextPlayer = players.get((i + 1) % players.size()); // garante que reiniciará a playlist após o último MediaPlayer
             player.setOnEndOfMedia(new Runnable() {
                 @Override public void run() {
-                nextPlayer.play();
+                    nextPlayer.play();
                 }
             });   
         }
