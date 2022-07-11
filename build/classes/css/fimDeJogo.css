@@ -1,0 +1,14 @@
+.mensagemFimDeJogo {
+    -fx-font-family: "Berlin Sans FB";
+    font-family: "Berlin Sans FB";
+    -fx-font-size: 20px;
+    font-size: 20px;
+    -fx-text-fill: #fff;
+    -fx-background-color: #eb3455;
+    background-color: #eb3455;
+    -fx-background-radius: 10px;
+    -fx-text-alignment: center;
+    text-align: center;
+    -fx-padding: 10px;
+    padding: 10px;
+}

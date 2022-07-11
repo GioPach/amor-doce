@@ -1,76 +1,116 @@
 # Amor Doce
-### Projeto JavaFx - IFRS Campus Canoas 2022/1
 
-<p>amordoce - diretório principal: telas, controladores, modelos, handlers e App.java</p>
-<p>assets - diretório de recursos: imagens, áudios, vídeos, etc.</p>
-<p>css - diretório de estilos CSS</p>
+    Projeto JavaFx - IFRS Campus Canoas 2022/1
 
-# Time de desenvolvimento
-<p>Filipe Siota</p>
-<p>Gabriela Estigarribia</p>
-<p>Giovani Signori</p>
+- [Amor Doce](#amor-doce)
+  - [Diretórios](#diretórios)
+  - [Time de desenvolvimento](#time-de-desenvolvimento)
+  - [Regras de Commit](#regras-de-commit)
+    - [Types Permitidos](#types-permitidos)
+    - [Referenciando uma Issue ao commit](#referenciando-uma-issue-ao-commit)
+    - [Fechando Issues](#fechando-issues)
+  - [Criando um fork (Bifurcação) do repositório para a sua conta](#criando-um-fork-bifurcação-do-repositório-para-a-sua-conta)
+    - [Clonando o repositório](#clonando-o-repositório)
+    - [Configurar o Git para sincronizar o fork (bifurcação) com o repositório original](#configurar-o-git-para-sincronizar-o-fork-bifurcação-com-o-repositório-original)
+  - [Configurando o projeto no NetBeans](#configurando-o-projeto-no-netbeans)
 
-# Classes
+## Diretórios
 
-## App (Comentada)
+``src/amordoce`` - Diretório principal: telas, controladores, modelos, handlers e App.java
 
-- [ ] `public static Personagem usuario` - Nome do usuário
-- [ ] `public static Set<Personagem> personagens = new HashSet<>()` - Array de personagens para fofoca
-- [x] `Scene` - Trocas de cena
+``src/assets`` - Diretório de recursos: imagens, áudios, vídeos, etc.
 
-## Personagem (Comentada)
+``src/css`` - Diretório de estilos CSS
 
-- [x] - nome: String
-- [x] - idade: int
-- [x] - signo: String
-- [x] - nacionalidade: String
-- [x] - genero: char
-- [x] + conversas: Set<Conversa>
-- [x] + conversasConcluidas: Set<Conversa>
+## Time de desenvolvimento
 
-- Barras:
+- [Filipe Siota](https://github.com/FilipeSiota)
+- [Gabriela Estigarribia](https://github.com/estigarribia08)
+- [Giovani Signori](https://github.com/GioPach)
 
-- [x] - humor: String (feliz, empolgado, etc)
-- [ ] - energia: double (REVISAR)
-- [ ] - interesse: double (REVISAR)
-- [x] - nivel: String
+## Regras de Commit
 
-- Métodos:
+Se possível (e quando necessário), o commit deve manter um corpo estrutural padronizado. Utilizaremos o padrão utilizado em alguns projetos do Google (simplificado)
 
-- [x] + getConversaAtual(): Conversa
-- [x] + concluirConversa(): void (adicionado a conversa às já concluídas para ter o log depois)
-- [x] + atualizarInteresse(): void
-- [x] + atualizarHumor(): void
-- [x] + atualizarEnergia(): void
-- [x] + logPersonagem(): ObservableList<String> (????)
+``TYPE(TARGET): DESCRIPTION``
 
-### Herança (NomePersonagem)
+O ``TARGET`` é o alvo de modificações do commit, podendo ser um arquivo, ou um módulo da aplicação. E a ``DESCRIPTION`` é uma descrição breve do que foi feito no commit.
 
-- [ ] construção da personagem pelo método `super` dentro do contrutor (REVISAR)
-- [x] - setarConversas(): void (seta as conversas referentes a esta personagem)
+### Types Permitidos
 
-## Conversa (Comentada)
+- FEAT: Commits com adição de funcionalidade (Seja ela pronta ou em progresso);
+- FIX: Um bugfix. Se houver uma Issue relacionada, deve-se fechá-la;
+- REFACT: Algumas melhorias de código (Sejam elas de performance, de limpeza, ou de documentação);
 
-- [x] - id: int
-- [x] - personagem: Personagem
-- [x] - pergunta: String
-- [x] - respostasPossiveis: Set<Resposta>
-- [x] - reacoesPossiveis: Set<Resposta> (possíveis respostas dos personagens de acordo com a opção escolhida pelo usuário)
-- [x] - respostaUsuario: Resposta
+### Referenciando uma Issue ao commit
 
-- Métodos:
+Para referenciar um commit a uma determinada Issue cadastrada aqui no Github, o commit deve conter (por padrão):
 
-- [x] + setRespostaUsuario(): void (atualiza os valores das barras do personagem de acordo com a resposta escolhida pelo usuário)
-- [x] + getResposta(): String (o texto da resposta do usuário)
-- [x] + getReacao(): String (o texto da reação do personagem)
-- [x] + escolherResposta(): void (faz a escolha da resposta de uma conversa)
-- [x] - buscarReacao(): Resposta (valida a busca pela reação de acordo com a opção escolhida)
-- [x] - buscarResposta(): Resposta (valida a busca pela resposta de acordo com a opção escolhida)
+``COMMIT_MESSAGE #ISSUE_NUMBER``
 
-## Resposta (Comentada)
+``COMMIT_MESSAGE`` sendo a mensagem em si e ``ISSUE_NUMBER`` o número da Issue aqui no Github.
 
-- [x] - id: int
-- [x] - texto: String
-- [x] - humorFinal: String
-- [ ] - deltaEnergia: double (REVISAR)
-- [ ] - deltaInteresse: double (REVISAR)
+### Fechando Issues
+
+Para fechar uma Issue cadastrada aqui no Github, o commit deve conter (por padrão):
+
+``COMMIT_MESSAGE closes #ISSUE_NUMBER``
+
+``COMMIT_MESSAGE`` sendo a mensagem em si e ``ISSUE_NUMBER`` o número da Issue aqui no Github.
+
+## Criando um fork (Bifurcação) do repositório para a sua conta
+
+Você pode bifurcar este projeto para propor alterações no repositório upstream ou original, ou então como ponto de partida para sua própria ideia.
+
+Para isso:
+
+- Clique em **Fork** no canto superior direito;
+- Crie o Fork;
+- Abra o repositório (fork) que foi criado dentro de *Repositories* na sua conta.
+
+### Clonando o repositório
+
+Após fazer os passos anteriores:
+
+- Clique em code;
+- Copie o link (HTTPS) do repositório;
+- Abra o Git Bash em seu PC;
+- Altere o diretório de trabalho atual para o local em que deseja ter o diretório clonado;
+- Digite ``git clone`` (clonar git) e cole a URL que você copiou anteriormente. Ficará assim, com seu nome de usuário do GitHub no lugar de ``YOUR-USERNAME`` e o do respectivo repositório em ``YOUR_FORK``:
+
+        $ git clone https://github.com/YOUR-USERNAME/YOUR_FORK.git
+
+- Pressione **Enter**. Seu clone local estará criado.
+
+### Configurar o Git para sincronizar o fork (bifurcação) com o repositório original
+
+- Pelo Git Bash, acessando o seu repositório local que foi criado, digite ``git remote -v`` e pressione **Enter**. Você verá o repositório remote atual configurado para sua bifurcação.
+
+        $ git remote -v
+        > origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
+        > origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+
+- Digite ``git remote add upstream``, cole o URL que você copiou anteriormente e pressione Enter. Ficará assim:
+
+        
+
+- Para verificar o novo repositório upstream que você especificou para sua bifurcação, digite novamente ``git remote -v``. Você deverá visualizar a URL da sua bifurcação como ``origin`` (origem) e a URL do repositório original como ``upstream``.
+
+        $ git remote -v
+        > origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
+        > origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+        > upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)
+        > upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
+
+Agora é possível manter a bifurcação sincronizada com o repositório upstream usando apenas alguns comandos Git. Para obter mais informações, consulte "[Sincronizar uma bifurcação](https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)".
+
+## Configurando o projeto no [NetBeans](https://netbeans.apache.org/download/index.html)
+
+Após realizar os passos anteriores, você terá todos os arquivos do repositório localmente em seu PC. Agora, para finalizar a configuração do projeto no NetBeans:
+
+- Abra a pasta do projeto no NetBeans;
+- Clique na aba ``Run`` no topo da tela;
+- Selecione a opção ``Clean and Build Project (NOME-PROJETO)``
+- Assim, os arquivos serão compilados e você conseguirá executar o programa tranquilamente clicando em ``Run Project (NOME-PROJETO)``.
+
+**Feito! Agora é só se divertir.**

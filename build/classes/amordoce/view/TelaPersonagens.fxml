@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxWidth="1280.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.TelaPersonagensController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0">
+         <image>
+            <Image url="@../../assets/img/TelaPersonagens.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnEmaMontenegro" layoutX="911.0" layoutY="471.0" mnemonicParsing="false" onAction="#handlerButtonEmaMontenegro" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Ema Montenegro" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnDarioAgostini" layoutX="392.0" layoutY="414.0" mnemonicParsing="false" onAction="#handlerButtonDarioAgostini" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Dario Agostini" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnJudyWillis" layoutX="663.0" layoutY="389.0" mnemonicParsing="false" onAction="#handlerButtonJudyWillis" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Judy Willis" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnDylanAyala" layoutX="33.0" layoutY="21.0" mnemonicParsing="false" onAction="#handlerButtonDylanAyala" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Dylan Ayala" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnMatthewWilliams" layoutX="329.0" layoutY="90.0" mnemonicParsing="false" onAction="#handlerButtonMatthewWilliams" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Matthew Williams" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnSusanneLefort" layoutX="1097.0" layoutY="321.0" mnemonicParsing="false" onAction="#handlerButtonSusanneLefort" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Susanne Lefort" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnCaioLopes" layoutX="640.0" layoutY="161.0" mnemonicParsing="false" onAction="#handlerButtonCaioLopes" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Caio Lopes" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnSophiePorto" layoutX="45.0" layoutY="488.0" mnemonicParsing="false" onAction="#handlerButtonSophiePorto" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Sophie Porto" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnCatherineJones" layoutX="136.0" layoutY="269.0" mnemonicParsing="false" onAction="#handlerButtonCatherineJones" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Catherine Jones" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnRenzoAndreotti" layoutX="910.0" layoutY="157.0" mnemonicParsing="false" onAction="#handlerButtonRenzoAndreotti" prefHeight="33.0" prefWidth="166.0" styleClass="btnPersonagem" stylesheets="@../../css/buttons.css" text="Renzo Andreotti" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnFimDeJogo" layoutX="1138.0" layoutY="21.0" mnemonicParsing="false" onAction="#handlerButtonFimDeJogo" styleClass="btn" stylesheets="@../../css/buttons.css" text="Fim de Jogo" visible="false">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

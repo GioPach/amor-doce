@@ -5,8 +5,8 @@ public class Resposta {
     private int id;
     private String texto;
     private String humorFinal;
-    private int deltaEnergia;
-    private int deltaInteresse;
+    private double deltaEnergia;
+    private double deltaInteresse;
     
     public Resposta() {
     }
@@ -21,19 +21,31 @@ public class Resposta {
         this.texto = reacao;
     }    
     
-    public Resposta(int id, String texto, String humorFinal, int deltaInteresse) {
+    public Resposta(int id, String reacao, String humorFinal) {
+        this.id = id;
+        this.texto = reacao;
+        this.humorFinal = humorFinal;
+    }
+    
+    public Resposta(int id, String texto, double deltaEnergia) {
+        this.id = id;
+        this.texto = texto;
+        this.deltaEnergia = deltaEnergia;
+    } 
+    
+    public Resposta(int id, String texto, String humorFinal, double deltaInteresse) {  
         this.id = id;
         this.humorFinal = humorFinal;
         this.texto = texto;
         this.deltaInteresse = deltaInteresse;
     }
     
-     public Resposta(int id, String texto, String humorFinal, int deltaEnergia, int deltaInteresse) {
+    public Resposta(int id, String texto, String humorFinal, double deltaInteresse, double deltaEnergia) {
         this.id = id;
         this.humorFinal = humorFinal;
         this.texto = texto;
-        this.deltaEnergia = deltaEnergia;
         this.deltaInteresse = deltaInteresse;
+        this.deltaEnergia = deltaEnergia;
     }
 
     /*===============================
@@ -64,19 +76,19 @@ public class Resposta {
         this.humorFinal = humorFinal;
     }
 
-    public int getDeltaInteresse() {
+    public double getDeltaInteresse() {
         return this.deltaInteresse;
     }
 
-    public void setDeltaInteresse(int deltaInteresse) {
+    public void setDeltaInteresse(double deltaInteresse) {
         this.deltaInteresse = deltaInteresse;
     }
      
-     public int getDeltaEnergia() {
+     public double getDeltaEnergia() {
         return this.deltaEnergia;
     }
 
-    public void setDeltaEnergia(int deltaEnergia) {
+    public void setDeltaEnergia(double deltaEnergia) {
         this.deltaEnergia = deltaEnergia;
     }
      

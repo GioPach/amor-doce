@@ -88,9 +88,8 @@ public class Conversa {
         this.respostaUsuario = respostaUsuario;
         this.personagem.atualizarInteresse(this.respostaUsuario.getDeltaInteresse()); // atualiza barra de interesse
         this.personagem.atualizarHumor(this.respostaUsuario.getHumorFinal()); // atualiza barra de humor
-        this.personagem.atualizarEnergia(this.respostaUsuario.getDeltaEnergia()); // atualiza barra de energia
-    // arredondar deltas:   
-    // this.personagem.atualizarColega(this.respostaUsuario.getDeltaEnergia() / 2, this.respostaUsuario.getDeltaEnergia() / 2); // fofoca com Personagem da mesma turma (50% de influência)
+        this.personagem.atualizarEnergia(this.respostaUsuario.getDeltaEnergia()); // atualiza barra de energia  
+        this.personagem.atualizarColegas(this.respostaUsuario.getDeltaInteresse() / 2); // fofoca com Personagem da mesma turma (50% de influência)
     }
     
     /*===============================
@@ -120,10 +119,6 @@ public class Conversa {
      * @param idResposta 
      */
     public void escolherResposta(int idResposta) {
-        if(idResposta < 0 || idResposta > 2) {
-            throw new Error("Modelo Conversa -> metodo escolherResposta: o id da resposta deve ser: 0, 1 ou 2");
-        }
-        
         this.setRespostaUsuario(buscarResposta(idResposta));
     } 
     
@@ -133,12 +128,10 @@ public class Conversa {
      * @return o objeto da reação do personagem
      */
     private Resposta buscarReacao(int idResposta) {
-        for(Resposta reacao : this.reacoesPossiveis) {
-            if(reacao.getId() == idResposta) {
-                return reacao;
-            }
-        }
-        throw new Error("Modelo Conversa -> metodo buscarReacao: reacao nao encontrada...");
+        return this.reacoesPossiveis.stream()
+            .filter(conversa -> conversa.getId() == idResposta)
+            .findFirst()
+            .orElse(new Resposta());
     }
     
     /**
@@ -147,18 +140,9 @@ public class Conversa {
      * @return o objeto da resposta do usuário
      */
     private Resposta buscarResposta(int idResposta) {
-        for(Resposta resposta : this.respostasPossiveis) {
-            if(resposta.getId() == idResposta) {
-                return resposta;
-            }
-        }
-        throw new Error("Modelo Conversa -> metodo buscarResposta: resposta nao encontrada...");
+        return this.respostasPossiveis.stream()
+            .filter(conversa -> conversa.getId() == idResposta)
+            .findFirst()
+            .orElse(new Resposta());
     }
-
-    @Override
-    public String toString() {
-        return "Conversa{" + "id=" + id + ", personagem=" + personagem + ", pergunta=" + pergunta + ", respostasPossiveis=" + respostasPossiveis + ", reacoesPossiveis=" + reacoesPossiveis + ", respostaUsuario=" + respostaUsuario + ", numRespostasPossiveis=" + numRespostasPossiveis + '}';
-    }
-    
-    
 }

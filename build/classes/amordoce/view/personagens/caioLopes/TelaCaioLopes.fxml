@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amordoce.control.personagens.caioLopes.TelaCaioLopesController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0">
+         <image>
+            <Image url="@../../../../assets/img/personagens/CaioLopes.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnVoltar" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" onAction="#handlerButtonVoltar" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Voltar" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label fx:id="labelPergunta" alignment="CENTER" layoutX="450.0" layoutY="205.0" prefHeight="146.0" prefWidth="430.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px;" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+      <Button fx:id="btnConversas" layoutX="1131.0" layoutY="30.0" mnemonicParsing="false" onAction="#handlerLogConversas" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Conversas" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnProxima" layoutX="1131.0" layoutY="652.0" mnemonicParsing="false" onAction="#handlerButtonProxima" prefHeight="35.0" prefWidth="109.6" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Próxima" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <VBox layoutX="348.0" layoutY="465.0" prefHeight="168.0" prefWidth="602.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnOpcaoA" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="602.0" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnOpcaoB" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="602.0" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnOpcaoC" mnemonicParsing="false" onAction="#handlerButtonResposta" prefHeight="50.0" prefWidth="602.0" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox layoutX="967.0" layoutY="220.0" prefHeight="146.0" prefWidth="220.0" spacing="20.0">
+         <children>
+            <Label fx:id="labelHumor" alignment="CENTER" prefHeight="34.0" prefWidth="220.0" style="-fx-background-color: #fff; -fx-background-radius: 10px; -fx-border-color: #000; -fx-border-width: 2px; -fx-border-radius: 10px;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelEnergia" alignment="CENTER" prefHeight="34.0" prefWidth="220.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelInteresse" alignment="CENTER" prefHeight="34.0" prefWidth="220.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Button fx:id="btnStats" layoutX="235.0" layoutY="447.0" mnemonicParsing="false" onAction="#handlerMostrarStats" styleClass="btn" stylesheets="@../../../../css/buttons.css" text="Stats" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <VBox fx:id="statsBox" layoutX="37.0" layoutY="510.0" prefHeight="161.0" prefWidth="273.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px; -fx-border-color: #000; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-padding: 10px;" visible="false">
+         <children>
+            <HBox prefWidth="249.0">
+               <children>
+                  <Label text="Nome:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelNome" prefHeight="20.0" prefWidth="205.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefWidth="249.0">
+               <children>
+                  <Label text="Idade:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelIdade" prefHeight="20.0" prefWidth="208.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefWidth="249.0">
+               <children>
+                  <Label text="Signo:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelSigno" prefHeight="20.0" prefWidth="201.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefWidth="249.0">
+               <children>
+                  <Label text="Nacionalidade:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelNacionalidade" prefHeight="20.0" prefWidth="150.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="22.0" layoutY="22.0" prefWidth="249.0">
+               <children>
+                  <Label text="Turma:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelTurma" prefHeight="20.0" prefWidth="201.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Label fx:id="labelFofoca" alignment="CENTER" layoutX="373.0" layoutY="89.0" prefHeight="62.0" prefWidth="577.0" styleClass="labelFofoca" stylesheets="@../../../../css/labelFofoca.css" textAlignment="CENTER" visible="false" wrapText="true" />
+      <Pane fx:id="btnNamoro" layoutX="985.0" layoutY="391.0" prefHeight="146.0" prefWidth="183.0">
+         <children>
+            <ImageView fitHeight="135.0" fitWidth="166.0" layoutX="9.0" layoutY="7.0">
+               <image>
+                  <Image url="@../../../../assets/img/iconeCoracao.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="17.0" layoutY="16.0" mnemonicParsing="false" onAction="#handlerPedirEmNamoro" prefHeight="114.0" prefWidth="150.0" styleClass="btnNamoro" stylesheets="@../../../../css/buttons.css" text="PEDIR EM NAMORO" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

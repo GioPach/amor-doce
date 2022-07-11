@@ -1,7 +1,11 @@
 package amordoce.model;
 
-import java.util.Set;
+import enums.NivelDificuldade;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -9,32 +13,43 @@ public class Personagem {
 
     private String nome;
     private String turma;
-    private Personagem colega;
+    private Set<Personagem> colegas = new HashSet<>();
     private int idade;
     private String signo;
     private String nacionalidade;
     private char genero;
+    private String msgApresentacao;
     private String humor; // barra
-    private int energia; // barra
-    private int interesse; // barra
-    private String nivel; // barra
-    public Set<Conversa> conversas = new HashSet<>(); // conversas do personagem
-    public Set<Conversa> conversasConcluidas = new HashSet<>(); // conversas concluídas para gerar o log de conversas
+    private double energia; // barra
+    private double interesse; // barra
+    private NivelDificuldade nivel;
+    private double fatorNivel; // determina o valor máximo do intervalo a ser utilizado para sorteio ao pedir em namoro
+    private String fofoca;
+    private boolean pedidoEmNamoro;
+    public List<Conversa> conversas = new ArrayList<>(); // conversas do personagem
+    public List<Conversa> conversasConcluidas = new ArrayList<>(); // conversas concluídas para gerar o log de conversas
+    
+    final private int converterParaPorcentagem = 100;
 
     public Personagem() {
     }
-
-    public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, String humor, int energia, int interesse, String nivel) {
+    
+    public Personagem(String nome, String turma, int idade, String signo, String nacionalidade, char genero, NivelDificuldade nivel) {
         this.nome = nome;
         this.turma = turma;
         this.idade = idade;
         this.signo = signo;
         this.nacionalidade = nacionalidade;
         this.genero = genero;
-        this.humor = humor;
-        this.energia = energia;
-        this.interesse = interesse;
+        String primeiroNome = this.getNome().substring(0, this.getNome().indexOf(" "));
+        this.msgApresentacao = "Me chamo " + primeiroNome + ", sou da turma de " + this.getTurma();
+        this.humor = "Neutro";
+        this.energia = 1.0;
+        this.interesse = 0.0; // começa por padrão para implementar a lógica de sorteio do pedido de namoro
         this.nivel = nivel;
+        this.setFatorNivel();
+        this.fofoca = "";
+        this.pedidoEmNamoro = false;
     }
     
     /*===============================
@@ -57,12 +72,12 @@ public class Personagem {
         this.turma = turma;
     }
 
-    public Personagem getColega() {
-        return colega;
+    public Set<Personagem> getColegas() {
+        return this.colegas;
     }
 
     public void setColega(Personagem colega) {
-        this.colega = colega;
+        this.colegas.add(colega);
     }
 
     public int getIdade() {
@@ -97,6 +112,14 @@ public class Personagem {
         this.genero = genero;
     }
 
+    public String getMsgApresentacao() {
+        return msgApresentacao;
+    }
+
+    public void setMsgApresentacao(String msgApresentacao) {
+        this.msgApresentacao = msgApresentacao;
+    }
+
     public String getHumor() {
         return this.humor;
     }
@@ -105,91 +128,120 @@ public class Personagem {
         this.humor = humor;
     }
 
-    public Set<Conversa> getConversas() {
+    public List<Conversa> getConversas() {
         return conversas;
     }
 
-    public void setConversas(Set<Conversa> conversas) {
+    public void setConversas(List<Conversa> conversas) {
         this.conversas = conversas;
     }
 
-    public Set<Conversa> getConversasConcluidas() {
+    public List<Conversa> getConversasConcluidas() {
         return conversasConcluidas;
     }
 
-    public void setConversasConcluidas(Set<Conversa> conversasConcluidas) {
+    public void setConversasConcluidas(List<Conversa> conversasConcluidas) {
         this.conversasConcluidas = conversasConcluidas;
     }
 
     public int getEnergia() {
-        return this.energia;
+        return (int) Math.round(this.energia * converterParaPorcentagem);
     }
 
-    public void setEnergia(int energia) {
-        this.energia = energia;
+    public void setEnergia(double energia) {
+        this.atualizarEnergia(energia);
     }
 
     public int getInteresse() {
-        return this.interesse;
+        return (int) Math.round(this.interesse * converterParaPorcentagem);
     }
 
-    public void setInteresse(int interesse) {
-        this.interesse = interesse;
+    public void setInteresse(double interesse) {
+        this.atualizarInteresse(interesse);
     }
 
-    public String getNivel() {
+    public NivelDificuldade getNivel() {
         return this.nivel;
     }
 
-    public void setNivel(String nivel) {
+    public void setNivel(NivelDificuldade nivel) {
         this.nivel = nivel;
+    }
+
+    public double getFatorNivel() {
+        return this.fatorNivel;
+    }
+
+    /**
+     * Setta o desconto para o valor configurado no enum NivelDificuldade
+     */
+    public final void setFatorNivel() {
+        this.fatorNivel = this.getNivel().getDesconto();
+    }
+    
+    public String getFofoca() {
+        return fofoca;
+    }
+
+    public void setFofoca(String fofoca) {
+        this.fofoca = fofoca;
+    }
+    
+    public boolean isPedidoEmNamoro() {
+        return pedidoEmNamoro;
+    }
+
+    public void setPedidoEmNamoro(boolean pedidoEmNamoro) {
+        this.pedidoEmNamoro = pedidoEmNamoro;
+    }
+     
+    /**
+     * O Padrão Iterator fornece uma maneira de acessar sequencialmente os elementos de um objeto agregado sem expor a sua representação subjacente
+     * @return o primeiro elemento da fila de conversas
+     */
+    public Conversa getConversaAtual() {               
+        if(this.conversas.isEmpty()) {
+            return new Conversa();
+        } else {
+            return this.conversas.iterator().next();
+        }
     }
     
     /*===============================
     # Demais métodos
     ===============================*/
     
-    /**
-     * O Padrão Iterator fornece uma maneira de acessar sequencialmente os elementos de um objeto agregado sem expor a sua representação subjacente
-     * @return o primeiro elemento da fila de conversas
-     */
-    public Conversa getConversaAtual() {
-               
-        if(this.conversas.isEmpty()) {
-            return new Conversa();
-        } else {
-            return this.conversas.iterator().next();
-        }
-    }    
     
     /**
-     * Conclui uma conversa (diálogo) e adiciona ela às já concluídas para ter o log de conversas no futuro
-     * @param idConversa 
+     * Atualiza a energia do personagem após um diálogo
+     * @param deltaEnergia 
      */
-    public void concluirConversa(int idConversa) {
-        for(Conversa conversa : this.conversas) {
-            if(conversa.getId() == idConversa) {
-                this.conversasConcluidas.add(conversa);
-                this.conversas.remove(conversa);
-            }
+    public void atualizarEnergia(double deltaEnergia) {
+        double tmpEnergia = arredondarDuasCasasDecimais(deltaEnergia + this.energia);
+        
+        if(tmpEnergia > 1.0) {
+            this.energia = 1.0;
+        } else if (tmpEnergia < 0.0){
+            this.energia = 0.0;
+        } else {
+            this.energia = tmpEnergia;
         }
+        
     }
     
     /**
      * Atualiza o interesse do personagem pelo usuário
      * @param deltaInteresse 
      */    
-    public void atualizarInteresse(int deltaInteresse) {
-        int tmpInteresse = this.interesse + deltaInteresse;
+    public void atualizarInteresse(double deltaInteresse) {   
+        double interesseFinal = arredondarDuasCasasDecimais(this.interesse + deltaInteresse);
         
-        if(tmpInteresse < 0) {
-            this.interesse = 0;
-        }         
-        else if(tmpInteresse > 100) {
-            this.interesse = 100;
-        }         
-        else {
-            this.interesse += deltaInteresse;
+        if(interesseFinal > 1) {
+            this.interesse = 1.0;
+        } else if(interesseFinal < 0) {
+            this.interesse = 0.0;
+        } else {
+            this.interesse = interesseFinal;
         }
     }
     
@@ -200,37 +252,95 @@ public class Personagem {
     public void atualizarHumor(String humorFinal) {
         this.humor = humorFinal;
     }
-    
-    /**
-     * Atualiza a energia do personagem após um diálogo
-     * @param deltaEnergia 
-     */
-    public void atualizarEnergia(int deltaEnergia) {
-        int tmpEnergia = this.energia + deltaEnergia;
-        
-        if(tmpEnergia < 0) {
-            this.energia = 0;
-        }         
-        else if(tmpEnergia > 100) {
-            this.energia = 100;
-        }         
-        else {
-            this.energia += deltaEnergia;
+       
+    public void atualizarColegas(double deltaInteresse) {
+        for(Personagem colega : this.colegas) {
+            colega.atualizarInteresse(deltaInteresse);
+            
+            String fofocaMensagem = this.getNome() + " fofocou com " + colega.getNome() + ".\nO interesse de " + colega.getNome();
+            
+            if(deltaInteresse > 0) {
+                fofocaMensagem += " aumentou em " + arredondarDuasCasasDecimais(deltaInteresse * converterParaPorcentagem) + "%.";
+            }
+            else if (deltaInteresse < 0){
+                fofocaMensagem += " diminuiu em " + arredondarDuasCasasDecimais(deltaInteresse * converterParaPorcentagem) + "%.";
+            }
+            else {
+                fofocaMensagem += " permaneceu igual.";
+            }
+            
+            colega.setFofoca(fofocaMensagem);
         }
     }
     
-    public void atualizarColega(int deltaInteresse, int deltaEnergia) {
+    /**
+     * Conclui uma conversa (diálogo) e adiciona ela às já concluídas para ter o log de conversas no futuro
+     * @param idConversa 
+     */
+    public void concluirConversa(int idConversa) {
+        Conversa conversaConcluida = this.conversas.stream().filter(conversa -> conversa.getId() == idConversa).findFirst().orElse(new Conversa());
+        this.conversasConcluidas.add(conversaConcluida);
+        this.conversas.remove(conversaConcluida);
+    }
+    
+    public boolean validarConversaAlternativa(int idConversa, int idRespostaTarget) {
+        Resposta respostaAnterior;
+        try {
+            respostaAnterior = this.conversasConcluidas.get(idConversa).getRespostaUsuario();
+        } catch (Exception e) {
+            System.out.println(e);
+            respostaAnterior = new Resposta();
+        }
         
+        if(respostaAnterior.getId() == idRespostaTarget) {
+            return true;
+        } else {
+            return false;
+        }
     }
     
     /**
-     * ObservableList??
-     * @return 
+     * Método usado para settar visibilidade do botão de pedir em namoro. O botão
+     * se tornará visível ao usuário caso o personagem tenha atingido 50% de interesse,
+     * possibilitando o pedido de namoro, que será executado pelo método pedirEmNamoro.
+     * @return true se o personagem tiver 50% de interesse no mínimo; false caso contrário.
+     */
+    public boolean validarInteresse() {
+        return this.interesse >= 0.5;
+    }   
+    
+    /**
+     * Método utilizado para garantir a validade do valor sorteado ao pedir em namoro
+     * @param valor
+     * @return valor com duas casas decimais
+     */
+    private double arredondarDuasCasasDecimais(double valor) {
+        return Math.round(valor * 100.0) / 100.0;
+    }
+    
+    /**
+     * Método chamado quando o usuário clicar no botão Pedir Em Namoro.
+     * Sorteará um número dentro do intervalo interesse-nivel
+     * @return true para responder "SIM" (número sorteado maior ou igual a 0.5); false caso contrário
+     */
+    public boolean pedirEmNamoro() {
+        if(!validarInteresse()) {
+            throw new Error("Modelo Personagem -> pedirEmNamoro: interesse menor que 50%...");
+        }
+        final double corretorIntervalo = 0.5;
+        Random rand = new Random();
+        double resposta = arredondarDuasCasasDecimais(rand.nextDouble(this.interesse - corretorIntervalo, this.fatorNivel));
+        return resposta >= 0.5;        
+    }
+    
+    /**
+     * ObservableList utilizada para o componente ListView logar as conversas concluídas
+     * @return lista de strings compostas pela pergunta do personagem e a resposta escolhida pelo usuário
      */
     public ObservableList<String> logPersonagem() {
         ObservableList<String> perguntaResposta = FXCollections.observableArrayList();
         this.conversasConcluidas.forEach((conversa) -> {
-            perguntaResposta.add(conversa.getPergunta() + " " + conversa.getRespostaUsuario().getTexto());
+            perguntaResposta.add(this.nome + ": " + conversa.getPergunta().replace("\n", " ") + "\nVocê: " + conversa.getRespostaUsuario().getTexto().replace("\n", " "));
         });
         return perguntaResposta;    
     }
