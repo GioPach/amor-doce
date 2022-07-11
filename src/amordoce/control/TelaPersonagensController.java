@@ -17,6 +17,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 public class TelaPersonagensController implements Initializable {
     
@@ -33,11 +34,42 @@ public class TelaPersonagensController implements Initializable {
     
     private static boolean start = true;
     
+    @FXML
+    public Button btnDylanAyala;
+    @FXML
+    public Button btnMatthewWilliams;
+    @FXML
+    public Button btnCaioLopes;
+    @FXML
+    public Button btnRenzoAndreotti;
+    @FXML
+    public Button btnSophiePorto;
+    @FXML
+    public Button btnCatherineJones;
+    @FXML
+    public Button btnDarioAgostini;
+    @FXML
+    public Button btnJudyWillis;
+    @FXML
+    public Button btnEmaMontenegro;
+    @FXML
+    public Button btnSusanneLefort;
+    @FXML
+    public Button btnFimDeJogo;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         if(TelaPersonagensController.start) {
             initPersonagens();          
             TelaPersonagensController.start = false;
+        }
+        else {
+            int numPersonagensIndisponiveis = verificaDisponibilidadeBtnPersonagens();
+            
+            if(numPersonagensIndisponiveis == App.personagens.size()) {
+                btnFimDeJogo.setVisible(true);
+            }
         }
     }
     
@@ -53,12 +85,11 @@ public class TelaPersonagensController implements Initializable {
         App.personagens.add(sophiePorto);
         App.personagens.add(susanneLefort);
         
-        instanciarColegas();
-                
+        instanciarColegas();       
     }
     
     private void instanciarColegas() {
-        // Verica para cada personagem a turma dos outros e coloca dentro de um array aqueles que forem da turma dele
+        // Verifica para cada personagem a turma dos outros e coloca dentro de um array aqueles que forem da turma dele
         for(Personagem personagem : App.personagens) {
             for(Personagem colega : App.personagens) {
                 if(colega != personagem && colega.getTurma().equals(personagem.getTurma())) {
@@ -66,6 +97,62 @@ public class TelaPersonagensController implements Initializable {
                 }
             }
         }
+    }
+    
+    /**
+     * Verifica se o personagem ainda pode ser acessado (se ainda não foi pedido em namoro)
+     */
+    private int verificaDisponibilidadeBtnPersonagens() {
+        int numPersonagensIndisponiveis = 0;
+        
+        if(caioLopes.isPedidoEmNamoro()) {
+            btnCaioLopes.setDisable(true);
+            numPersonagensIndisponiveis++;
+        }
+        if(catherineJones.isPedidoEmNamoro()) {
+            btnCatherineJones.setDisable(true);
+            numPersonagensIndisponiveis++;
+        }
+        if(darioAgostini.isPedidoEmNamoro()) {
+            btnDarioAgostini.setDisable(true);
+            numPersonagensIndisponiveis++;
+        }
+        if(dylanAyala.isPedidoEmNamoro()) {
+            btnDylanAyala.setDisable(true);
+            numPersonagensIndisponiveis++;
+        }
+        if(emaMontenegro.isPedidoEmNamoro()) {
+            btnEmaMontenegro.setDisable(true);
+            numPersonagensIndisponiveis++;
+        }
+        if(judyWillis.isPedidoEmNamoro()) {
+            btnJudyWillis.setDisable(true);
+            numPersonagensIndisponiveis++;
+        }
+        if(matthewWilliams.isPedidoEmNamoro()) {
+            btnMatthewWilliams.setDisable(true);
+            numPersonagensIndisponiveis++;
+        }
+        if(renzoAndreotti.isPedidoEmNamoro()) {
+            btnRenzoAndreotti.setDisable(true);
+            numPersonagensIndisponiveis++;
+        }
+        if(sophiePorto.isPedidoEmNamoro()) {
+            btnSophiePorto.setDisable(true);
+            numPersonagensIndisponiveis++;
+        }
+        if(susanneLefort.isPedidoEmNamoro()) {
+            btnSusanneLefort.setDisable(true);
+            numPersonagensIndisponiveis++;
+        }
+        
+        return numPersonagensIndisponiveis;
+    }
+    
+    //Fim de Jogo
+    @FXML
+    private void handlerButtonFimDeJogo() throws Exception {
+        App.setRoot("TelaFimDeJogoRuim");
     }
     
     //Ema Montenegro

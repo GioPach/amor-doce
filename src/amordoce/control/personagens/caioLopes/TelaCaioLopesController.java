@@ -25,22 +25,23 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
     
     @FXML
     private void handlerButtonProxima(ActionEvent event) throws Exception {        
-        TelaPersonagensController.caioLopes.setFofoca("");
+        if(TelaPersonagensController.emaMontenegro.isPedidoEmNamoro()) {
+            App.setRoot("TelaFimDeJogoBom");
+        }
+        else {
+            TelaPersonagensController.emaMontenegro.setFofoca("");
         
-        listenVisibilidadeNamoro(TelaPersonagensController.caioLopes);
-        listenVisibilidadeFofoca(TelaPersonagensController.caioLopes);
-        TelaPersonagensController.caioLopes.verificarRespostaConversa3();
-        carregarConversa(TelaPersonagensController.caioLopes);
-        setVisibilidadeButton(this.btnProxima, false);
+            listenVisibilidadeNamoro(TelaPersonagensController.emaMontenegro);
+            listenVisibilidadeFofoca(TelaPersonagensController.emaMontenegro);
+            TelaPersonagensController.emaMontenegro.verificarRespostaConversa3();
+            carregarConversa(TelaPersonagensController.emaMontenegro);
+            setVisibilidadeButton(this.btnProxima, false);
+        }
     }
     
      @FXML
     public void handlerPedirEmNamoro(ActionEvent event) throws Exception {
-        if(TelaPersonagensController.caioLopes.pedirEmNamoro()) {
-            System.out.println("SIM");
-        } else {
-            System.out.println("NAO");
-        }
+        mostrarPedidoDeNamoro(TelaPersonagensController.caioLopes);
     }
     
     @FXML
@@ -50,35 +51,52 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
     
     @FXML
     private void handlerButtonResposta(ActionEvent event) throws Exception {
-        Button btn = (Button) event.getSource();
-        
-        int idResposta;
-        
-        switch(btn.getId())
-        {
-            case "btnOpcaoA":
-                idResposta = 0;
-                break;
+        if(TelaPersonagensController.emaMontenegro.isPedidoEmNamoro()) {
+            setVisibilidadeRespostas(false);
+            Thread.sleep(2000);
             
-            case "btnOpcaoB":
-                idResposta = 1;
-                break;
-
-            case "btnOpcaoC":
-                idResposta = 2;
-                break;
-                
-            default:
-                idResposta = -1;
-                break;
-                
+            if(TelaPersonagensController.emaMontenegro.pedirEmNamoro()) {
+                labelPergunta.setText("SIM!");
+                setVisibilidadeButton(this.btnProxima, true);
+            }
+            else {
+                labelPergunta.setText("NÃO!");
+                setVisibilidadeButton(this.btnVoltar, true);
+                setVisibilidadeButton(this.btnConversas, true);
+            }
+            
         }
-        
-        TelaPersonagensController.caioLopes.getConversaAtual().escolherResposta(idResposta);
-        atualizarAtributosTela(TelaPersonagensController.caioLopes);
-        labelPergunta.setText(TelaPersonagensController.caioLopes.getConversaAtual().getReacao(idResposta));
-        TelaPersonagensController.caioLopes.concluirConversa(TelaPersonagensController.caioLopes.getConversaAtual().getId());
-        setVisibilidadeRespostas(false);
-        setVisibilidadeButton(this.btnProxima, true);
+        else {
+            Button btn = (Button) event.getSource();
+
+            int idResposta;
+
+            switch(btn.getId())
+            {
+                case "btnOpcaoA":
+                    idResposta = 0;
+                    break;
+
+                case "btnOpcaoB":
+                    idResposta = 1;
+                    break;
+
+                case "btnOpcaoC":
+                    idResposta = 2;
+                    break;
+
+                default:
+                    idResposta = -1;
+                    break;
+
+            }
+
+            TelaPersonagensController.emaMontenegro.getConversaAtual().escolherResposta(idResposta);
+            atualizarAtributosTela(TelaPersonagensController.emaMontenegro);
+            labelPergunta.setText(TelaPersonagensController.emaMontenegro.getConversaAtual().getReacao(idResposta));
+            TelaPersonagensController.emaMontenegro.concluirConversa(TelaPersonagensController.emaMontenegro.getConversaAtual().getId());
+            setVisibilidadeRespostas(false);
+            setVisibilidadeButton(this.btnProxima, true);
+        }
     }
 }

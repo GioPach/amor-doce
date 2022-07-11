@@ -24,6 +24,7 @@ public class Personagem {
     private NivelDificuldade nivel;
     private double fatorNivel; // determina o valor máximo do intervalo a ser utilizado para sorteio ao pedir em namoro
     private String fofoca;
+    private boolean pedidoEmNamoro;
     public List<Conversa> conversas = new ArrayList<>(); // conversas do personagem
     public List<Conversa> conversasConcluidas = new ArrayList<>(); // conversas concluídas para gerar o log de conversas
     
@@ -45,6 +46,7 @@ public class Personagem {
         this.nivel = nivel;
         this.setFatorNivel();
         this.fofoca = "";
+        this.pedidoEmNamoro = false;
     }
     
     /*===============================
@@ -172,6 +174,14 @@ public class Personagem {
 
     public void setFofoca(String fofoca) {
         this.fofoca = fofoca;
+    }
+    
+    public boolean isPedidoEmNamoro() {
+        return pedidoEmNamoro;
+    }
+
+    public void setPedidoEmNamoro(boolean pedidoEmNamoro) {
+        this.pedidoEmNamoro = pedidoEmNamoro;
     }
      
     /**
