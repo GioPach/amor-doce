@@ -127,7 +127,7 @@ public class TesteSorteio {
     private void teste(double min, double max) {
         double contSim = 0.0;
         double contNao = 0.0;
-
+      
         for (int i = 0; i < 150; i++) {
             if (pedirEmNamoro(min, max)) {
                 contSim += 1.0;
@@ -148,12 +148,12 @@ public class TesteSorteio {
     private boolean pedirEmNamoro(double min, double max) {
 
         Random rand = new Random();
-        double resposta = arredondarDuasCasasDecimais(rand.nextDouble(min, max));
+        double resposta = arredondarDuasCasasDecimais(min + (max - min) * rand.nextDouble());
         if (resposta < 0.5) {
-            // System.out.println("NÃO: " + resposta);
+            //System.out.println("NÃO: " + resposta);
             return false;
         } else {
-            // System.out.println("SIM: " + resposta);
+            //System.out.println("SIM: " + resposta);
             return true;
         }
 

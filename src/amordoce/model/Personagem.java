@@ -332,7 +332,7 @@ public class Personagem {
         final double corretorIntervalo = 0.5;
         double min = this.interesse - corretorIntervalo;
         double max = this.fatorNivel;
-        double resposta = arredondarDuasCasasDecimais(rand.nextDouble(min, max));
+        double resposta = arredondarDuasCasasDecimais(min + (max - min) * rand.nextDouble());
     
         return resposta >= 0.5;        
     }
