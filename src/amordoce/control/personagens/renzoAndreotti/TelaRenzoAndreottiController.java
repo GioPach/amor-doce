@@ -68,35 +68,10 @@ public class TelaRenzoAndreottiController extends PersonagemController implement
         }
         else {
             Button btn = (Button) event.getSource();
-
-            int idResposta;
-
-            switch(btn.getId())
-            {
-                case "btnOpcaoA":
-                    idResposta = 0;
-                    break;
-
-                case "btnOpcaoB":
-                    idResposta = 1;
-                    break;
-
-                case "btnOpcaoC":
-                    idResposta = 2;
-                    break;
-
-                default:
-                    idResposta = -1;
-                    break;
-
-            }
-
-            TelaPersonagensController.renzoAndreotti.getConversaAtual().escolherResposta(idResposta);
+            int idRespostaEscolhida = tratarResposta(btn.getId(), TelaPersonagensController.renzoAndreotti);
             atualizarAtributosTela(TelaPersonagensController.renzoAndreotti);
-            labelPergunta.setText(TelaPersonagensController.renzoAndreotti.getConversaAtual().getReacao(idResposta));
-            TelaPersonagensController.renzoAndreotti.concluirConversa(TelaPersonagensController.renzoAndreotti.getConversaAtual().getId());
-            setVisibilidadeRespostas(false);
-            setVisibilidadeButton(this.btnProxima, true);
+            labelPergunta.setText(TelaPersonagensController.renzoAndreotti.getConversaAtual().getReacao(idRespostaEscolhida));
+            concluirConversa(TelaPersonagensController.renzoAndreotti);
         }
     }
 }

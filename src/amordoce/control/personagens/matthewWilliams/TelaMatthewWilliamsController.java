@@ -68,35 +68,10 @@ public class TelaMatthewWilliamsController extends PersonagemController implemen
         }
         else {
             Button btn = (Button) event.getSource();
-
-            int idResposta;
-
-            switch(btn.getId())
-            {
-                case "btnOpcaoA":
-                    idResposta = 0;
-                    break;
-
-                case "btnOpcaoB":
-                    idResposta = 1;
-                    break;
-
-                case "btnOpcaoC":
-                    idResposta = 2;
-                    break;
-
-                default:
-                    idResposta = -1;
-                    break;
-
-            }
-
-            TelaPersonagensController.matthewWilliams.getConversaAtual().escolherResposta(idResposta);
+            int idRespostaEscolhida = tratarResposta(btn.getId(), TelaPersonagensController.matthewWilliams);
             atualizarAtributosTela(TelaPersonagensController.matthewWilliams);
-            labelPergunta.setText(TelaPersonagensController.matthewWilliams.getConversaAtual().getReacao(idResposta));
-            TelaPersonagensController.matthewWilliams.concluirConversa(TelaPersonagensController.matthewWilliams.getConversaAtual().getId());
-            setVisibilidadeRespostas(false);
-            setVisibilidadeButton(this.btnProxima, true);
+            labelPergunta.setText(TelaPersonagensController.matthewWilliams.getConversaAtual().getReacao(idRespostaEscolhida));
+            concluirConversa(TelaPersonagensController.matthewWilliams);
         }
     }
 }

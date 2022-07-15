@@ -68,35 +68,10 @@ public class TelaSusanneLefortController extends PersonagemController implements
         }
         else {
             Button btn = (Button) event.getSource();
-            
-            int idResposta;
-            
-            switch(btn.getId())
-            {
-                case "btnOpcaoA":
-                    idResposta = 0;
-                    break;
-                
-                case "btnOpcaoB":
-                    idResposta = 1;
-                    break;
-
-                case "btnOpcaoC":
-                    idResposta = 2;
-                    break;
-                    
-                default:
-                    idResposta = -1;
-                    break;
-                    
-            }
-            
-            TelaPersonagensController.susanneLefort.getConversaAtual().escolherResposta(idResposta);
+            int idRespostaEscolhida = tratarResposta(btn.getId(), TelaPersonagensController.susanneLefort);
             atualizarAtributosTela(TelaPersonagensController.susanneLefort);
-            labelPergunta.setText(TelaPersonagensController.susanneLefort.getConversaAtual().getReacao(idResposta));
-            TelaPersonagensController.susanneLefort.concluirConversa(TelaPersonagensController.susanneLefort.getConversaAtual().getId());
-            setVisibilidadeRespostas(false);
-            setVisibilidadeButton(this.btnProxima, true);
+            labelPergunta.setText(TelaPersonagensController.susanneLefort.getConversaAtual().getReacao(idRespostaEscolhida));
+            concluirConversa(TelaPersonagensController.susanneLefort);
         }
     }
 }

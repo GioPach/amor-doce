@@ -201,7 +201,7 @@ public class Personagem {
      */
     public Conversa getConversaAtual() {               
         if(this.conversas.isEmpty()) {
-            return new Conversa();
+            return new Conversa(true);
         } else {
             return this.conversas.iterator().next();
         }
@@ -277,10 +277,9 @@ public class Personagem {
      * Conclui uma conversa (diálogo) e adiciona ela às já concluídas para ter o log de conversas no futuro
      * @param idConversa 
      */
-    public void concluirConversa(int idConversa) {
-        Conversa conversaConcluida = this.conversas.stream().filter(conversa -> conversa.getId() == idConversa).findFirst().orElse(new Conversa());
-        this.conversasConcluidas.add(conversaConcluida);
-        this.conversas.remove(conversaConcluida);
+    public void moverConversaAtual() {
+        this.conversasConcluidas.add(this.getConversaAtual());
+        this.conversas.remove(this.getConversaAtual());
     }
     
     public boolean validarConversaAlternativa(int idConversa, int idRespostaTarget) {

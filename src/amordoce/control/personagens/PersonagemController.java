@@ -124,6 +124,7 @@ public class PersonagemController implements Initializable {
 
         if(conversa.getId() == -1) {
             setVisibilidadeRespostas(false);
+            labelPergunta.setText(conversa.getPergunta());
         } else {
             setVisibilidadeRespostas(true);
             labelPergunta.setText(personagem.getConversaAtual().getPergunta());
@@ -131,6 +132,47 @@ public class PersonagemController implements Initializable {
             btnOpcaoB.setText(personagem.getConversaAtual().getResposta(1));
             btnOpcaoC.setText(personagem.getConversaAtual().getResposta(2));
         }
+    }
+    
+    /**
+     * Setta a resposta escolhida pelo usuário na conversa atual
+     * @param respostaEscolhida
+     * @param personagem
+     * @return id da resposta escolhida -> importante para selecionar a reação adequada do personagem
+     */
+    public int tratarResposta(String respostaEscolhida, Personagem personagem) {
+        int idResposta;
+        
+        switch(respostaEscolhida)
+        {
+            case "btnOpcaoA":
+                idResposta = 0;
+                break;
+
+            case "btnOpcaoB":
+                idResposta = 1;
+                break;
+
+            case "btnOpcaoC":
+                idResposta = 2;
+                break;
+
+            default:
+                idResposta = -1;
+                break;
+
+        }
+
+        personagem.getConversaAtual().escolherResposta(idResposta);        
+        return idResposta;
+        
+    }
+    
+    public void concluirConversa(Personagem personagem) {
+        personagem.moverConversaAtual();
+        setVisibilidadeRespostas(false);
+        setVisibilidadeButton(this.btnProxima, true);
+        setVisibilidadeButton(this.btnProxima, true);
     }
     
     public void mostrarPedidoDeNamoro(Personagem personagem) {

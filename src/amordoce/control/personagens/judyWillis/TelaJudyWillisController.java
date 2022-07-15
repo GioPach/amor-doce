@@ -68,35 +68,10 @@ public class TelaJudyWillisController extends PersonagemController implements In
         }
         else {
             Button btn = (Button) event.getSource();
-
-            int idResposta;
-
-            switch(btn.getId())
-            {
-                case "btnOpcaoA":
-                    idResposta = 0;
-                    break;
-
-                case "btnOpcaoB":
-                    idResposta = 1;
-                    break;
-
-                case "btnOpcaoC":
-                    idResposta = 2;
-                    break;
-
-                default:
-                    idResposta = -1;
-                    break;
-
-            }
-
-            TelaPersonagensController.judyWillis.getConversaAtual().escolherResposta(idResposta);
+            int idRespostaEscolhida = tratarResposta(btn.getId(), TelaPersonagensController.judyWillis);
             atualizarAtributosTela(TelaPersonagensController.judyWillis);
-            labelPergunta.setText(TelaPersonagensController.judyWillis.getConversaAtual().getReacao(idResposta));
-            TelaPersonagensController.judyWillis.concluirConversa(TelaPersonagensController.judyWillis.getConversaAtual().getId());
-            setVisibilidadeRespostas(false);
-            setVisibilidadeButton(this.btnProxima, true);
+            labelPergunta.setText(TelaPersonagensController.judyWillis.getConversaAtual().getReacao(idRespostaEscolhida));
+            concluirConversa(TelaPersonagensController.judyWillis);
         }
     }
 }

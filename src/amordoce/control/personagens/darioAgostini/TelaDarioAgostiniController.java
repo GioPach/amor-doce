@@ -68,35 +68,10 @@ public class TelaDarioAgostiniController extends PersonagemController implements
         }
         else {
             Button btn = (Button) event.getSource();
-
-            int idResposta;
-
-            switch(btn.getId())
-            {
-                case "btnOpcaoA":
-                    idResposta = 0;
-                    break;
-
-                case "btnOpcaoB":
-                    idResposta = 1;
-                    break;
-
-                case "btnOpcaoC":
-                    idResposta = 2;
-                    break;
-
-                default:
-                    idResposta = -1;
-                    break;
-
-            }
-
-            TelaPersonagensController.darioAgostini.getConversaAtual().escolherResposta(idResposta);
+            int idRespostaEscolhida = tratarResposta(btn.getId(), TelaPersonagensController.darioAgostini);
             atualizarAtributosTela(TelaPersonagensController.darioAgostini);
-            labelPergunta.setText(TelaPersonagensController.darioAgostini.getConversaAtual().getReacao(idResposta));
-            TelaPersonagensController.darioAgostini.concluirConversa(TelaPersonagensController.darioAgostini.getConversaAtual().getId());
-            setVisibilidadeRespostas(false);
-            setVisibilidadeButton(this.btnProxima, true);
+            labelPergunta.setText(TelaPersonagensController.darioAgostini.getConversaAtual().getReacao(idRespostaEscolhida));
+            concluirConversa(TelaPersonagensController.darioAgostini);        
         }
     }
 }

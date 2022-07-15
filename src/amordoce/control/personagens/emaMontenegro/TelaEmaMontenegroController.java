@@ -94,35 +94,10 @@ public class TelaEmaMontenegroController extends PersonagemController implements
         }
         else {
             Button btn = (Button) event.getSource();
-
-            int idResposta;
-
-            switch(btn.getId())
-            {
-                case "btnOpcaoA":
-                    idResposta = 0;
-                    break;
-
-                case "btnOpcaoB":
-                    idResposta = 1;
-                    break;
-
-                case "btnOpcaoC":
-                    idResposta = 2;
-                    break;
-
-                default:
-                    idResposta = -1;
-                    break;
-
-            }
-
-            TelaPersonagensController.emaMontenegro.getConversaAtual().escolherResposta(idResposta);
+            int idRespostaEscolhida = tratarResposta(btn.getId(), TelaPersonagensController.emaMontenegro);
             atualizarAtributosTela(TelaPersonagensController.emaMontenegro);
-            labelPergunta.setText(TelaPersonagensController.emaMontenegro.getConversaAtual().getReacao(idResposta));
-            TelaPersonagensController.emaMontenegro.concluirConversa(TelaPersonagensController.emaMontenegro.getConversaAtual().getId());
-            setVisibilidadeRespostas(false);
-            setVisibilidadeButton(this.btnProxima, true);
+            labelPergunta.setText(TelaPersonagensController.emaMontenegro.getConversaAtual().getReacao(idRespostaEscolhida));
+            concluirConversa(TelaPersonagensController.emaMontenegro);
         }
     }
 }

@@ -68,35 +68,10 @@ public class TelaDylanAyalaController extends PersonagemController implements In
         }
         else {
             Button btn = (Button) event.getSource();
-
-            int idResposta;
-
-            switch(btn.getId())
-            {
-                case "btnOpcaoA":
-                    idResposta = 0;
-                    break;
-
-                case "btnOpcaoB":
-                    idResposta = 1;
-                    break;
-
-                case "btnOpcaoC":
-                    idResposta = 2;
-                    break;
-
-                default:
-                    idResposta = -1;
-                    break;
-
-            }
-
-            TelaPersonagensController.dylanAyala.getConversaAtual().escolherResposta(idResposta);
+            int idRespostaEscolhida = tratarResposta(btn.getId(), TelaPersonagensController.dylanAyala);
             atualizarAtributosTela(TelaPersonagensController.dylanAyala);
-            labelPergunta.setText(TelaPersonagensController.dylanAyala.getConversaAtual().getReacao(idResposta));
-            TelaPersonagensController.dylanAyala.concluirConversa(TelaPersonagensController.dylanAyala.getConversaAtual().getId());
-            setVisibilidadeRespostas(false);
-            setVisibilidadeButton(this.btnProxima, true);
+            labelPergunta.setText(TelaPersonagensController.dylanAyala.getConversaAtual().getReacao(idRespostaEscolhida));
+            concluirConversa(TelaPersonagensController.dylanAyala);        
         }
     }
 }

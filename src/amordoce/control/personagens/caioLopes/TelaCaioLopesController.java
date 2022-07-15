@@ -65,36 +65,11 @@ public class TelaCaioLopesController extends PersonagemController implements Ini
             
         }
         else {
-            Button btn = (Button) event.getSource();
-
-            int idResposta;
-
-            switch(btn.getId())
-            {
-                case "btnOpcaoA":
-                    idResposta = 0;
-                    break;
-
-                case "btnOpcaoB":
-                    idResposta = 1;
-                    break;
-
-                case "btnOpcaoC":
-                    idResposta = 2;
-                    break;
-
-                default:
-                    idResposta = -1;
-                    break;
-
-            }
-
-            TelaPersonagensController.caioLopes.getConversaAtual().escolherResposta(idResposta);
+               Button btn = (Button) event.getSource();
+            int idRespostaEscolhida = tratarResposta(btn.getId(), TelaPersonagensController.caioLopes);
             atualizarAtributosTela(TelaPersonagensController.caioLopes);
-            labelPergunta.setText(TelaPersonagensController.caioLopes.getConversaAtual().getReacao(idResposta));
-            TelaPersonagensController.caioLopes.concluirConversa(TelaPersonagensController.caioLopes.getConversaAtual().getId());
-            setVisibilidadeRespostas(false);
-            setVisibilidadeButton(this.btnProxima, true);
+            labelPergunta.setText(TelaPersonagensController.caioLopes.getConversaAtual().getReacao(idRespostaEscolhida));
+            concluirConversa(TelaPersonagensController.caioLopes);   
         }
     }
 }
