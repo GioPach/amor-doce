@@ -18,7 +18,7 @@
             <Image url="@../../assets/img/FundoTelaLog.jpg" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER" layoutX="391.0" layoutY="274.0" prefHeight="172.0" prefWidth="498.0" style="-fx-background-color: #FFF; -fx-background-radius: 5px; -fx-padding: 20px;">
+      <VBox alignment="CENTER" layoutX="391.0" layoutY="274.0" prefHeight="202.0" prefWidth="498.0" spacing="8.0" style="-fx-background-color: #FFF; -fx-background-radius: 5px; -fx-padding: 20px;">
          <children>
             <Label fx:id="inputLabel" prefHeight="32.0" prefWidth="491.0" text="Informe o seu nome:">
                <font>
@@ -28,7 +28,7 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="inputNome" prefHeight="36.0" prefWidth="345.0">
+            <TextField fx:id="inputNome" prefHeight="36.0" prefWidth="345.0" stylesheets="@../../css/inputNome.css">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -39,6 +39,11 @@
                   <Font size="18.0" />
                </font>
             </TextField>
+            <Label fx:id="labelMsgErro" alignment="CENTER" prefHeight="19.0" prefWidth="401.0" text="O nome de usuário deve conter, no mínimo, 3 caracteres" textAlignment="CENTER" textFill="RED" visible="false" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="16.0" />
+               </font>
+            </Label>
             <Button fx:id="btnProximo" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handlerButtonProximo" styleClass="btn" stylesheets="@../../css/buttons.css" text="Próximo">
                <cursor>
                   <Cursor fx:constant="HAND" />

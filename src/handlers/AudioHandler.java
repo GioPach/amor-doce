@@ -60,6 +60,7 @@ public class AudioHandler {
     private MediaPlayer criarPlayer(String pathAudio) {
         
         final MediaPlayer player = new MediaPlayer(new Media(pathAudio));
+        player.setVolume(0.3);
         player.setOnError(new Runnable() {
         @Override public void run() {
             System.out.println("Media error occurred: " + player.getError());
