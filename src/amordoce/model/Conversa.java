@@ -16,12 +16,8 @@ public class Conversa {
     final private int numRespostasPossiveis = 3; // constante
     
     public Conversa() {
+        // Utilizado para marcar quando o personagem não possui mais conversas na fila
         this.id = -1;
-        this.pergunta = "...";
-        for(int i = 0; i < numRespostasPossiveis; i++) {
-            this.respostasPossiveis.add(new Resposta(i));
-            this.reacoesPossiveis.add(new Resposta(i));
-        }
     }
     
     public Conversa(Personagem personagem, String pergunta, Set<Resposta> respostas, Set<Resposta> reacoesPossiveis) {

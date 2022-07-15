@@ -13,6 +13,11 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
+/**
+ * @author Giovani
+ * @author Filipe
+ */
+
 public class PersonagemController implements Initializable {
     
     @FXML 
@@ -118,10 +123,9 @@ public class PersonagemController implements Initializable {
         Conversa conversa = personagem.getConversaAtual();
 
         if(conversa.getId() == -1) {
-            this.setVisibilidadeRespostas(false);
-            labelPergunta.setText("...");
+            setVisibilidadeRespostas(false);
         } else {
-            this.setVisibilidadeRespostas(true);
+            setVisibilidadeRespostas(true);
             labelPergunta.setText(personagem.getConversaAtual().getPergunta());
             btnOpcaoA.setText(personagem.getConversaAtual().getResposta(0));
             btnOpcaoB.setText(personagem.getConversaAtual().getResposta(1));
@@ -189,6 +193,7 @@ public class PersonagemController implements Initializable {
      * Altera a visibilidade do botão passado como paramêtro
      * @param button
      * @param visibilidade 
+     * Utilizado nos controladores de cada personagem.
      */
     @FXML
     public void setVisibilidadeButton(Button button, boolean visibilidade) {
